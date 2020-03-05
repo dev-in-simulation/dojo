@@ -32,7 +32,7 @@ npm install
 
 ## Modifying Sass
 
-The Sass will need to be recompiled if modified. I use Dart Sass's standalone cli, found [here](https://sass-lang.com/dart-sass)
+The Sass will need to be recompiled if modified. I use Dart Sass's standalone cli, found [here](https://sass-lang.com/install)
 
 ## Features
 
