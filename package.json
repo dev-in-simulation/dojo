@@ -1,16 +1,18 @@
 {
-  "name": "react_router_template",
+  "name": "your_app",
   "version": "0.1.0",
   "private": true,
-  "description": "Used to speed up the setup process for a React Router project, removing the bloat from create-react-app",
+  "description": "React boilerplate: includes PropTypes, React Router, and React Transition Group",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "react-transition-group": "^4.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,10 +36,10 @@
     ]
   },
   "main": "index.js",
-  "author": "",
+  "author": "You",
   "repository": {
     "type": "git",
-    "url": "https://github.com/niems/React-Router-Template.git"
+    "url": ""
   },
   "keywords": [],
   "license": "MIT"
