@@ -7,13 +7,13 @@ Used to expedite setting a new project up using React Router and Sass. Removing 
 Clone repo with default project name (same as repo)
 
 ```
-git clone https://github.com/niems/React-Router-Template.git
+git clone https://github.com/dev-in-simulation/React-Router-Template.git
 ```
 
 Clone repot with a new project name (ex. testProject)
 
 ```
-git clone https://github.com/niems/React-Router-Template.git testProject
+git clone https://github.com/dev-in-simulation/React-Router-Template.git testProject
 ```
 
 ## Install modules
