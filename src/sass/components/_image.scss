@@ -1,0 +1,38 @@
+$img-container-size: 200px;
+
+.img-container {
+  display: inline-block;
+  overflow: hidden;
+  max-width: $img-container-size;
+  max-height: $img-container-size;
+  width: 90%;
+
+  &.small {
+    $img-container-size: 100px;
+    max-width: $img-container-size;
+    max-height: $img-container-size;
+  }
+
+  &.large {
+    $img-container-size: 400px;
+    max-width: $img-container-size;
+    max-height: $img-container-size;
+  }
+
+  &.custom {
+    $size: attr(unquote(data-size));
+
+    > img {
+      $img-container-size: $size;
+      $size: attr(unquote(data-size));
+      //content: $size;
+      max-width: $size;
+      max-height: $size;
+    }
+  }
+
+  > img {
+    max-width: 100%;
+    height: auto;
+  }
+}

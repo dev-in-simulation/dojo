@@ -1,0 +1,11 @@
+//* setup box model on root
+html {
+  box-sizing: border-box;
+}
+
+//* box sizing for all
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}

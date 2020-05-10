@@ -1,0 +1,15 @@
+@mixin font-init(
+  $family,
+  $size,
+  $style,
+  $weight,
+  $ltr-spacing,
+  $line-height: 1.15
+) {
+  font-family: $family;
+  font-size: $size;
+  font-style: $style;
+  font-weight: $weight;
+  letter-spacing: $ltr-spacing;
+  line-height: $line-height;
+}

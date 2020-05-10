@@ -1,0 +1,13 @@
+@keyframes background-transition {
+  0% {
+    background: $color-light-purple;
+  }
+
+  50% {
+    background: $color-dark-purple;
+  }
+
+  100% {
+    background: $color-light-purple;
+  }
+}

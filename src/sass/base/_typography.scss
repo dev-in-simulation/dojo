@@ -1,0 +1,58 @@
+//* basic typography styling
+body {
+  @include font-init(
+    $body-font-stack,
+    17px,
+    normal,
+    $weight-normal,
+    0.25px,
+    1.5
+  );
+}
+
+h1 {
+  @include font-init($header-font-stack, 101px, normal, $weight-light, -1.5px);
+  text-align: center;
+}
+
+h2 {
+  @include font-init($header-font-stack, 63px, normal, $weight-light, -0.5px);
+}
+
+h3 {
+  @include font-init($header-font-stack, 50px, normal, $weight-normal, 0px);
+}
+
+h4 {
+  @include font-init($header-font-stack, 36px, normal, $weight-normal, 0.25px);
+}
+
+h5 {
+  @include font-init($header-font-stack, 25px, normal, $weight-normal, 0px);
+}
+
+h6 {
+  @include font-init($header-font-stack, 21px, normal, $weight-medium, 0.15px);
+}
+
+p {
+  @include font-init(
+    $body-font-stack,
+    17px,
+    normal,
+    $weight-normal,
+    0.5px,
+    1.5
+  );
+}
+
+button {
+  @include font-init(
+    $body-font-stack,
+    15px,
+    normal,
+    $weight-normal,
+    0.25px,
+    1.5
+  );
+}

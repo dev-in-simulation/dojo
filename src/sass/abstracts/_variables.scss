@@ -1,0 +1,20 @@
+//* font-based variables
+$header-font-stack: (Lato, sans-serif);
+$body-font-stack: (Lato, sans-serif);
+
+$weight-light: 300;
+$weight-normal: 400;
+$weight-medium: 500;
+
+$color-charcoal: #343434;
+$color-light-purple: #84a9df;
+$color-dark-purple: #5788cf;
+
+//* main
+$main-bg-fallback: $color-light-purple;
+$main-fg: $color-charcoal;
+$main-bg: linear-gradient(90deg, $color-light-purple, $color-dark-purple);
+$main-bg-alt: linear-gradient(180deg, $color-light-purple, $color-dark-purple);
+
+//* logo
+$logo-size: 200px; //* used for both width and height
