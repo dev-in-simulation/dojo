@@ -20,7 +20,8 @@ body {
   flex-flow: column nowrap;
   align-items: center;
   justify-content: flex-start;
-  background: $main-bg;
+  background: none;
+  background: $light-purple;
 }
 
 //* used in creating the content view containers
@@ -34,6 +35,8 @@ body {
   flex-flow: column nowrap;
   align-items: center;
   //background: gray;
+  //background: none;
+  background: gray;
   &:nth-of-type(2n) {
     background: green;
   }
@@ -45,4 +48,11 @@ body {
 
 .debug {
   border: 2px solid red;
+}
+
+.particle-bg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 500;
 }
