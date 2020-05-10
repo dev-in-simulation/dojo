@@ -26,21 +26,6 @@ function App() {
       </Suspense>
     </main>
   );
-  //return (
-  //<main className="App">
-  //<Suspense fallback={<Loading />}>
-  //<Switch>
-  //<Route exact path="/">
-  //<Homepage />
-  //</Route>
-
-  //<Route>
-  //<NoMatch />
-  //</Route>
-  //</Switch>
-  //</Suspense>
-  //</main>
-  //);
 }
 
 export default App;

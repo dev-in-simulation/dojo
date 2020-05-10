@@ -5,31 +5,42 @@ body {
   padding: 0;
   margin: 0;
 
-  @include scrollbar($scrollbar-size, $scrollbar-fg, $scrollbar-bg);
+  overflow: hidden;
+  //overflow-x: hidden;
+  //overflow-y: auto;
 }
 
 //* wrapper used at the top-level
 .App {
-  width: 100%;
-  min-height: 100vh;
-  height: max-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  //min-height: 100vh;
+  //height: max-content;
+  height: 100vh;
   margin: 0;
   padding: 0;
+
+  overflow-x: hidden;
+  overflow-y: auto;
 
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: flex-start;
-  background: none;
   background: $light-purple;
+
+  @include scrollbar($scrollbar-size, $scrollbar-fg, $scrollbar-bg);
 }
 
 //* used in creating the content view containers
 .view {
-  max-width: 1200px;
-  min-height: 100vh;
+  max-width: $max-view-width;
+  //min-height: 100vh;
   width: 100%;
-  height: auto;
+  height: max-content;
 
   display: flex;
   flex-flow: column nowrap;
@@ -54,5 +65,5 @@ body {
   position: absolute;
   width: 100%;
   height: 100vh;
-  z-index: 500;
+  z-index: 0;
 }

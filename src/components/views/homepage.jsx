@@ -3,7 +3,7 @@ import View from "../template/view";
 
 function Homepage() {
   return (
-    <View>
+    <View id="homepage">
       <h1 className="title">This is a TITLE</h1>
       <h2 className="title">This is a TITLE</h2>
       <h3 className="title">This is a TITLE</h3>

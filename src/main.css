@@ -9,7 +9,7 @@
     background: #84a9df;
   }
 }
-html {
+body {
   box-sizing: border-box;
 }
 
@@ -21,11 +21,12 @@ html {
 
 body {
   font-family: Lato, sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   letter-spacing: 0.25px;
   line-height: 1.5;
+  text-align: center;
 }
 
 h1 {
@@ -35,7 +36,6 @@ h1 {
   font-weight: 300;
   letter-spacing: -1.5px;
   line-height: 1.15;
-  text-align: center;
 }
 
 h2 {
@@ -105,43 +105,46 @@ body {
   width: 100%;
   padding: 0;
   margin: 0;
-}
-body::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-body::-webkit-scrollbar-thumb {
-  background: gray;
-}
-body::-webkit-scrollbar-track {
-  background: black;
-}
-body {
-  scrollbar-width: thin;
-  scrollbar-color: gray black;
-  scrollbar-face-color: gray;
-  scrollbar-track-color: black;
+  overflow: hidden;
 }
 
 .App {
-  width: 100%;
-  min-height: 100vh;
-  height: max-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: flex-start;
-  background: none;
   background: #fafaff;
+}
+.App::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.App::-webkit-scrollbar-thumb {
+  background: #5788cf;
+}
+.App::-webkit-scrollbar-track {
+  background: black;
+}
+.App {
+  scrollbar-width: thin;
+  scrollbar-color: #5788cf black;
+  scrollbar-face-color: #5788cf;
+  scrollbar-track-color: black;
 }
 
 .view {
   max-width: 1200px;
-  min-height: 100vh;
   width: 100%;
-  height: auto;
+  height: max-content;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -162,7 +165,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100vh;
-  z-index: 500;
+  z-index: 0;
 }
 
 .img-container {

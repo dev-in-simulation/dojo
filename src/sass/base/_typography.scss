@@ -2,17 +2,17 @@
 body {
   @include font-init(
     $body-font-stack,
-    17px,
+    16px,
     normal,
     $weight-normal,
     0.25px,
     1.5
   );
+  text-align: center;
 }
 
 h1 {
   @include font-init($header-font-stack, 101px, normal, $weight-light, -1.5px);
-  text-align: center;
 }
 
 h2 {
