@@ -33,7 +33,10 @@ body {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  background: gray;
+  //background: gray;
+  &:nth-of-type(2n) {
+    background: green;
+  }
 
   &.centered {
     justify-content: center;

@@ -1,8 +1,9 @@
 import React from "react";
+import View from "../template/view";
 
 function Homepage() {
   return (
-    <section id="homepage" className="view">
+    <View>
       <h1 className="title">This is a TITLE</h1>
       <h2 className="title">This is a TITLE</h2>
       <h3 className="title">This is a TITLE</h3>
@@ -22,7 +23,7 @@ function Homepage() {
         since the 1500s, when an unknown printer took a galley of type and
         scrambled it to make a type specimen book.
       </p>
-    </section>
+    </View>
   );
 }
 

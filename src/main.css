@@ -133,7 +133,7 @@ body {
   flex-flow: column nowrap;
   align-items: center;
   justify-content: flex-start;
-  background: linear-gradient(90deg, #84a9df, #5788cf);
+  background: #fafaff;
 }
 
 .view {
@@ -144,7 +144,9 @@ body {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  background: gray;
+}
+.view:nth-of-type(2n) {
+  background: green;
 }
 .view.centered {
   justify-content: center;
