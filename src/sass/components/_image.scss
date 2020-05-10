@@ -19,18 +19,6 @@ $img-container-size: 200px;
     max-height: $img-container-size;
   }
 
-  &.custom {
-    $size: attr(unquote(data-size));
-
-    > img {
-      $img-container-size: $size;
-      $size: attr(unquote(data-size));
-      //content: $size;
-      max-width: $size;
-      max-height: $size;
-    }
-  }
-
   > img {
     max-width: 100%;
     height: auto;

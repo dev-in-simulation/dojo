@@ -10,6 +10,11 @@ $color-charcoal: #343434;
 $color-light-purple: #84a9df;
 $color-dark-purple: #5788cf;
 
+//*scrollbar
+$scrollbar-size: 10px;
+$scrollbar-fg: gray;
+$scrollbar-bg: black;
+
 //* main
 $main-bg-fallback: $color-light-purple;
 $main-fg: $color-charcoal;

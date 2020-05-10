@@ -13,3 +13,26 @@
   letter-spacing: $ltr-spacing;
   line-height: $line-height;
 }
+
+//* scrollbar styling setup
+@mixin scrollbar($size, $fg-color, $bg-color) {
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $fg-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $bg-color;
+  }
+
+  & {
+    scrollbar-width: thin;
+    scrollbar-color: $fg-color $bg-color;
+    scrollbar-face-color: $fg-color;
+    scrollbar-track-color: $bg-color;
+  }
+}

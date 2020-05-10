@@ -9,7 +9,7 @@ function Homepage() {
       <h4 className="title">This is a TITLE</h4>
       <h5 className="title">This is a TITLE</h5>
       <h6 className="title">This is a TITLE</h6>
-      <span className="img-container custom" data-size="20px">
+      <span className="img-container">
         <img
           className="img"
           src="./assets/icons/beaker.svg"

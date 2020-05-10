@@ -1,17 +1,17 @@
-//* contains helper classes
+//* contains general helper classes
 
 body {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
   padding: 0;
   margin: 0;
-  overflow-x: hidden;
-  background: orange;
+
+  @include scrollbar($scrollbar-size, $scrollbar-fg, $scrollbar-bg);
 }
 
 //* wrapper used at the top-level
 .App {
   width: 100%;
+  min-height: 100vh;
   height: max-content;
   margin: 0;
   padding: 0;
@@ -19,7 +19,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  //overflow: auto;
+  justify-content: flex-start;
   background: $main-bg;
 }
 
@@ -33,6 +33,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  background: gray;
 
   &.centered {
     justify-content: center;
