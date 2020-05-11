@@ -1,6 +1,12 @@
 //* .view container setup
 $max-view-width: 1200px; //* max content width in .view
 
+//* screen breakpoints
+$breakpoints: (
+  "medium": 800px,
+  "large": 1200px,
+);
+
 //* font-based variables
 $header-font-stack: (Lato, sans-serif);
 $body-font-stack: (Lato, sans-serif);
@@ -9,7 +15,9 @@ $weight-normal: 400;
 $weight-medium: 500;
 
 //* base colors
+$near-white: hsl(0, 0%, 90%);
 $color-charcoal: #343434;
+$color-charcoal-fade: hsl(0, 0%, 35%);
 $color-light-purple: #84a9df;
 $color-dark-purple: #5788cf;
 $light-purple: hsl(240, 100%, 99%);
@@ -32,6 +40,8 @@ $theme-on-secondary: gray; //* sets text color to color configured for text ON s
 $theme-surface: gray; //* sets background color to the surface background color
 $theme-on-surface: gray; //* sets text color to the configured color for text on the surface color
 $theme-background: gray; //* sets the background color to the theme background color
+
+$theme-icon-bg: $mid-purple; //* sets background color to theme icon
 
 //* logo
 $logo-size: 200px; //* used for both width and height

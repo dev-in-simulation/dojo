@@ -1,0 +1,62 @@
+//* icon sizes based on media breakpoints
+$icon-small: 45px; //* default
+$icon-med: 50px;
+$icon-large: 55px;
+
+//* container holding all social icons
+.social-icons-container {
+  width: 100%;
+  height: 100%;
+  //margin: 0.25rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+//* container holds in individual icon
+.icon-container {
+  display: inline-block;
+  width: $icon-small;
+  height: $icon-small;
+  margin: 0 0.85rem;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $theme-icon-bg;
+  border-radius: 6px;
+  transition: background 0.35s;
+
+  &:hover {
+    background: $theme-icon-bg;
+  }
+}
+
+//* holds the link to the social icon
+.social-icon-link {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+
+  > img {
+    max-width: 100%;
+    height: auto;
+    //filter: invert(1);
+  }
+}
+
+@media only screen and (min-width: map-get($breakpoints, "medium")) {
+  .icon-container {
+    width: $icon-med;
+    height: $icon-med;
+  }
+}
+
+@media only screen and (min-width: map-get($breakpoints, "large")) {
+  .icon-container {
+    width: $icon-large;
+    height: $icon-large;
+  }
+}

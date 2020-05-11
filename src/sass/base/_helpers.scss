@@ -11,6 +11,12 @@ body {
   overflow: hidden;
 }
 
+p {
+  width: 100%;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
 //* wrapper used at the top-level
 .App {
   position: absolute;
@@ -31,7 +37,7 @@ body {
   align-items: center;
 
   color: $theme-on-primary;
-  background: $light-purple;
+  background: $mid-purple;
 
   @include scrollbar($scrollbar-size, $scrollbar-fg, $scrollbar-bg);
 }
@@ -51,7 +57,6 @@ body {
   flex-flow: column nowrap;
   align-items: center;
   background: $theme-primary-bg;
-  //background: gray;
 
   &:nth-of-type(2n) {
     background: green;
@@ -89,6 +94,6 @@ body {
   height: 100%;
   //min-height: 100vh;
   z-index: 0;
-  background: $theme-primary-bg;
+  //background: $theme-primary-bg;
   opacity: 1;
 }
