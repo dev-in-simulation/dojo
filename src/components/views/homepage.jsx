@@ -1,6 +1,6 @@
 import React from "react";
 import ParticleBackground from "../organisms/particleBackground";
-//import AnimateIt from "../molecules/animateIt";
+import ViewTitle from "../atoms/viewTitle";
 
 import View from "../template/view";
 import ViewSection from "../template/viewSection";
@@ -9,12 +9,13 @@ function Homepage() {
   return (
     <View id="homepage">
       <ViewSection>
-        <h1 className="title">This is h1</h1>
-        <h2 className="title">This is h2</h2>
-        <h3 className="title">This is h3</h3>
-        <h4 className="title">This is h4</h4>
-        <h5 className="title">This is h5</h5>
-        <h6 className="title">This is h6</h6>
+        <ViewTitle title="About" addClasses="show-sides" />
+        <h1 className="t">This is h1</h1>
+        <h2 className="t">This is h2</h2>
+        <h3 className="t">This is h3</h3>
+        <h4 className="t">This is h4</h4>
+        <h5 className="t">This is h5</h5>
+        <h6 className="t">This is h6</h6>
       </ViewSection>
 
       <ParticleBackground />
