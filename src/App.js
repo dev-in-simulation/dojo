@@ -6,6 +6,7 @@ import Loading from "./components/views/loading";
 import Footer from "./components/organisms/footer";
 
 const Homepage = lazy(() => import("./components/views/homepage"));
+const About = lazy(() => import("./components/views/about"));
 const NoMatch = lazy(() => import("./components/views/noMatch"));
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Homepage />
+            <About />
             <Footer />
           </Route>
 

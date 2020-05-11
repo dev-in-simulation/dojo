@@ -9,7 +9,7 @@ function Homepage() {
   return (
     <View id="homepage">
       <ViewSection>
-        <ViewTitle title="About" addClasses="is-size-1 show-sides" />
+        <ViewTitle title="Homepage" addClasses="is-size-1 show-sides" />
         <h4 className="title is-size-4">This is h4</h4>
         <h5 className="title is-size-5">This is h5</h5>
         <h6 className="title is-size-6">This is h6</h6>
