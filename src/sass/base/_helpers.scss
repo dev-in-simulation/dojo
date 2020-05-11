@@ -1,13 +1,14 @@
 //* contains general helper classes
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   width: 100%;
-  padding: 0;
-  margin: 0;
-
   overflow: hidden;
-  //overflow-x: hidden;
-  //overflow-y: auto;
 }
 
 //* wrapper used at the top-level
@@ -17,8 +18,6 @@ body {
   left: 0;
 
   width: 100vw;
-  //min-height: 100vh;
-  //height: max-content;
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -26,16 +25,18 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
 
+  //* keeps .view centered since it's width is capped
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  justify-content: flex-start;
+
   background: $light-purple;
 
   @include scrollbar($scrollbar-size, $scrollbar-fg, $scrollbar-bg);
 }
 
 //* used in creating the content view containers
+//* used once per page (about; projects; etc.)
 .view {
   max-width: $max-view-width;
   //min-height: 100vh;
@@ -45,8 +46,6 @@ body {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  //background: gray;
-  //background: none;
   background: gray;
   &:nth-of-type(2n) {
     background: green;
@@ -55,6 +54,20 @@ body {
   &.centered {
     justify-content: center;
   }
+}
+
+//* used to keep related content in .view together
+//* stays width of parent, but height grows based on content
+.view-section {
+  width: 100%;
+  height: max-content;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .debug {

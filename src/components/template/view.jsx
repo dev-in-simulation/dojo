@@ -1,12 +1,19 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 //* each <View /> encloses a single page
 function View(props) {
   return (
-    <section className="view" id={props.id}>
+    <article className="view" id={props.id}>
       {props.children}
-    </section>
+    </article>
   );
 }
+
+View.propTypes = {
+  props: PropTypes.shape({
+    id: PropTypes.string,
+  }),
+};
 
 export default View;
