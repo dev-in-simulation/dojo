@@ -37,9 +37,9 @@ function Footer(props) {
   return (
     <footer className="page-view footer-view">
       <section className="view centered footer">
-        <p className="closing-words">{title}</p>
+        <p className="closing-words title is-size-5 weight--light">{title}</p>
         <SocialIcons icons={iconsData} />
-        <p className="copyright">{copyright}</p>
+        <p className="copyright body is-size-2 weight--light">{copyright}</p>
       </section>
     </footer>
   );
