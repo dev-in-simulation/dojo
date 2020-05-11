@@ -1,13 +1,31 @@
 //* icon sizes based on media breakpoints
-$icon-small: 45px; //* default
-$icon-med: 50px;
-$icon-large: 55px;
+$icon-small: (
+  "size": 35px,
+  "padding": 0.25rem,
+  "margin": 0 0.85rem,
+);
+
+$icon-mid: (
+  "size": 40px,
+  "padding": 0.3rem,
+  "margin": 0 1rem,
+);
+
+$icon-large: (
+  "size": 45px,
+  "padding": 0.3rem,
+  "margin": 0 1.15rem,
+);
+
+//$icon-small: 40px; //* default
+//$icon-med: 50px;
+//$icon-large: 55px;
 
 //* container holding all social icons
 .social-icons-container {
   width: 100%;
   height: 100%;
-  //margin: 0.25rem;
+  margin: 0.25rem;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -17,10 +35,11 @@ $icon-large: 55px;
 //* container holds in individual icon
 .icon-container {
   display: inline-block;
-  width: $icon-small;
-  height: $icon-small;
-  margin: 0 0.85rem;
-  padding: 0.5rem;
+  width: map-get($icon-small, "size");
+  height: map-get($icon-small, "size");
+  margin: map-get($icon-small, "margin");
+  padding: map-get($icon-small, "padding");
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,20 +62,23 @@ $icon-large: 55px;
   > img {
     max-width: 100%;
     height: auto;
-    //filter: invert(1);
   }
 }
 
 @media only screen and (min-width: map-get($breakpoints, "medium")) {
   .icon-container {
-    width: $icon-med;
-    height: $icon-med;
+    width: map-get($icon-mid, "size");
+    height: map-get($icon-mid, "size");
+    margin: map-get($icon-mid, "margin");
+    padding: map-get($icon-mid, "padding");
   }
 }
 
 @media only screen and (min-width: map-get($breakpoints, "large")) {
   .icon-container {
-    width: $icon-large;
-    height: $icon-large;
+    width: map-get($icon-large, "size");
+    height: map-get($icon-large, "size");
+    margin: map-get($icon-large, "margin");
+    padding: map-get($icon-large, "padding");
   }
 }

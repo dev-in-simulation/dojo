@@ -1,18 +1,25 @@
+.footer-view {
+  padding: 2rem 0;
+  background: $theme-secondary-bg;
+}
+
 .footer {
-  max-width: $max-view-width;
-  width: 100%;
-  height: max-content;
   margin: 0;
-  padding: 1rem 0;
+  padding: 0;
 
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  color: $theme-on-primary;
-  background: $theme-primary-bg;
+  color: $theme-on-secondary;
+  font-weight: $weight-light;
 
-  > .footer-text {
+  > .title {
+    font-size: 125%;
+    font-weight: inherit;
+    margin: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  > .copyright {
     margin: 1rem 0;
+    font-size: 85%;
+    font-weight: inherit;
   }
 }

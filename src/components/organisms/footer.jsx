@@ -7,35 +7,40 @@ function Footer(props) {
       name: "github",
       link: "https://www.github.com/niems",
       imgPath: "assets/social/github.svg",
-      imgAlt: "redirect to my github account",
+      imgAlt: "redirect to my github profile",
       type: "social",
     },
     {
       name: "codepen",
       link: "https://codepen.io/niems",
       imgPath: "assets/social/codepen.svg",
-      imgAlt: "redirect to my codepen account",
+      imgAlt: "redirect to my codepen profile",
       type: "social",
     },
     {
-      name: "dribbble",
-      link: "https://www.github.com/niems",
-      imgPath: "assets/social/dribbble.svg",
-      imgAlt: "redirect to my dribbble account",
+      name: "freecodecamp",
+      link: "https://www.freecodecamp.org/niems",
+      imgPath: "assets/social/freecodecamp.svg",
+      imgAlt: "redirect to my freecodecamp profile",
       type: "social",
     },
     {
       name: "linkedin",
       link: "https://www.linkedin.com/in/zach-niemann-6203105a/",
       imgPath: "assets/social/linkedin.svg",
-      imgAlt: "redirect to my linkedin account",
+      imgAlt: "redirect to my linkedin profile",
       type: "social",
     },
   ];
+  const title = "Living, learning, & leveling up one day at a time.";
+  const copyright = "Hand typed by me © twentytwenty";
   return (
-    <footer className="footer debug">
-      <SocialIcons icons={iconsData} />
-      <p className="footer-text">Hand typed by me © twentytwenty</p>
+    <footer className="page-view footer-view">
+      <section className="view centered footer">
+        <p className="title">{title}</p>
+        <SocialIcons icons={iconsData} />
+        <p className="copyright">{copyright}</p>
+      </section>
     </footer>
   );
 }

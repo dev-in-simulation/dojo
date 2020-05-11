@@ -212,6 +212,20 @@ p {
   scrollbar-track-color: black;
 }
 
+.page-view {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: max-content;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background: #9394cc;
+}
+
 .view {
   position: relative;
   top: 0;
@@ -222,7 +236,7 @@ p {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  background: #9394cc;
+  background: none;
 }
 .view:nth-of-type(2n) {
   background: green;
@@ -257,21 +271,27 @@ p {
   opacity: 1;
 }
 
-.footer {
-  max-width: 1200px;
-  width: 100%;
-  height: max-content;
-  margin: 0;
-  padding: 1rem 0;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  color: #343434;
-  background: #9394cc;
+.footer-view {
+  padding: 2rem 0;
+  background: #bdbfe5;
 }
-.footer > .footer-text {
+
+.footer {
+  margin: 0;
+  padding: 0;
+  color: #343434;
+  font-weight: 300;
+}
+.footer > .title {
+  font-size: 125%;
+  font-weight: inherit;
+  margin: 0;
+  margin-bottom: 1.5rem;
+}
+.footer > .copyright {
   margin: 1rem 0;
+  font-size: 85%;
+  font-weight: inherit;
 }
 
 .img-container {
@@ -297,6 +317,7 @@ p {
 .social-icons-container {
   width: 100%;
   height: 100%;
+  margin: 0.25rem;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -305,19 +326,19 @@ p {
 
 .icon-container {
   display: inline-block;
-  width: 45px;
-  height: 45px;
+  width: 35px;
+  height: 35px;
   margin: 0 0.85rem;
-  padding: 0.5rem;
+  padding: 0.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #bdbfe5;
+  border: 1px solid #fafaff;
   border-radius: 6px;
   transition: background 0.35s;
 }
 .icon-container:hover {
-  background: #bdbfe5;
+  background: #fafaff;
 }
 
 .social-icon-link {
@@ -333,14 +354,18 @@ p {
 
 @media only screen and (min-width: 800px) {
   .icon-container {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+    margin: 0 1rem;
+    padding: 0.3rem;
   }
 }
 @media only screen and (min-width: 1200px) {
   .icon-container {
-    width: 55px;
-    height: 55px;
+    width: 45px;
+    height: 45px;
+    margin: 0 1.15rem;
+    padding: 0.3rem;
   }
 }
 
