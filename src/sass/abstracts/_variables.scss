@@ -22,8 +22,8 @@ $main-fg: $light-purple;
 $main-bg-alt: red;
 
 $theme-primary: gray; //* sets the text color to the theme primary color
-$theme-primary-bg: gray; //* sets background color to theme primary color
-$theme-on-primary: gray; //* sets text color to color configured for text ON primary color
+$theme-primary-bg: $dark-purple; //* sets background color to theme primary color
+$theme-on-primary: $color-charcoal; //* sets text color to color configured for text ON primary color
 
 $theme-secondary: gray; //* sets the text color to the theme secondary color
 $theme-secondary-bg: gray; //* sets background color to theme secondary color
