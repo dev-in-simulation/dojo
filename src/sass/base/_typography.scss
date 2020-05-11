@@ -14,28 +14,48 @@ body {
   text-align: center;
 }
 
-h1 {
-  @include font-init($header-font-stack, 101px, normal, $weight-light, -1.5px);
-}
+.title {
+  &.is-size-1 {
+    @include font-init(
+      $header-font-stack,
+      101px,
+      normal,
+      $weight-light,
+      -1.5px
+    );
+  }
 
-h2 {
-  @include font-init($header-font-stack, 63px, normal, $weight-light, -0.5px);
-}
+  &.is-size-2 {
+    @include font-init($header-font-stack, 63px, normal, $weight-light, -0.5px);
+  }
 
-h3 {
-  @include font-init($header-font-stack, 50px, normal, $weight-normal, 0px);
-}
+  &.is-size-3 {
+    @include font-init($header-font-stack, 50px, normal, $weight-normal, 0px);
+  }
 
-h4 {
-  @include font-init($header-font-stack, 36px, normal, $weight-normal, 0.25px);
-}
+  &.is-size-4 {
+    @include font-init(
+      $header-font-stack,
+      36px,
+      normal,
+      $weight-normal,
+      0.25px
+    );
+  }
 
-h5 {
-  @include font-init($header-font-stack, 25px, normal, $weight-normal, 0px);
-}
+  &.is-size-5 {
+    @include font-init($header-font-stack, 25px, normal, $weight-normal, 0px);
+  }
 
-h6 {
-  @include font-init($header-font-stack, 21px, normal, $weight-medium, 0.15px);
+  &.is-size-6 {
+    @include font-init(
+      $header-font-stack,
+      21px,
+      normal,
+      $weight-medium,
+      0.15px
+    );
+  }
 }
 
 p {

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function ViewTitle(props) {
-  let titleClasses = "view-title";
+  let titleClasses = "title is-size-1";
 
   if (props.addClasses) {
     titleClasses += " " + props.addClasses;

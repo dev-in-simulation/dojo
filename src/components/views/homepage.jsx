@@ -10,12 +10,9 @@ function Homepage() {
     <View id="homepage">
       <ViewSection>
         <ViewTitle title="About" addClasses="show-sides" />
-        <h1 className="t">This is h1</h1>
-        <h2 className="t">This is h2</h2>
-        <h3 className="t">This is h3</h3>
-        <h4 className="t">This is h4</h4>
-        <h5 className="t">This is h5</h5>
-        <h6 className="t">This is h6</h6>
+        <h4 className="title is-size-4">This is h4</h4>
+        <h5 className="title is-size-5">This is h5</h5>
+        <h6 className="title is-size-6">This is h6</h6>
       </ViewSection>
 
       <ParticleBackground />
