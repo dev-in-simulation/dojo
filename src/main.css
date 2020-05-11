@@ -9,6 +9,61 @@
     background: #84a9df;
   }
 }
+@keyframes travel-offset {
+  to {
+    offset-distance: 100%;
+  }
+}
+@keyframes dash {
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+.animate-it {
+  overflow: visible;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+  max-height: 500px;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.2);
+}
+.animate-it .path {
+  fill: #343434;
+}
+.animate-it .path.with-text {
+  stroke: orange;
+}
+.animate-it .text {
+  stroke: #fafaff;
+  stroke-width: 1px;
+}
+.animate-it .text.offset {
+  fill: none;
+  stroke-width: 0.25px;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: 5s ease 1s infinite dash;
+}
+.animate-it .text-path {
+  stroke-width: 1px;
+  stroke: #9394cc;
+  fill: black;
+}
+.animate-it .line {
+  width: 100px;
+  height: 10px;
+  fill: orange;
+  stroke: black;
+}
+
 body {
   box-sizing: border-box;
 }
@@ -101,11 +156,14 @@ button {
   line-height: 1.5;
 }
 
+svg .text {
+  font-size: 0.5rem;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
-  color: black;
 }
 
 body {
@@ -178,11 +236,13 @@ body {
 }
 
 .debug {
-  border: 2px solid red;
+  border: 2px dashed red;
 }
 
 .particle-bg {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: 0;

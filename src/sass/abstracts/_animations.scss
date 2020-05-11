@@ -11,3 +11,74 @@
     background: $color-light-purple;
   }
 }
+
+@keyframes travel-offset {
+  to {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes dash {
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+//svg[className="animate-it"] {
+.animate-it {
+  overflow: visible;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+  max-height: 500px;
+  width: 100%;
+  height: 100%;
+  //width: 500px;
+  //height: 500px;
+  z-index: 10;
+  background: hsla(0, 100%, 100%, 0.2);
+  //background: none;
+
+  .path {
+    fill: $theme-on-primary;
+    &.with-text {
+      stroke: orange;
+    }
+  }
+  .text {
+    stroke: $light-purple;
+    stroke-width: 1px;
+
+    &.offset {
+      @debug "stroke .offset()";
+      fill: none;
+      stroke-width: 0.25px;
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+      animation: 5s ease 1s infinite dash;
+    }
+  }
+  .text-path {
+    //stroke-width: 2px;
+    stroke-width: 1px;
+    stroke: $dark-purple;
+    fill: black;
+
+    //offset-path: path("M -110,10 h210");
+    //offset-distance: 0%;
+    //animation: 5s ease infinite alternate-reverse travel-offset;
+  }
+
+  .line {
+    width: 100px;
+    height: 10px;
+    fill: orange;
+    stroke: black;
+  }
+}

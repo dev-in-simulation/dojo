@@ -1,5 +1,5 @@
 //* basic typography styling
-body {
+@mixin def-body-font {
   @include font-init(
     $body-font-stack,
     16px,
@@ -8,6 +8,18 @@ body {
     0.25px,
     1.5
   );
+}
+
+body {
+  @include def-body-font;
+  //@include font-init(
+  //$body-font-stack,
+  //16px,
+  //normal,
+  //$weight-normal,
+  //0.25px,
+  //1.5
+  //);
   text-align: center;
 }
 
@@ -55,4 +67,12 @@ button {
     0.25px,
     1.5
   );
+}
+
+//* SVG animation text
+svg {
+  .text {
+    //@include def-body-font;
+    font-size: 0.5rem;
+  }
 }
