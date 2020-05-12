@@ -2,37 +2,42 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function SocialIcon({ data }) {
+function DisplayIcon({ data }) {
   return (
     <a
-      className="social-icon-link"
+      className="icon-link"
       target="_blank"
       rel="noreferrer noopener"
       href={data.link}
       alt={data.imgAlt}
     >
-      <img className="social-icon-img" src={data.imgPath} alt={data.imgAlt} />
+      <img className="icon-img" src={data.imgPath} alt={data.imgAlt} />
     </a>
   );
 }
 
 function Icon({ data }) {
-  let displayIcon = null;
+  let iconClasses = "icon-container";
+  iconClasses += " " + data.type;
 
-  if (data.type === "social") {
-    displayIcon = <SocialIcon data={data} />;
-  }
+  return (
+    <span className={iconClasses}>
+      <DisplayIcon data={data} />
 
-  return <span className="icon-container">{displayIcon}</span>;
+      {data.type === "named" && (
+        <span className="icon-name caption is-size-1">{data.name}</span>
+      )}
+    </span>
+  );
 }
 
 Icon.propTypes = {
   data: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
-    imgPath: PropTypes.string.isRequired,
-    imgAlt: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired, //* name of link. used as key, and also displayed if type === named
+    link: PropTypes.string.isRequired, //* icon link
+    imgPath: PropTypes.string.isRequired, //* img src path
+    imgAlt: PropTypes.string.isRequired, //* img alt text
+    type: PropTypes.string.isRequired, //* type of icon (currently named or social) This determines how the icon renders
   }).isRequired,
 };
 

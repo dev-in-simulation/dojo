@@ -17,6 +17,11 @@ p {
   margin: 0.5rem 0;
 }
 
+button,
+a {
+  cursor: pointer;
+}
+
 //* wrapper used at the top-level
 .App {
   position: absolute;
@@ -149,6 +154,10 @@ p {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+
+  &.skills {
+    margin: 0.5rem 0;
+  }
 }
 
 .debug {
