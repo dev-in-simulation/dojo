@@ -1,11 +1,11 @@
-//* displays all social icons in single container
+//* displays all icons in single container
 import React from "react";
 import PropTypes from "prop-types";
 import Icon from "../atoms/icon";
 
-function SocialIcons({ icons }) {
+function DisplayIcons({ icons }) {
   return (
-    <span className="social-icons-container">
+    <span className="display-icons-container">
       {icons.map((icon) => (
         <Icon key={icon.name} data={icon} />
       ))}
@@ -13,8 +13,8 @@ function SocialIcons({ icons }) {
   );
 }
 
-SocialIcons.propTypes = {
+DisplayIcons.propTypes = {
   icons: PropTypes.array.isRequired,
 };
 
-export default SocialIcons;
+export default DisplayIcons;

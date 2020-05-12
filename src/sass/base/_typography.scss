@@ -150,6 +150,10 @@ body {
     &--medium {
       font-weight: $weight-medium;
     }
+
+    &--bold {
+      font-weight: $weight-bold;
+    }
   }
 }
 

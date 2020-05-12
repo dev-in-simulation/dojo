@@ -3,8 +3,14 @@ import PropTypes from "prop-types";
 
 //* <ViewSection> groups related content together. Used inside <View>
 function ViewSection(props) {
+  let sectionClasses = "view-section";
+
+  if (props.addClasses) {
+    sectionClasses += " " + props.addClasses;
+  }
+
   return (
-    <section className="view-section" id={props.id}>
+    <section className={sectionClasses} id={props.id}>
       {props.children}
     </section>
   );
@@ -13,6 +19,7 @@ function ViewSection(props) {
 ViewSection.propTypes = {
   props: PropTypes.shape({
     id: PropTypes.string,
+    addClasses: PropTypes.string,
   }),
 };
 

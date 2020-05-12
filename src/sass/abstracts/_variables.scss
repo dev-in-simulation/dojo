@@ -13,6 +13,7 @@ $body-font-stack: (Lato, sans-serif);
 $weight-light: 300;
 $weight-normal: 400;
 $weight-medium: 500;
+$weight-bold: 700;
 
 //* base colors
 $near-white: hsl(0, 0%, 90%);
@@ -28,6 +29,11 @@ $dark-purple: hsl(239, 36%, 69%);
 
 //! TESTING
 $DEBUG: true;
+$p-theme-brightest: #6300e6;
+$p-theme-lightest: #e0ccf9;
+$p-theme-lightest: #d4b6f7;
+$p-theme-lightest: #c8a3f5;
+
 $lightest-test: #fcfcff;
 $light-test: #e3e4f5;
 $mid-test: #bdbfe3;

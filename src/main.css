@@ -208,6 +208,13 @@ body {
 .caption.weight--medium {
   font-weight: 500;
 }
+.title.weight--bold,
+.subtitle.weight--bold,
+.body.weight--bold,
+.btn.weight--bold,
+.caption.weight--bold {
+  font-weight: 700;
+}
 
 svg .text {
   font-size: 0.5rem;
@@ -228,6 +235,11 @@ p {
   width: 100%;
   padding: 0;
   margin: 0.5rem 0;
+}
+
+button,
+a {
+  cursor: pointer;
 }
 
 .App {
@@ -341,6 +353,9 @@ p {
   justify-content: center;
   align-items: center;
 }
+.view-section.skills {
+  margin: 0.5rem 0;
+}
 
 .debug {
   border: 2px dashed red;
@@ -394,7 +409,7 @@ p {
   height: auto;
 }
 
-.social-icons-container {
+.display-icons-container {
   width: 100%;
   height: 100%;
   margin: 0.25rem;
@@ -405,29 +420,56 @@ p {
 }
 
 .icon-container {
+  cursor: pointer;
   display: inline-block;
   width: 35px;
   height: 35px;
   margin: 0 0.85rem;
-  padding: 0.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #fafaff;
   border-radius: 6px;
   transition: background 0.35s;
 }
-.icon-container:hover {
+.icon-container.social {
+  border: 1px solid #fafaff;
+  padding: 0.25rem;
+}
+.icon-container.named {
+  height: max-content;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 45.5px;
+  height: 45.5px;
+  padding: 0.1rem;
+  border-radius: 50%;
+}
+.icon-container.named > .icon-name {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: max-content;
+  opacity: 0;
+  color: #343434;
+  transition: opacity 0.35s;
+  font-style: italic;
+}
+.icon-container:hover:not(.named) {
   background: #fafaff;
 }
+.icon-container:hover > .icon-name {
+  opacity: 1;
+}
 
-.social-icon-link {
+.icon-link {
   display: inline-block;
   width: 100%;
   height: 100%;
   border-radius: inherit;
 }
-.social-icon-link > img {
+.icon-link > img {
   max-width: 100%;
   height: auto;
 }
@@ -437,6 +479,8 @@ p {
     width: 40px;
     height: 40px;
     margin: 0 1rem;
+  }
+  .icon-container.social {
     padding: 0.3rem;
   }
 }
@@ -445,6 +489,8 @@ p {
     width: 45px;
     height: 45px;
     margin: 0 1.15rem;
+  }
+  .icon-container.social {
     padding: 0.3rem;
   }
 }
