@@ -5,9 +5,9 @@ import ViewTitle from "../atoms/viewTitle";
 import View from "../template/view";
 import ViewSection from "../template/viewSection";
 
-function Homepage() {
+function Homepage(props) {
   return (
-    <View id="homepage">
+    <View id="homepage" handleSetRef={props.handleSetRef}>
       <ViewSection>
         <ViewTitle title="Homepage" addClasses="is-size-1 show-sides" />
         <h4 className="title is-size-4">This is h4</h4>

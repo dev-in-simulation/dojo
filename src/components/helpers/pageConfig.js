@@ -112,3 +112,13 @@ export const FooterConfig = {
     },
   ],
 };
+
+export const NavConfig = {
+  iconData: {
+    name: "arrow home",
+    link: "#homepage",
+    imgPath: "assets/page/arrow_up.svg",
+    imgAlt: "scroll back to top",
+    type: "page",
+  },
+};

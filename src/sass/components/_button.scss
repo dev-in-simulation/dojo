@@ -1,0 +1,52 @@
+$btn-fab: (
+  "size": 40px,
+  "padding": 0.3rem,
+);
+
+.btn {
+  width: 100px;
+  height: 60px;
+  background: green;
+  border-radius: 50%;
+
+  &.fab {
+    &--scroll-to-top {
+      $width: map-get($btn-fab, "size");
+      $height: map-get($btn-fab, "size");
+      padding: map-get($btn-fab, "padding");
+
+      z-index: 10;
+      position: fixed;
+      top: 100%;
+      right: 0;
+      transform: translate(-$width * 1, -$height * 1.5);
+      color: $p-theme-text-on-accent;
+
+      max-width: $width;
+      max-height: $height;
+
+      scroll-behavior: smooth;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      background: $color-charcoal-fade;
+
+      &:hover {
+        background: $p-theme-accent;
+      }
+
+      > img {
+        filter: invert(1);
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    //?&:active {
+    //?background: $p-theme-accent;
+    //?clip-path: circle(100%);
+    //?}
+  }
+}

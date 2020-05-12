@@ -9,6 +9,7 @@ body {
 body {
   width: 100%;
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 
 p {
@@ -35,6 +36,7 @@ a {
 
   overflow-x: hidden;
   overflow-y: auto;
+  scroll-behavior: smooth;
 
   //* keeps .view centered since it's width is capped
   display: flex;

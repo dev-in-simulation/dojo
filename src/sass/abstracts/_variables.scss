@@ -7,6 +7,25 @@ $breakpoints: (
   "large": 1200px,
 );
 
+//* icon sizes based on media breakpoints
+$icon-small: (
+  "size": 35px,
+  "padding": 0.25rem,
+  "margin": 0 0.85rem,
+);
+
+$icon-mid: (
+  "size": 40px,
+  "padding": 0.3rem,
+  "margin": 0 1rem,
+);
+
+$icon-large: (
+  "size": 45px,
+  "padding": 0.3rem,
+  "margin": 0 1.15rem,
+);
+
 //* font-based variables
 $header-font-stack: (Lato, sans-serif);
 $body-font-stack: (Lato, sans-serif);
@@ -29,10 +48,15 @@ $dark-purple: hsl(239, 36%, 69%);
 
 //! TESTING
 $DEBUG: true;
-$p-theme-brightest: #6300e6;
-$p-theme-lightest: #e0ccf9;
+$theme1-bright-purple: #6300e6;
+$theme1-lightest: #e0ccf9;
 $p-theme-lightest: #d4b6f7;
-$p-theme-lightest: #c8a3f5;
+$p-theme-: #c8a3f5;
+$p-theme-outline: #9c5eef;
+$p-theme-accent: green;
+
+$p-theme-on-primary: $p-theme-lightest;
+$p-theme-text-on-accent: green;
 
 $lightest-test: #fcfcff;
 $light-test: #e3e4f5;

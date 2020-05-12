@@ -229,6 +229,7 @@ body {
 body {
   width: 100%;
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 
 p {
@@ -252,6 +253,7 @@ a {
   padding: 0;
   overflow-x: hidden;
   overflow-y: auto;
+  scroll-behavior: smooth;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -389,6 +391,39 @@ a {
   margin: 1.25rem 0;
 }
 
+.btn {
+  width: 100px;
+  height: 60px;
+  background: green;
+  border-radius: 50%;
+}
+.btn.fab--scroll-to-top {
+  padding: 0.3rem;
+  z-index: 10;
+  position: fixed;
+  top: 100%;
+  right: 0;
+  transform: translate(-40px, -60px);
+  color: green;
+  max-width: 40px;
+  max-height: 40px;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background: #595959;
+}
+.btn.fab--scroll-to-top:hover {
+  background: green;
+}
+.btn.fab--scroll-to-top > img {
+  filter: invert(1);
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
 .img-container {
   display: inline-block;
   overflow: hidden;
@@ -421,7 +456,6 @@ a {
 
 .icon-container {
   cursor: pointer;
-  display: inline-block;
   width: 35px;
   height: 35px;
   margin: 0 0.85rem;
