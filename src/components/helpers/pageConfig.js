@@ -114,11 +114,22 @@ export const FooterConfig = {
 };
 
 export const NavConfig = {
-  iconData: {
+  icon: {
     name: "arrow home",
     link: "#homepage",
     imgPath: "assets/page/arrow_up.svg",
     imgAlt: "scroll back to top",
     type: "page",
   },
+  addClasses: "fab scroll-to-top",
+};
+
+export const DownloadBtnConfig = {
+  icon: {
+    name: "download resume",
+    link: "#",
+    imgPath: "assets/page/download.svg",
+    imgAlt: "click here to download my resume as a PDF",
+  },
+  text: "RESUME",
 };

@@ -1,52 +1,138 @@
-$btn-fab: (
-  "size": 40px,
-  "padding": 0.3rem,
+$btn-def: (
+  "base": (
+    "width": 120px,
+    "height": 50px,
+    "padding": 0 12px,
+    "border-radius": 6px,
+    "border-color": $p-theme-outline,
+    "color": #efefee,
+    "background": $p-theme-primary-fade,
+  ),
+  "hover": (
+    "background": $p-theme-primary,
+  ),
 );
 
-.btn {
-  width: 100px;
-  height: 60px;
-  background: green;
-  border-radius: 50%;
+$btn-outline: (
+  "bg": none,
+  "bg-on-hover": map-get($btn-def, "bg"),
+);
 
-  &.fab {
-    &--scroll-to-top {
-      $width: map-get($btn-fab, "size");
-      $height: map-get($btn-fab, "size");
-      padding: map-get($btn-fab, "padding");
+$btn-fab: (
+  "base": (
+    "width": 40px,
+    "height": 40px,
+    "transform": translate(-40px, -40px * 1.5),
+    "padding": 0.3rem,
+    "border-radius": 50%,
+    "z-index": 10,
+    "color": $p-theme-text-on-accent,
+    "scroll-behavior": smooth,
+    "background": $p-theme-primary-fade,
+    "transition": all 0.45s,
+  ),
+  "hover": (
+    "background": $p-theme-primary,
+  ),
+  "img": (
+    "max-width": 100%,
+    "width": 100%,
+    "height": auto,
+  ),
+);
 
-      z-index: 10;
-      position: fixed;
-      top: 100%;
-      right: 0;
-      transform: translate(-$width * 1, -$height * 1.5);
-      color: $p-theme-text-on-accent;
+$btn-icon-text: (
+  "base": (
+    "width": max-content,
+    "height": 40px,
+    "padding": 0.25rem 0.75rem,
+  ),
+  "icon": (
+    "padding": 0,
+    "padding-right": 0.5rem,
+    "filter": invert(0.95),
+  ),
+);
 
-      max-width: $width;
-      max-height: $height;
+//*
+@mixin btn-center-expand($bg) {
+  &::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: map-get($btn-def, "background");
+    clip-path: circle(0%);
+    //clip-path: inset(50% 50% 50% 50%);
+    transition: inherit;
+    opacity: 0.25;
+  }
 
-      scroll-behavior: smooth;
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: center;
-      align-items: center;
-      background: $color-charcoal-fade;
-
-      &:hover {
-        background: $p-theme-accent;
-      }
-
-      > img {
-        filter: invert(1);
-        max-width: 100%;
-        width: 100%;
-        height: auto;
-      }
+  &:hover {
+    &::before {
+      clip-path: circle(100%);
+      //clip-path: inset(100% 100% 100% 100%);
+      opacity: 1;
     }
+  }
+}
 
-    //?&:active {
-    //?background: $p-theme-accent;
-    //?clip-path: circle(100%);
-    //?}
+.btn {
+  $base: map-get($btn-def, "base");
+  $hover: map-get($btn-def, "hover");
+  @include set-content($base);
+  //@include set-content($btn-def);
+
+  &.outline {
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: all 0.45s;
+    //background: map-get($btn-outline, "bg");
+
+    //@include btn-center-expand(map-get($hover, "background"));
+    @include btn-center-expand(map-get($btn-outline, "bg-on-hover"));
+  }
+}
+
+.icon-text {
+  $base: map-get($btn-icon-text, "base");
+  $icon: map-get($btn-icon-text, "icon");
+
+  @include set-content($base);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  > .btn-icon {
+    @include set-content($icon);
+  }
+}
+
+.fab {
+  @include set-content(map-get($btn-fab, "base"));
+
+  &.scroll-to-top {
+    position: fixed;
+    top: 100%;
+    right: 0;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &:hover {
+    @include set-content(map-get($btn-fab, "hover"));
+  }
+
+  > img {
+    filter: invert(1);
+    @include set-content(map-get($btn-fab, "img"));
   }
 }

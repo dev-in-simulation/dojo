@@ -14,6 +14,13 @@
   line-height: $line-height;
 }
 
+//* @params: $init (Map object) to assign attribute: value
+@mixin set-content($init) {
+  @each $attr, $value in $init {
+    #{$attr}: #{$value};
+  }
+}
+
 //* scrollbar styling setup
 @mixin scrollbar($size, $fg-color, $bg-color) {
   &::-webkit-scrollbar {

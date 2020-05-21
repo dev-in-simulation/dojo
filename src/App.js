@@ -3,7 +3,9 @@ import React, { useRef } from "react";
 import Homepage from "./components/views/homepage";
 import About from "./components/views/about";
 import Footer from "./components/organisms/footer";
-import NavBtn from "./components/molecules/navBtn";
+import { IconBtn } from "./components/atoms/btn";
+import { NavConfig } from "./components/helpers/pageConfig";
+//import NavBtn from "./components/molecules/navBtn";
 
 function App() {
   const scrollToTopRef = useRef(null);
@@ -26,7 +28,8 @@ function App() {
   return (
     <main id="app" className="App">
       <Homepage handleSetRef={handleSetRef} />
-      <NavBtn handleClick={handleScrollHome} />
+      <IconBtn config={NavConfig} handleClick={handleScrollHome} />
+      {/*<NavBtn handleClick={handleScrollHome} />*/}
       <About />
       <Footer />
       <Footer />

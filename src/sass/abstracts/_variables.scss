@@ -51,10 +51,13 @@ $DEBUG: true;
 $theme1-bright-purple: #6300e6;
 $theme1-lightest: #e0ccf9;
 $p-theme-lightest: #d4b6f7;
-$p-theme-: #c8a3f5;
+$p-theme-light3: #c8a3f5;
 $p-theme-outline: #9c5eef;
 $p-theme-accent: green;
 
+$p-theme-primary: $p-theme-outline;
+$p-theme-primary-fade: hsla(266, 82%, 65%, 0.35);
+$p-theme-primary-hover: $p-theme-light3;
 $p-theme-on-primary: $p-theme-lightest;
 $p-theme-text-on-accent: green;
 

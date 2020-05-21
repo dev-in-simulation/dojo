@@ -1,6 +1,8 @@
 import React from "react";
 import ParticleBackground from "../organisms/particleBackground";
 import ViewTitle from "../atoms/viewTitle";
+import { IconTextBtn } from "../atoms/btn";
+import { DownloadBtnConfig } from "../helpers/pageConfig";
 
 import View from "../template/view";
 import ViewSection from "../template/viewSection";
@@ -23,6 +25,7 @@ function Homepage(props) {
             alt="default logo: a beaker made in svg"
           ></img>
         </span>
+        <IconTextBtn data={DownloadBtnConfig} />
         <p className="body is-size-1">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
