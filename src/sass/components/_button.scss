@@ -15,7 +15,7 @@ $btn-def: (
 
 $btn-outline: (
   "bg": none,
-  "bg-on-hover": map-get($btn-def, "bg"),
+  "bg-on-hover": map-get($btn-def, "background"),
 );
 
 $btn-fab: (
