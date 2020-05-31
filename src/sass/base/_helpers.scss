@@ -133,6 +133,8 @@ a {
   flex-flow: column nowrap;
   align-items: center;
   background: none;
+  transition: all ease 1.5s;
+  //transition: background ease 2s;
 
   &:nth-of-type(2n) {
     background: green;

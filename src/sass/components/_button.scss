@@ -26,8 +26,9 @@ $btn-fab: (
     "padding": 0.3rem,
     "border-radius": 50%,
     "z-index": 10,
-    "color": $p-theme-text-on-accent,
-    "scroll-behavior": smooth,
+    "color": red,
+    //$p-theme-text-on-accent,
+      "scroll-behavior": smooth,
     "background": $p-theme-primary-fade,
     "transition": all 0.45s,
   ),
@@ -55,15 +56,22 @@ $btn-icon-text: (
 );
 
 $btn-content-toggle: (
-  "width": 70px,
-  "height": 30px,
-  "border": none,
+  //"width": 100px,
+    //"height": 30px,
+    "width": 90px,
+  "height": max-content,
+  "border": 1px inset $p-theme-primary-fade-outline,
+  "background": none,
+  "padding": 8px,
+  //$p-theme-primary-fade,
+    //"box-shadow":,,,,,,,,,,,
 );
 
 //*
 @mixin btn-center-expand($bg) {
   &::before {
     content: "";
+    box-shadow: 1px 1px 2px 4px red;
     z-index: -1;
     position: absolute;
     top: 0;

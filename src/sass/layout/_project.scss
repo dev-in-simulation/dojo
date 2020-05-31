@@ -1,62 +1,150 @@
 $project-size: (
   "small": (
     "width": 60%,
+    "min-height": 125px,
+    "height": 125px,
+    "background": hsla(255, 100%, 80%, 0.75),
   ),
   "medium": (
     "width": 420px,
-    "background": cyan,
+    "height": 125px,
+    "background": hsla(255, 80%, 65%, 0.35),
   ),
   "large": (
     "width": 600px,
-    "background": orange,
+    "height": 125px,
+    "background": hsla(117, 100%, 50%, 0.1),
   ),
 );
 
-#get-screensize {
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 50px;
-  background: gray;
+$transition-time: (
+  "wrapper": 1s,
+  "selectorData": 1s,
+);
 
-  &::before {
-    content: "small-screensize";
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 50%;
-    height: 50%;
-    background: green;
-    //visibility: hidden;
+$project-transition-setup: (
+  "enter": (
+    "height": 125px,
+  ),
+  "enter-active": (
+    "height": max-content,
+    "transition": height map-get($transition-time, "wrapper"),
+  ),
+  "exit": (
+    "height": max-content,
+  ),
+  "exit-active": (
+    "height": 125px,
+    "transition": height map-get($transition-time, "wrapper"),
+  ),
+);
+
+$project-transition-data: (
+  "toggled-on": (
+    "enter": (
+      "height": 125px,
+    ),
+    "enter-active": (
+      "height": max-content,
+      "transition": height map-get($transition-time, "wrapper"),
+    ),
+    "exit": (
+      "height": max-content,
+    ),
+    "exit-active": (
+      "height": 125px,
+      "transition": height map-get($transition-time, "wrapper"),
+    ),
+  ),
+  "toggled-off": (
+    "enter": (
+      "height": 125px,
+    ),
+    "enter-active": (
+      "height": max-content,
+      "transition": height map-get($transition-time, "wrapper"),
+    ),
+    "exit": (
+      "height": max-content,
+    ),
+    "exit-active": (
+      "height": 125px,
+      "transition": height map-get($transition-time, "wrapper"),
+    ),
+  ),
+);
+
+//* @params
+//!   $prefix: name used to identify transition
+//*      - format: #{$prefix}-#{$id}
+//*      - ex. where 'project' is $prefix: project-on-enter, project-on-enter-active
+//!   $transition-data: all attributes being set for the selector
+
+@mixin set-react-child-transition($prefix, $transition-data) {
+  @each $id, $idAttributes in $transition-data {
+    > .#{$prefix}-#{$id} {
+      @debug "";
+      @debug "";
+      @debug ".#{$prefix}-#{$id}";
+      @each $attr, $attrVal in $idAttributes {
+        #{$attr}: #{$attrVal};
+        @debug "- #{$attr}: #{$attrVal}";
+      }
+    }
+  }
+}
+
+@mixin set-transition-on-parent($prefix, $transition-data) {
+  @each $id, $idAttributes in $transition-data {
+    &.#{$prefix}-#{$id} {
+      @debug "";
+      @debug "";
+      @debug ".#{prefix}-#{$id}";
+      @each $attr, $attrVal in $idAttributes {
+        #{$attr}: #{$attrVal};
+        @debug "- #{$attr}: #{$attrVal}";
+      }
+    }
   }
 }
 
 .project {
   max-width: 100%;
   @include set-content(map-get($project-size, "small"));
-  height: max-content;
+  //height: 100%;
+  //height: max-content;
   margin: 0;
   padding: 0.75rem;
+  opacity: 1;
   border-radius: 0.25rem;
-  background: green;
   margin: 1rem;
   text-align: justify;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr auto;
-  grid-template-rows: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  //flex: 0 1 10%;
+  transition: all 1s;
 
-  grid-template-areas:
-    "img-carousel img-carousel img-carousel"
-    "title title title"
-    "subtitle subtitle subtitle"
-    "role role role"
-    "description description description"
-    ". . content-toggle";
+  //?&.toggled-on {
+  //?@include set-transition-on-parent(
+  //?"project-wrapper",
+  //?map-get($project-transition-data, "toggled-on")
+  //?);
+  //?}
+
+  //?&.toggled-off {
+  //?@include set-transition-on-parent(
+  //?"project-wrapper",
+  //?map-get($project-transition-data, "toggled-off")
+  //?);
+  //?}
+
+  > .project-data {
+    flex: 1 1 auto;
+    transition: all 1s;
+  }
 
   > .title,
   > .subtitle {
@@ -65,34 +153,30 @@ $project-size: (
   }
 
   > .title {
-    grid-area: title;
+    display: none;
   }
 
-  > .subtitle {
-    grid-area: subtitle;
-  }
+  //> .subtitle {
+  //}
 
   > .content-toggle {
-    grid-area: content-toggle;
+    align-self: flex-end;
+    margin-top: auto;
   }
 
-  > .project-role {
-    grid-area: role;
-  }
+  //> .project-role {
+  //}
 
-  > .project-desc {
-    grid-area: description;
-  }
+  //> .project-desc {
+  //}
 }
 
 @media only screen and (min-width: map-get($breakpoints, "medium")) {
   .project {
     @include set-content(map-get($project-size, "medium"));
-  }
 
-  #get-screensize {
-    &::before {
-      content: "medium-screensize";
+    > .title {
+      display: initial;
     }
   }
 }
@@ -100,11 +184,9 @@ $project-size: (
 @media only screen and (min-width: map-get($breakpoints, "large")) {
   .project {
     @include set-content(map-get($project-size, "large"));
-  }
 
-  #get-screensize {
-    &::before {
-      content: "large-screensize";
+    > .title {
+      display: initial;
     }
   }
 }

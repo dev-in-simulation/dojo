@@ -5,6 +5,9 @@ const SCREEN_SIZE_CONFIG = {
   pseudoElt: "::before",
 };
 
+//TODO: try using screenRef.current.offsetWidth to check for changes
+//*       - keep previous width in reference array. ex. useRef([]) --> useRef([screenRef, prevScreen])
+
 function useScreenSize(screenConfig = {}) {
   const screenRef = useRef(null);
   const [screenSize, setScreenSize] = useState(null);
@@ -33,10 +36,19 @@ function useScreenSize(screenConfig = {}) {
         }
       }
     }
-
-    //return null;
-    //setScreenSize((prevState) => prevState);
   }, [config, screenSize]);
+
+  useEffect(() => {
+    if (screenRef && screenRef.current) {
+      let styles = window.getComputedStyle(screenRef.current, config.pseudoElt);
+
+      if (styles) {
+        console.log(`\t - setting size from styles`);
+        let attrValue = styles[config.getAttrValueOf];
+        setScreenSize(attrValue);
+      }
+    }
+  }, [config]);
 
   useEffect(() => {
     function handleResize() {
@@ -52,9 +64,9 @@ function useScreenSize(screenConfig = {}) {
     };
   }, [getComputedStyles]);
 
-  useEffect(() => {
-    getComputedStyles();
-  }, [getComputedStyles]);
+  //useEffect(() => {
+  //getComputedStyles();
+  //}, [getComputedStyles]);
 
   return [screenSize, screenRef];
 }

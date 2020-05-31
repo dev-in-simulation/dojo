@@ -55,10 +55,20 @@ $p-theme-light3: #c8a3f5;
 $p-theme-outline: #9c5eef;
 $p-theme-accent: green;
 
+//! old primary theme
 $p-theme-primary: $p-theme-outline;
-$p-theme-primary-fade: hsla(266, 82%, 65%, 0.35);
-$p-theme-primary-hover: $p-theme-light3;
-$p-theme-on-primary: $p-theme-lightest;
+//*$p-theme-primary-fade: hsla(266, 82%, 65%, 0.35);
+//*$p-theme-primary-hover: $p-theme-light3;
+//*$p-theme-on-primary: $p-theme-lightest;
+//*$p-theme-text-on-accent: green;
+
+//TODO: that new-new theme
+//$p-theme-primary-fade: hsla(117, 100%, 50%, 0.1);
+$p-theme-primary-fade: hsla(255, 100%, 50%, 0.1);
+$p-theme-primary-fade-outline: hsla(207, 100%, 85%, 0.5);
+$p-theme-on-primary: hsla(11, 100%, 50%, 0.5);
+$p-theme-primary-hover: yellow; //hsla(50, 85%, 60%, 0.25);
+
 $p-theme-text-on-accent: green;
 
 $lightest-test: #fcfcff;
