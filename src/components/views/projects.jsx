@@ -4,16 +4,28 @@ import View from "../template/view";
 import ViewSection from "../template/viewSection";
 import ViewTitle from "../atoms/viewTitle";
 import ParticleBackground from "../organisms/particleBackground";
+import { ProjectsConfig } from "../helpers/pageConfig";
+
 import Project from "../molecules/project";
+
+function AllProjects(props) {
+  const displayProjects = ProjectsConfig.allProjects.map((work) => (
+    <Project data={work} />
+  ));
+
+  return displayProjects;
+}
 
 function Projects(props) {
   return (
     <View id="projects" handleSetRef={props.handleSetRef}>
       <ViewSection>
-        <ViewTitle title="Recent Work" addClasses="is-size-1 show-sides" />
-        <h4 className="title is-size-4">This is h4</h4>
-        <h5 className="title is-size-5">This is h5</h5>
-        <h6 className="title is-size-6">This is h6</h6>
+        <ViewTitle title="Projects" addClasses="is-size-1 show-sides" />
+        <p className="body is-size-1">description for project's page</p>
+      </ViewSection>
+
+      <ViewSection>
+        <AllProjects />
       </ViewSection>
 
       <ParticleBackground />

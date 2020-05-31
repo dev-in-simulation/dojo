@@ -1,3 +1,76 @@
+$project-size: (
+  "small": (
+    "width": 60%,
+  ),
+  "medium": (
+    "width": 420px,
+    "background": cyan,
+  ),
+  "large": (
+    "width": 600px,
+    "background": orange,
+  ),
+);
+
 .project {
+  max-width: 100%;
+  @include set-content(map-get($project-size, "small"));
+  height: max-content;
+  margin: 0;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
   background: green;
+  margin: 1rem;
+  text-align: justify;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  grid-template-rows: auto;
+
+  grid-template-areas:
+    "img-carousel img-carousel img-carousel"
+    "title title title"
+    "subtitle subtitle subtitle"
+    "role role role"
+    "description description description"
+    ". . content-toggle";
+
+  > .title,
+  > .subtitle {
+    margin: 0;
+    margin-bottom: 0.625rem;
+  }
+
+  > .title {
+    grid-area: title;
+  }
+
+  > .subtitle {
+    grid-area: subtitle;
+    background: red;
+  }
+
+  > .content-toggle {
+    grid-area: content-toggle;
+  }
+
+  > .project-role {
+    grid-area: role;
+  }
+
+  > .project-desc {
+    grid-area: description;
+  }
+}
+
+@media only screen and (min-width: map-get($breakpoints, "medium")) {
+  .project {
+    @include set-content(map-get($project-size, "medium"));
+  }
+}
+
+@media only screen and (min-width: map-get($breakpoints, "large")) {
+  .project {
+    @include set-content(map-get($project-size, "large"));
+  }
 }

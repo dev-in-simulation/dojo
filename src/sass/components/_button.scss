@@ -54,6 +54,12 @@ $btn-icon-text: (
   ),
 );
 
+$btn-content-toggle: (
+  "width": 70px,
+  "height": 30px,
+  "border": none,
+);
+
 //*
 @mixin btn-center-expand($bg) {
   &::before {
@@ -66,7 +72,6 @@ $btn-icon-text: (
     height: 100%;
     background: map-get($btn-def, "background");
     clip-path: circle(0%);
-    //clip-path: inset(50% 50% 50% 50%);
     transition: inherit;
     opacity: 0.25;
   }
@@ -95,6 +100,11 @@ $btn-icon-text: (
 
     //@include btn-center-expand(map-get($hover, "background"));
     @include btn-center-expand(map-get($btn-outline, "bg-on-hover"));
+  }
+
+  //* the "read more" button that toggles content
+  &.content-toggle {
+    @include set-content($btn-content-toggle);
   }
 }
 

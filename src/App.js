@@ -28,10 +28,10 @@ function App() {
 
   return (
     <main id="app" className="App">
+      <Projects />
       <Homepage handleSetRef={handleSetRef} />
       <IconBtn config={NavConfig} handleClick={handleScrollHome} />
       <About />
-      <Projects />
       <Footer />
       <Footer />
       <Footer />

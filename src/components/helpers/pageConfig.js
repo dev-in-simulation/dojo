@@ -133,3 +133,36 @@ export const DownloadBtnConfig = {
   },
   text: "RESUME",
 };
+
+export const ProjectsConfig = {
+  allProjects: [
+    {
+      name: "Whisper",
+      briefDescription: "Messenger app using Socket.IO",
+      techStack: ["Node.js", "React", "Socket.IO", "Electron"],
+      role: "Full-stack role, bruh",
+      description:
+        "placeholder whisper description that will have tooo much text and will run over for testing purposes",
+      images: [
+        {
+          src: "",
+          alt: "",
+        },
+      ],
+    },
+
+    {
+      name: "Roulette",
+      briefDescription: "Video chat app using WebRTC",
+      techStack: ["Node.js", "WebRTC", "React", "Socket.IO", "Electron"],
+      role: "Full-stack roulette",
+      description: "placeholder roulette description",
+      images: [
+        {
+          src: "",
+          alt: "",
+        },
+      ],
+    },
+  ],
+};
