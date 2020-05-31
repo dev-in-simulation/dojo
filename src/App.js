@@ -6,7 +6,6 @@ import Projects from "./components/views/projects";
 import Footer from "./components/organisms/footer";
 import { IconBtn } from "./components/atoms/btn";
 import { NavConfig } from "./components/helpers/pageConfig";
-//import NavBtn from "./components/molecules/navBtn";
 
 function App() {
   const scrollToTopRef = useRef(null);
