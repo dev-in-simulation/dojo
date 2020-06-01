@@ -1,76 +1,19 @@
 $project-size: (
-  "small": (
-    "width": 60%,
-    "min-height": 125px,
-    "height": 125px,
-    "background": hsla(255, 100%, 80%, 0.75),
+  "base": (
+    "max-width": 350px,
+    "width": 95%,
+    "min-height": 150px,
+    "height": 150px,
+    "box-shadow": 1px 1px 2px 1px black,
+    "background": hsla(270, 100%, 90%, 0.35),
   ),
   "medium": (
-    "width": 420px,
-    "height": 125px,
-    "background": hsla(255, 80%, 65%, 0.35),
+    "width": 100%,
+    "max-width": 450px,
   ),
   "large": (
-    "width": 600px,
-    "height": 125px,
-    "background": hsla(117, 100%, 50%, 0.1),
-  ),
-);
-
-$transition-time: (
-  "wrapper": 1s,
-  "selectorData": 1s,
-);
-
-$project-transition-setup: (
-  "enter": (
-    "height": 125px,
-  ),
-  "enter-active": (
-    "height": max-content,
-    "transition": height map-get($transition-time, "wrapper"),
-  ),
-  "exit": (
-    "height": max-content,
-  ),
-  "exit-active": (
-    "height": 125px,
-    "transition": height map-get($transition-time, "wrapper"),
-  ),
-);
-
-$project-transition-data: (
-  "toggled-on": (
-    "enter": (
-      "height": 125px,
-    ),
-    "enter-active": (
-      "height": max-content,
-      "transition": height map-get($transition-time, "wrapper"),
-    ),
-    "exit": (
-      "height": max-content,
-    ),
-    "exit-active": (
-      "height": 125px,
-      "transition": height map-get($transition-time, "wrapper"),
-    ),
-  ),
-  "toggled-off": (
-    "enter": (
-      "height": 125px,
-    ),
-    "enter-active": (
-      "height": max-content,
-      "transition": height map-get($transition-time, "wrapper"),
-    ),
-    "exit": (
-      "height": max-content,
-    ),
-    "exit-active": (
-      "height": 125px,
-      "transition": height map-get($transition-time, "wrapper"),
-    ),
+    "width": 100%,
+    "max-width": 600px,
   ),
 );
 
@@ -79,20 +22,6 @@ $project-transition-data: (
 //*      - format: #{$prefix}-#{$id}
 //*      - ex. where 'project' is $prefix: project-on-enter, project-on-enter-active
 //!   $transition-data: all attributes being set for the selector
-
-@mixin set-react-child-transition($prefix, $transition-data) {
-  @each $id, $idAttributes in $transition-data {
-    > .#{$prefix}-#{$id} {
-      @debug "";
-      @debug "";
-      @debug ".#{$prefix}-#{$id}";
-      @each $attr, $attrVal in $idAttributes {
-        #{$attr}: #{$attrVal};
-        @debug "- #{$attr}: #{$attrVal}";
-      }
-    }
-  }
-}
 
 @mixin set-transition-on-parent($prefix, $transition-data) {
   @each $id, $idAttributes in $transition-data {
@@ -108,56 +37,109 @@ $project-transition-data: (
   }
 }
 
+@mixin anim-transition-setup {
+  $transition-wrapper-duration: 1s;
+
+  $anim-base: (
+    "min-width": 80px,
+    "width": 90%,
+    "max-width": 320px,
+  );
+
+  $anim-active: (
+    "min-width": 200px,
+    "width": 20%,
+    "max-width": 600px,
+  );
+
+  &.anim-enter,
+  &.anim-appear {
+    @include set-content($anim-base);
+  }
+
+  &.anim-enter-active,
+  &.anim-appear-active {
+    @include set-content($anim-active);
+    transition: all $transition-wrapper-duration;
+  }
+
+  &.anim-exit {
+    @include set-content($anim-active);
+  }
+
+  &.anim-exit-active {
+    @include set-content($anim-base);
+    transition: all $transition-wrapper-duration;
+  }
+}
+
 .project {
-  max-width: 100%;
-  @include set-content(map-get($project-size, "small"));
-  //height: 100%;
-  //height: max-content;
-  margin: 0;
-  padding: 0.75rem;
-  opacity: 1;
+  @include set-content(map-get($project-size, "base"));
+
+  //TODO TESTING TRANSITION
+  @include anim-transition-setup();
+
+  margin: 0.5rem;
+  padding: 1rem 1.5rem;
   border-radius: 0.25rem;
-  margin: 1rem;
   text-align: justify;
+  overflow: hidden;
 
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
-  //flex: 0 1 10%;
   transition: all 1s;
 
-  //?&.toggled-on {
-  //?@include set-transition-on-parent(
-  //?"project-wrapper",
-  //?map-get($project-transition-data, "toggled-on")
-  //?);
-  //?}
+  &.toggled-off {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 
-  //?&.toggled-off {
-  //?@include set-transition-on-parent(
-  //?"project-wrapper",
-  //?map-get($project-transition-data, "toggled-off")
-  //?);
-  //?}
+    > * {
+      white-space: inherit;
+      text-overflow: inherit;
+      overflow: inherit;
+    }
+  }
+
+  &.toggled-on {
+    height: max-content;
+
+    > .project-data {
+      white-space: normal;
+      overflow: visible;
+    }
+  }
 
   > .project-data {
-    flex: 1 1 auto;
-    transition: all 1s;
+    //text-overflow: ellipsis;
+    //overflow: hidden;
+    //padding: 0.25rem 1rem;
+
+    //flex: 1 1 90%;
+    //width: 100%;
+    //max-width: 600px;
+    //flex: 1 1 auto;
+    //transition: all 1s;
   }
 
   > .title,
   > .subtitle {
     margin: 0;
+    padding: 0;
     margin-bottom: 0.625rem;
+    width: 100%;
   }
 
   > .title {
-    display: none;
+    //display: none;
+    //font-size: 100%;
   }
 
-  //> .subtitle {
-  //}
+  > .subtitle {
+    font-size: 90%;
+  }
 
   > .content-toggle {
     align-self: flex-end;
@@ -174,19 +156,11 @@ $project-transition-data: (
 @media only screen and (min-width: map-get($breakpoints, "medium")) {
   .project {
     @include set-content(map-get($project-size, "medium"));
-
-    > .title {
-      display: initial;
-    }
   }
 }
 
 @media only screen and (min-width: map-get($breakpoints, "large")) {
   .project {
     @include set-content(map-get($project-size, "large"));
-
-    > .title {
-      display: initial;
-    }
   }
 }

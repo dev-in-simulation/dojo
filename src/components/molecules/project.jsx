@@ -1,5 +1,4 @@
 import React, { useState, useCallback } from "react";
-import { CSSTransition } from "react-transition-group";
 
 function ProjectDesc({ data }) {
   return (
@@ -14,11 +13,6 @@ function ProjectDesc({ data }) {
 
 function Project({ data }) {
   const [showAll, setShowAll] = useState(false);
-  const transitionTime = {
-    wrapper: 1000,
-    selectorsData: 1000,
-  };
-
   let projectClasses = "project";
 
   if (data.addClasses) {
@@ -34,58 +28,20 @@ function Project({ data }) {
     },
     [setShowAll]
   );
+  //TODO check onEntered and onExit for CSSTransition
 
-  return (
-    <CSSTransition
-      key={data.name}
-      in={showAll}
-      timeout={transitionTime.wrapper}
-      classNames="project-wrapper"
-    >
-      <section className={projectClasses}>
-        {/*image carousel here*/}
-        <h5 className="title is-size-5">{data.name}</h5>
-        <p className="subtitle is-size-1">{data.briefDescription}</p>
-
-        {showAll && <ProjectDesc data={data} />}
-
-        <button className="btn content-toggle" onClick={handleShowAll}>
-          {showAll ? "Collapse" : "More"}
-        </button>
-      </section>
-    </CSSTransition>
-  );
-}
-
-export default Project;
-
-/*
-
-        //!</section><CSSTransition
-          //!</section>in={showAll}
-          //!</section>timeout={transitionTime.selectorsData}
-          //!</section>classNames="project-data"
-          //!</section>unmountOnExit
-        //!</section>>
-          //!</section><ProjectDesc data={data} />
-        //!</section></CSSTransition>
   return (
     <section className={projectClasses}>
-      <h5 className="title is-size-5">{data.name}</h5>
+      <h6 className="title is-size-6">{data.name}</h6>
       <p className="subtitle is-size-1">{data.briefDescription}</p>
 
-      <CSSTransition
-        in={showAll}
-        timeout={500}
-        classNames="project"
-        unmountOnExit
-      >
-        <ProjectDesc data={data} />
-      </CSSTransition>
+      {showAll && <ProjectDesc data={data} />}
 
       <button className="btn content-toggle" onClick={handleShowAll}>
         {showAll ? "Collapse" : "More"}
       </button>
     </section>
   );
-*/
+}
+
+export default Project;

@@ -1,5 +1,4 @@
 import React from "react";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import View from "../template/view";
 import ViewSection from "../template/viewSection";
@@ -26,9 +25,7 @@ function Projects(props) {
       </ViewSection>
 
       <ViewSection>
-        <TransitionGroup component={null}>
-          <AllProjects />
-        </TransitionGroup>
+        <AllProjects />
       </ViewSection>
 
       <ParticleBackground />

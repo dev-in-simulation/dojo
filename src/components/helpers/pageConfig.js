@@ -164,5 +164,21 @@ export const ProjectsConfig = {
         },
       ],
     },
+
+    {
+      name: "Break It Test",
+      briefDescription:
+        "this is just some nonsense to see if my component fucks up or not. I'm hoping it's a real problem :D",
+      techStack: ["Node.js", "WebRTC", "React", "Socket.IO", "Electron"],
+      role: "Full-stack breaking shit",
+      description:
+        "bbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionreak-it test description",
+      images: [
+        {
+          src: "",
+          alt: "",
+        },
+      ],
+    },
   ],
 };
