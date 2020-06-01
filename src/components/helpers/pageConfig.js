@@ -145,8 +145,20 @@ export const ProjectsConfig = {
         "placeholder whisper description that will have tooo much text and will run over for testing purposes",
       images: [
         {
-          src: "",
-          alt: "",
+          src: "assets/projects/whisper-chatting.png",
+          alt: "example conversation in whisper app",
+        },
+        {
+          src: "assets/projects/whisper-landing.png",
+          alt: "landing page in whisper app",
+        },
+        {
+          src: "assets/projects/whisper-sign-in.png",
+          alt: "sign-in page in whisper app",
+        },
+        {
+          src: "assets/projects/whisper-sign-up.png",
+          alt: "sign-up page in whisper app",
         },
       ],
     },
