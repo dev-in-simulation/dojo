@@ -33,7 +33,10 @@ function Project({ data }) {
 
   return (
     <section className={projectClasses}>
-      <Carousel images={data.images} />
+      <Carousel
+        id={`${data.name.toLowerCase()}-carousel`}
+        images={data.images}
+      />
       <h6 className="title is-size-6">{data.name}</h6>
       <p className="subtitle is-size-1">{data.briefDescription}</p>
 
