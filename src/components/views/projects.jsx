@@ -24,7 +24,7 @@ function Projects(props) {
         <p className="title is-size-6">description for project's page</p>
       </ViewSection>
 
-      <ViewSection>
+      <ViewSection addClasses="all-projects">
         <AllProjects />
       </ViewSection>
 

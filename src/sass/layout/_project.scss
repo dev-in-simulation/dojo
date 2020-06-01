@@ -1,19 +1,20 @@
 $project-size: (
   "base": (
     "width": 95%,
-    "height": max-content,
-    "max-width": 350px,
-    "min-height": 150px,
-    "box-shadow": 1px 1px 2px 1px black,
+    "height": auto,
+    "max-width": 400px,
+    "min-height": 200px,
+    //"max-height": 400px,
+      "box-shadow": 1px 1px 2px 1px black,
     "background": hsla(270, 100%, 90%, 0.35),
   ),
   "medium": (
     "width": 100%,
-    "max-width": 450px,
+    //"max-width": 450px,
   ),
   "large": (
     "width": 100%,
-    "max-width": 600px,
+    //"max-width": 600px,
   ),
 );
 
@@ -95,6 +96,7 @@ $project-size: (
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    max-height: 400px;
 
     > * {
       white-space: inherit;
@@ -104,7 +106,7 @@ $project-size: (
   }
 
   &.toggled-on {
-    height: max-content;
+    //height: max-content;
 
     > .project-data {
       white-space: normal;
