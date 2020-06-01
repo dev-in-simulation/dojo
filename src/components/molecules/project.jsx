@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react";
+import Carousel from "./carousel";
 
 function ProjectDesc({ data }) {
   return (
@@ -32,6 +33,7 @@ function Project({ data }) {
 
   return (
     <section className={projectClasses}>
+      <Carousel images={data.images} />
       <h6 className="title is-size-6">{data.name}</h6>
       <p className="subtitle is-size-1">{data.briefDescription}</p>
 

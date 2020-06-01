@@ -56,15 +56,11 @@ $btn-icon-text: (
 );
 
 $btn-content-toggle: (
-  //"width": 100px,
-    //"height": 30px,
-    "width": 90px,
-  "height": max-content,
+  "width": 90px,
+  "min-height": max-content,
   "border": 1px inset $p-theme-primary-fade-outline,
   "background": none,
   "padding": 8px,
-  //$p-theme-primary-fade,
-    //"box-shadow":,,,,,,,,,,,
 );
 
 //*
