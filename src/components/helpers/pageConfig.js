@@ -134,6 +134,8 @@ export const DownloadBtnConfig = {
   text: "RESUME",
 };
 
+const ProjectsImgBase = "assets/projects/";
+
 export const ProjectsConfig = {
   allProjects: [
     {
@@ -145,20 +147,19 @@ export const ProjectsConfig = {
         "placeholder whisper description that will have tooo much text and will run over for testing purposes",
       images: [
         {
-          src: "assets/projects/whisper-chatting.png",
+          srcSet: `${ProjectsImgBase}whisper-chatting-320w.png,
+          ${ProjectsImgBase}whisper-chatting-480w.png 1.5x,
+          ${ProjectsImgBase}whisper-chatting-600w.png 1.875x`,
+          src: `${ProjectsImgBase}whisper-chatting-320w.png`,
           alt: "example conversation in whisper app",
         },
+
         {
-          src: "assets/projects/whisper-landing.png",
-          alt: "landing page in whisper app",
-        },
-        {
-          src: "assets/projects/whisper-sign-in.png",
-          alt: "sign-in page in whisper app",
-        },
-        {
-          src: "assets/projects/whisper-sign-up.png",
-          alt: "sign-up page in whisper app",
+          srcSet: `${ProjectsImgBase}whisper-chatting-inverted-320w.png,
+          ${ProjectsImgBase}whisper-chatting-inverted-480w.png 1.5x,
+          ${ProjectsImgBase}whisper-chatting-inverted-600w.png 1.875x`,
+          src: `${ProjectsImgBase}whisper-chatting-inverted-320w.png`,
+          alt: "inverted color example conversation in whisper app",
         },
       ],
     },

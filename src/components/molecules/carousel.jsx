@@ -7,6 +7,27 @@ function CarouselImg({ img }) {
   return <img className="carousel-img" src={img.src} alt={img.alt} />;
 }
 
+function CarouselImgWithSizes({ img }) {
+  return (
+    <img
+      className="carousel-img"
+      srcset={img.srcSet}
+      src={img.src}
+      alt={img.alt}
+    />
+  );
+}
+
+//* srcSet: string of all the srcset image sizes
+//* src: default image to render
+CarouselImgWithSizes.propTypes = {
+  img: PropTypes.shape({
+    srcSet: PropTypes.string.isRequired,
+    src: PropTypes.string.isRequired,
+    alt: PropTypes.string,
+  }).isRequired,
+};
+
 function Carousel(props) {
   const [imgIndex, setImgIndex] = useState(0); //* starting index used to display image
 
@@ -17,7 +38,7 @@ function Carousel(props) {
 
   return (
     <Container id={props.id} addClasses="carousel">
-      <CarouselImg img={props.images[imgIndex]} />
+      <CarouselImgWithSizes img={props.images[imgIndex]} />
     </Container>
   );
 }
