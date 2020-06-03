@@ -32,7 +32,7 @@ function Project({ data }) {
   //TODO check onEntered and onExit for CSSTransition
 
   return (
-    <section className={projectClasses}>
+    <div className={projectClasses}>
       <Carousel
         id={`${data.name.toLowerCase()}-carousel`}
         images={data.images}
@@ -45,7 +45,7 @@ function Project({ data }) {
       <button className="btn content-toggle" onClick={handleShowAll}>
         {showAll ? "Collapse" : "More"}
       </button>
-    </section>
+    </div>
   );
 }
 

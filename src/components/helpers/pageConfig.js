@@ -150,7 +150,7 @@ export const ProjectsConfig = {
           srcSet: `${ProjectsImgBase}whisper-chatting-320w.png,
           ${ProjectsImgBase}whisper-chatting-480w.png 1.5x,
           ${ProjectsImgBase}whisper-chatting-600w.png 1.875x`,
-          src: `${ProjectsImgBase}whisper-chatting-320w.png`,
+          src: `${ProjectsImgBase}whisper-chatting-480w.png`,
           alt: "example conversation in whisper app",
         },
 
@@ -158,7 +158,7 @@ export const ProjectsConfig = {
           srcSet: `${ProjectsImgBase}whisper-chatting-inverted-320w.png,
           ${ProjectsImgBase}whisper-chatting-inverted-480w.png 1.5x,
           ${ProjectsImgBase}whisper-chatting-inverted-600w.png 1.875x`,
-          src: `${ProjectsImgBase}whisper-chatting-inverted-320w.png`,
+          src: `${ProjectsImgBase}whisper-chatting-inverted-480w.png`,
           alt: "inverted color example conversation in whisper app",
         },
       ],
@@ -172,8 +172,11 @@ export const ProjectsConfig = {
       description: "placeholder roulette description",
       images: [
         {
-          src: "",
-          alt: "",
+          srcSet: `${ProjectsImgBase}whisper-chatting-inverted-320w.png,
+          ${ProjectsImgBase}whisper-chatting-inverted-480w.png 1.5x,
+          ${ProjectsImgBase}whisper-chatting-inverted-600w.png 1.875x`,
+          src: `${ProjectsImgBase}whisper-chatting-inverted-480w.png`,
+          alt: "roulette rubbish alt text",
         },
       ],
     },
@@ -188,8 +191,11 @@ export const ProjectsConfig = {
         "bbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionreak-it test description",
       images: [
         {
-          src: "",
-          alt: "",
+          srcSet: `${ProjectsImgBase}whisper-chatting-320w.png,
+          ${ProjectsImgBase}whisper-chatting-480w.png 1.5x,
+          ${ProjectsImgBase}whisper-chatting-600w.png 1.875x`,
+          src: `${ProjectsImgBase}whisper-chatting-480w.png`,
+          alt: "example conversation in whisper app",
         },
       ],
     },

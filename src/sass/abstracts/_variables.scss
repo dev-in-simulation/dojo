@@ -3,6 +3,7 @@ $max-view-width: 1200px; //* max content width in .view
 
 //* screen breakpoints
 $breakpoints: (
+  "small-medium": 550px,
   "medium": 800px,
   "large": 1200px,
 );

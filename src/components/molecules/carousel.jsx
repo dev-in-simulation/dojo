@@ -11,7 +11,7 @@ function CarouselImgWithSizes({ img }) {
   return (
     <img
       className="carousel-img"
-      srcset={img.srcSet}
+      srcSet={img.srcSet}
       src={img.src}
       alt={img.alt}
     />
@@ -31,7 +31,7 @@ CarouselImgWithSizes.propTypes = {
 function Carousel(props) {
   const [imgIndex, setImgIndex] = useState(0); //* starting index used to display image
 
-  if (!props.images) {
+  if (!props.images || !props.images.length) {
     console.error("no images passed");
     return null;
   }

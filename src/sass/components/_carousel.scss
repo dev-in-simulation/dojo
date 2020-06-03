@@ -2,7 +2,19 @@
   position: relative;
   top: 0;
   left: 0;
-  min-height: 200px;
-  margin-bottom: 1rem;
-  background: orange;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  //height: max-content;
+  background: none;
+
+  > .carousel-img {
+    display: inline-block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+  }
 }
