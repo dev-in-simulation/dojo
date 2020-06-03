@@ -1,45 +1,58 @@
 //* styles specific to the projects page
-$projects-container-base: 200px, 350px;
-$projects-container-small-medium: 200px, 350px;
-$projects-container-medium: 350px, 400px;
-$projects-container-large: 450px, 600px;
+//!$projects-container-base: 200px, 350px;
+$projects-container-base: 200px, 0.9fr;
+//$projects-container-small-medium: 200px, 0.9fr;
+//!$projects-container-medium: 300px, 0.45fr;
+$projects-container-medium: 300px, 0.9fr;
+//$projects-container-large: 300px, 450px;
+
+$projects-default: (
+  "size": "200px, 350px",
+  "min-height": 180px,
+);
+
+$projects-small-medium: (
+  "min-height": 200px,
+);
+
+$projects-medium: (
+  "min-height": 200px,
+);
+
+$projects-large: (
+  "min-height": 200px,
+);
 
 //#projects {
 //}
 
-//!@mixin all-projects-grid-setup($size) {
-//!//$size: map-get($setup, "size");
-
-//!display: grid;
-//!grid-template-columns: repeat(auto-fill, minmax($size));
-//!gap: 1rem;
-
-//!justify-content: center;
-//!justify-items: center;
-//!align-items: center;
-//!}
-
 .all-projects {
   width: 100%;
-  margin: 0.5rem 0;
+  //margin: 0.5rem 0;
+  margin: 0;
   padding: 0.5rem;
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax($projects-container-base));
-  gap: 1.5rem;
+  gap: 1.25rem;
 
   background: gray;
-}
+  transition: all 1s;
 
-@media only screen and (min-width: map-get($breakpoints, "small-medium")) {
-  .all-projects {
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax($projects-container-small-medium)
-    );
-    background: red;
+  .carousel {
+    min-height: map-get($projects-default, "min-height");
   }
 }
+
+//@media only screen and (min-width: map-get($breakpoints, "small-medium")) {
+//.all-projects {
+//grid-template-columns: repeat(
+//auto-fill,
+//minmax($projects-container-small-medium)
+//);
+//background: red;
+//}
+//}
 
 @media only screen and (min-width: map-get($breakpoints, "medium")) {
   .all-projects {
@@ -51,9 +64,9 @@ $projects-container-large: 450px, 600px;
   }
 }
 
-@media only screen and (min-width: map-get($breakpoints, "large")) {
-  .all-projects {
-    grid-template-columns: repeat(auto-fill, minmax($projects-container-large));
-    background: green;
-  }
-}
+//?@media only screen and (min-width: map-get($breakpoints, "large")) {
+//?.all-projects {
+//?grid-template-columns: repeat(auto-fill, minmax($projects-container-large));
+//?background: green;
+//?}
+//?}

@@ -33,7 +33,8 @@ function Carousel(props) {
 
   if (!props.images || !props.images.length) {
     console.error("no images passed");
-    return null;
+    //!return null;
+    return <Container id={props.id} addClasses="carousel"></Container>;
   }
 
   return (

@@ -170,15 +170,7 @@ export const ProjectsConfig = {
       techStack: ["Node.js", "WebRTC", "React", "Socket.IO", "Electron"],
       role: "Full-stack roulette",
       description: "placeholder roulette description",
-      images: [
-        {
-          srcSet: `${ProjectsImgBase}whisper-chatting-inverted-320w.png,
-          ${ProjectsImgBase}whisper-chatting-inverted-480w.png 1.5x,
-          ${ProjectsImgBase}whisper-chatting-inverted-600w.png 1.875x`,
-          src: `${ProjectsImgBase}whisper-chatting-inverted-480w.png`,
-          alt: "roulette rubbish alt text",
-        },
-      ],
+      images: [],
     },
 
     {
@@ -189,13 +181,59 @@ export const ProjectsConfig = {
       role: "Full-stack breaking shit",
       description:
         "bbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionreak-it test description",
+      images: [],
+    },
+
+    {
+      name: "Whisper2",
+      briefDescription: "Messenger app using Socket.IO",
+      techStack: ["Node.js", "React", "Socket.IO", "Electron"],
+      role: "Full-stack role, bruh",
+      description:
+        "placeholder whisper description that will have tooo much text and will run over for testing purposes",
       images: [
         {
-          srcSet: `${ProjectsImgBase}whisper-chatting-320w.png,
-          ${ProjectsImgBase}whisper-chatting-480w.png 1.5x,
-          ${ProjectsImgBase}whisper-chatting-600w.png 1.875x`,
-          src: `${ProjectsImgBase}whisper-chatting-480w.png`,
-          alt: "example conversation in whisper app",
+          srcSet: `${ProjectsImgBase}whisper-chatting-inverted-320w.png,
+          ${ProjectsImgBase}whisper-chatting-inverted-480w.png 480w,
+          ${ProjectsImgBase}whisper-chatting-inverted-600w.png 600w`,
+          src: `${ProjectsImgBase}whisper-chatting-inverted-320w.png`,
+          alt: "inverted color example conversation in whisper app",
+        },
+      ],
+    },
+
+    {
+      name: "Whisper3",
+      briefDescription: "Messenger app using Socket.IO",
+      techStack: ["Node.js", "React", "Socket.IO", "Electron"],
+      role: "Full-stack role, bruh",
+      description:
+        "placeholder whisper description that will have tooo much text and will run over for testing purposes",
+      images: [
+        {
+          srcSet: `${ProjectsImgBase}whisper-chatting-inverted-320w.png,
+          ${ProjectsImgBase}whisper-chatting-inverted-480w.png 480w,
+          ${ProjectsImgBase}whisper-chatting-inverted-600w.png 600w`,
+          src: `${ProjectsImgBase}whisper-chatting-inverted-320w.png`,
+          alt: "inverted color example conversation in whisper app",
+        },
+      ],
+    },
+
+    {
+      name: "Whisper4",
+      briefDescription: "Messenger app using Socket.IO",
+      techStack: ["Node.js", "React", "Socket.IO", "Electron"],
+      role: "Full-stack role, bruh",
+      description:
+        "placeholder whisper description that will have tooo much text and will run over for testing purposes",
+      images: [
+        {
+          srcSet: `${ProjectsImgBase}whisper-chatting-inverted-320w.png,
+          ${ProjectsImgBase}whisper-chatting-inverted-480w.png 480w,
+          ${ProjectsImgBase}whisper-chatting-inverted-600w.png 600w`,
+          src: `${ProjectsImgBase}whisper-chatting-inverted-320w.png`,
+          alt: "inverted color example conversation in whisper app",
         },
       ],
     },

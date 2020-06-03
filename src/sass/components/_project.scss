@@ -70,7 +70,8 @@
   align-items: center;
   transition: all 1s;
   box-shadow: 1px 1px 2px 1px black;
-  background: hsla(270, 100%, 90%, 0.35);
+  //background: hsla(270, 100%, 90%, 0.35);
+  background: hsl(270, 100%, 90%);
 
   &.toggled-off {
     white-space: nowrap;
