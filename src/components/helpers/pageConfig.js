@@ -147,21 +147,26 @@ export const ProjectsConfig = {
         "placeholder whisper description that will have tooo much text and will run over for testing purposes",
       images: [
         {
-          srcSet: `${ProjectsImgBase}whisper-chatting-320w.png,
-          ${ProjectsImgBase}whisper-chatting-480w.png 1.5x,
-          ${ProjectsImgBase}whisper-chatting-600w.png 1.875x`,
-          src: `${ProjectsImgBase}whisper-chatting-480w.png`,
+          srcSet: `${ProjectsImgBase}whisper-chatting-320w.png 320w,
+          ${ProjectsImgBase}whisper-chatting-inverted-480w.png 480w,
+          ${ProjectsImgBase}whisper-chatting-600w.png 600w`,
+          sizes: `(max-width: 380px) 320px,
+          (max-width: 520px) 480px,
+          600px`,
+          src: `${ProjectsImgBase}whisper-chatting-320w.png`,
           alt: "example conversation in whisper app",
         },
-
-        {
-          srcSet: `${ProjectsImgBase}whisper-chatting-inverted-320w.png,
-          ${ProjectsImgBase}whisper-chatting-inverted-480w.png 1.5x,
-          ${ProjectsImgBase}whisper-chatting-inverted-600w.png 1.875x`,
-          src: `${ProjectsImgBase}whisper-chatting-inverted-480w.png`,
-          alt: "inverted color example conversation in whisper app",
-        },
       ],
+    },
+
+    {
+      name: "GIF Component",
+      briefDescription: "Standalone GIF search",
+      techStack: ["React", "GIPHY API"],
+      role: "Side Project",
+      description:
+        "This GIF search component searches your queries through the GIPHY API.",
+      images: [],
     },
 
     {
@@ -170,6 +175,16 @@ export const ProjectsConfig = {
       techStack: ["Node.js", "WebRTC", "React", "Socket.IO", "Electron"],
       role: "Full-stack roulette",
       description: "placeholder roulette description",
+      images: [],
+    },
+
+    {
+      name: "Word-connect",
+      briefDescription: "Desktop Dictionary Search",
+      techStack: ["Electron", "Node.js", "React", "IndexedDB"],
+      role: "The coding bit",
+      description:
+        "A side project I coded to get some experience with web scraping with Node.js",
       images: [],
     },
 
@@ -184,6 +199,7 @@ export const ProjectsConfig = {
       images: [],
     },
 
+    /*
     {
       name: "Whisper2",
       briefDescription: "Messenger app using Socket.IO",
@@ -193,11 +209,11 @@ export const ProjectsConfig = {
         "placeholder whisper description that will have tooo much text and will run over for testing purposes",
       images: [
         {
-          srcSet: `${ProjectsImgBase}whisper-chatting-inverted-320w.png,
+          srcSet: `${ProjectsImgBase}whisper-chatting-inverted-320w.png 320w,
           ${ProjectsImgBase}whisper-chatting-inverted-480w.png 480w,
           ${ProjectsImgBase}whisper-chatting-inverted-600w.png 600w`,
           src: `${ProjectsImgBase}whisper-chatting-inverted-320w.png`,
-          alt: "inverted color example conversation in whisper app",
+          alt: "example conversation in whisper app",
         },
       ],
     },
@@ -211,11 +227,11 @@ export const ProjectsConfig = {
         "placeholder whisper description that will have tooo much text and will run over for testing purposes",
       images: [
         {
-          srcSet: `${ProjectsImgBase}whisper-chatting-inverted-320w.png,
-          ${ProjectsImgBase}whisper-chatting-inverted-480w.png 480w,
-          ${ProjectsImgBase}whisper-chatting-inverted-600w.png 600w`,
-          src: `${ProjectsImgBase}whisper-chatting-inverted-320w.png`,
-          alt: "inverted color example conversation in whisper app",
+          srcSet: `${ProjectsImgBase}whisper-chatting-320w.png 320w,
+          ${ProjectsImgBase}whisper-chatting-480w.png 480w,
+          ${ProjectsImgBase}whisper-chatting-600w.png 600w`,
+          src: `${ProjectsImgBase}whisper-chatting-320w.png`,
+          alt: "example conversation in whisper app",
         },
       ],
     },
@@ -229,13 +245,14 @@ export const ProjectsConfig = {
         "placeholder whisper description that will have tooo much text and will run over for testing purposes",
       images: [
         {
-          srcSet: `${ProjectsImgBase}whisper-chatting-inverted-320w.png,
+          srcSet: `${ProjectsImgBase}whisper-chatting-inverted-320w.png 320w,
           ${ProjectsImgBase}whisper-chatting-inverted-480w.png 480w,
           ${ProjectsImgBase}whisper-chatting-inverted-600w.png 600w`,
           src: `${ProjectsImgBase}whisper-chatting-inverted-320w.png`,
-          alt: "inverted color example conversation in whisper app",
+          alt: "example conversation in whisper app",
         },
       ],
     },
+    */
   ],
 };

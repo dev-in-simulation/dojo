@@ -7,16 +7,9 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  overflow: hidden;
 
-  //! new min-height so the page doesn't jump when the image loads
-  //min-height: 200px;
   border-radius: 0.5rem;
-  background: orange;
-
-  //! testing this to use cover
-  min-width: 200px;
-  min-height: 160px;
-  //! ----------------------
 
   > .carousel-img {
     display: inline-block;
@@ -24,7 +17,7 @@
     //! testing this to use cover
     min-width: inherit;
     min-height: inherit;
-    object-fit: cover;
+    object-fit: contain;
     //! ----------------------
 
     width: 100%;

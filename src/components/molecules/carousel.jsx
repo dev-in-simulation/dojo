@@ -3,15 +3,12 @@ import PropTypes from "prop-types";
 
 import Container from "../template/container";
 
-function CarouselImg({ img }) {
-  return <img className="carousel-img" src={img.src} alt={img.alt} />;
-}
-
 function CarouselImgWithSizes({ img }) {
   return (
     <img
       className="carousel-img"
       srcSet={img.srcSet}
+      sizes={img.sizes}
       src={img.src}
       alt={img.alt}
     />

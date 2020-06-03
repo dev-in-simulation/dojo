@@ -1,6 +1,4 @@
 //* styles specific to the projects page
-$projects-container-base: 300px, 0.8fr;
-$projects-carousel-base-height: 180px;
 //$projects-container-small-medium: 200px, 0.9fr;
 //$projects-container-medium: 300px, 0.9fr;
 //$projects-container-large: 300px, 450px;
@@ -9,20 +7,47 @@ $projects-carousel-base-height: 180px;
 //}
 
 .all-projects {
+  $projects-container-base: 300px, 0.8fr;
+  $projects-container-base-height: 300px;
+
   width: 100%;
-  //margin: 0.5rem 0;
   margin: 0;
   padding: 0.5rem;
 
   display: grid;
+  //grid-template-columns: repeat(auto-fill, minmax($projects-container-base));
+
   grid-template-columns: repeat(auto-fill, minmax($projects-container-base));
+  grid-template-rows: minmax($projects-container-base-height, 1fr);
+
   gap: 2rem 2rem;
-  align-items: start;
+  align-items: stretch;
+  //!align-items: start;
 
   background: gray;
   transition: all 1s;
 
   .carousel {
-    min-height: $projects-carousel-base-height;
+    //min-height: $projects-container-base-height;
+    //min-width: 200px;
+    //width: 100%;
+    min-height: 200px;
+    max-height: 300px;
+
+    &:empty {
+      min-height: 200px;
+      width: 100%;
+      background: green;
+    }
+
+    > .carousel-img {
+      //min-height: 240px;
+      //max-width: 115%;
+      min-height: 200px;
+      min-width: 200px;
+
+      background: red;
+      object-fit: cover;
+    }
   }
 }

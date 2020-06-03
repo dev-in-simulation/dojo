@@ -63,11 +63,16 @@
   text-align: justify;
   overflow: hidden;
   max-width: 100%;
+  width: 100%;
 
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
+
+  //! testing
+  flex: 0 1 auto;
+
   transition: all 1s;
   box-shadow: 1px 1px 2px 1px black;
   //background: hsla(270, 100%, 90%, 0.35);
@@ -103,6 +108,10 @@
   ////transition: all 1s;
   //}
 
+  > .carousel {
+    flex: 1 1 auto;
+  }
+
   > .title,
   > .subtitle {
     margin: 0;
@@ -122,5 +131,10 @@
   > .content-toggle {
     align-self: flex-end;
     margin-top: auto;
+  }
+
+  > .project-data {
+    max-width: 300px;
+    width: 90%;
   }
 }
