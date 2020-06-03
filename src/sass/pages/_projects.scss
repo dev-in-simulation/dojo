@@ -1,27 +1,9 @@
 //* styles specific to the projects page
-//!$projects-container-base: 200px, 350px;
-$projects-container-base: 200px, 0.9fr;
+$projects-container-base: 300px, 0.8fr;
+$projects-carousel-base-height: 180px;
 //$projects-container-small-medium: 200px, 0.9fr;
-//!$projects-container-medium: 300px, 0.45fr;
-$projects-container-medium: 300px, 0.9fr;
+//$projects-container-medium: 300px, 0.9fr;
 //$projects-container-large: 300px, 450px;
-
-$projects-default: (
-  "size": "200px, 350px",
-  "min-height": 180px,
-);
-
-$projects-small-medium: (
-  "min-height": 200px,
-);
-
-$projects-medium: (
-  "min-height": 200px,
-);
-
-$projects-large: (
-  "min-height": 200px,
-);
 
 //#projects {
 //}
@@ -34,39 +16,13 @@ $projects-large: (
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax($projects-container-base));
-  gap: 1.25rem;
+  gap: 2rem 2rem;
+  align-items: start;
 
   background: gray;
   transition: all 1s;
 
   .carousel {
-    min-height: map-get($projects-default, "min-height");
+    min-height: $projects-carousel-base-height;
   }
 }
-
-//@media only screen and (min-width: map-get($breakpoints, "small-medium")) {
-//.all-projects {
-//grid-template-columns: repeat(
-//auto-fill,
-//minmax($projects-container-small-medium)
-//);
-//background: red;
-//}
-//}
-
-@media only screen and (min-width: map-get($breakpoints, "medium")) {
-  .all-projects {
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax($projects-container-medium)
-    );
-    background: blue;
-  }
-}
-
-//?@media only screen and (min-width: map-get($breakpoints, "large")) {
-//?.all-projects {
-//?grid-template-columns: repeat(auto-fill, minmax($projects-container-large));
-//?background: green;
-//?}
-//?}
