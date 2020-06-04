@@ -36,7 +36,7 @@ $temp-nav-arrow: (
     justify-content: space-between;
     align-items: center;
     margin: 0;
-    padding: 0;
+    padding: 0 0.25rem;
 
     > .nav-arrow {
       @include set-content($temp-nav-arrow);
