@@ -8,11 +8,11 @@ import CarouselImg from "../atoms/carouselImg";
 function getUpdatedIndex(classes, currIndex, max) {
   let index = currIndex;
 
-  if (classes.includes("arrow-left")) {
+  if (classes.includes("left")) {
     console.log("\t - arrow left triggered");
 
     return index === 0 ? max : index - 1;
-  } else if (classes.includes("arrow-right")) {
+  } else if (classes.includes("right")) {
     console.log("\t - arrow right triggered");
     return index === max ? 0 : index + 1;
   }
@@ -49,7 +49,11 @@ function Carousel(props) {
   );
 
   if (!props.images || !props.images.length) {
-    return <Container id={props.id} addClasses="carousel"></Container>;
+    return (
+      <Container id={props.id} addClasses="carousel">
+        <CarouselNav handleClick={handleArrowNav} />
+      </Container>
+    );
   }
 
   return (

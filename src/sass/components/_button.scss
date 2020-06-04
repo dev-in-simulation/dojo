@@ -110,6 +110,31 @@ $btn-content-toggle: (
   &.content-toggle {
     @include set-content($btn-content-toggle);
   }
+
+  &.nav-arrow {
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    margin: 0;
+    transform-origin: center;
+    border: none;
+    background: none;
+    transition: all 1s;
+
+    //&.left {
+    //}
+
+    //* rotates left-arrow icon to use for right side
+    &.right {
+      transform: rotateY(180deg);
+    }
+
+    > img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 .icon-text {

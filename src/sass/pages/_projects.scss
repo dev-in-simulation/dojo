@@ -1,10 +1,4 @@
 //* styles specific to the projects page
-//$projects-container-small-medium: 200px, 0.9fr;
-//$projects-container-medium: 300px, 0.9fr;
-//$projects-container-large: 300px, 450px;
-
-//#projects {
-//}
 
 .all-projects {
   $projects-container-base: 300px, 0.8fr;
@@ -15,22 +9,16 @@
   padding: 0.5rem;
 
   display: grid;
-  //grid-template-columns: repeat(auto-fill, minmax($projects-container-base));
-
   grid-template-columns: repeat(auto-fill, minmax($projects-container-base));
   grid-template-rows: minmax($projects-container-base-height, 1fr);
 
   gap: 2rem 2rem;
   align-items: stretch;
-  //!align-items: start;
 
-  background: gray;
+  background: none;
   transition: all 1s;
 
   .carousel {
-    //min-height: $projects-container-base-height;
-    //min-width: 200px;
-    //width: 100%;
     min-height: 200px;
     max-height: 300px;
 
@@ -41,8 +29,6 @@
     }
 
     > .carousel-img {
-      //min-height: 240px;
-      //max-width: 115%;
       min-height: 200px;
       min-width: 200px;
 
