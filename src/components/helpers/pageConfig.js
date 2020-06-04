@@ -148,13 +148,35 @@ export const ProjectsConfig = {
       images: [
         {
           srcSet: `${ProjectsImgBase}whisper-chatting-320w.png 320w,
-          ${ProjectsImgBase}whisper-chatting-inverted-480w.png 480w,
-          ${ProjectsImgBase}whisper-chatting-600w.png 600w`,
+          ${ProjectsImgBase}whisper-chatting-480w.png 480w`,
           sizes: `(max-width: 380px) 320px,
-          (max-width: 520px) 480px,
-          600px`,
+          480px`,
           src: `${ProjectsImgBase}whisper-chatting-320w.png`,
           alt: "example conversation in whisper app",
+        },
+        {
+          srcSet: `${ProjectsImgBase}whisper-landing-320w.png 320w,
+          ${ProjectsImgBase}whisper-landing-480w.png 480w`,
+          sizes: `(max-width: 380px) 320px,
+          480px`,
+          src: `${ProjectsImgBase}whisper-landing-320w.png`,
+          alt: "shows landing page",
+        },
+        {
+          srcSet: `${ProjectsImgBase}whisper-sign-in-320w.png 320w,
+          ${ProjectsImgBase}whisper-sign-in-480w.png 480w`,
+          sizes: `(max-width: 380px) 320px,
+          480px`,
+          src: `${ProjectsImgBase}whisper-sign-in-320w.png`,
+          alt: "shows sign-in page",
+        },
+        {
+          srcSet: `${ProjectsImgBase}whisper-sign-up-320w.png 320w,
+          ${ProjectsImgBase}whisper-sign-up-480w.png 480w`,
+          sizes: `(max-width: 380px) 320px,
+          480px`,
+          src: `${ProjectsImgBase}whisper-sign-up-320w.png`,
+          alt: "shows sign-up page",
         },
       ],
     },
@@ -198,61 +220,23 @@ export const ProjectsConfig = {
         "bbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionbreak-it test descriptionreak-it test description",
       images: [],
     },
-
-    /*
-    {
-      name: "Whisper2",
-      briefDescription: "Messenger app using Socket.IO",
-      techStack: ["Node.js", "React", "Socket.IO", "Electron"],
-      role: "Full-stack role, bruh",
-      description:
-        "placeholder whisper description that will have tooo much text and will run over for testing purposes",
-      images: [
-        {
-          srcSet: `${ProjectsImgBase}whisper-chatting-inverted-320w.png 320w,
-          ${ProjectsImgBase}whisper-chatting-inverted-480w.png 480w,
-          ${ProjectsImgBase}whisper-chatting-inverted-600w.png 600w`,
-          src: `${ProjectsImgBase}whisper-chatting-inverted-320w.png`,
-          alt: "example conversation in whisper app",
-        },
-      ],
-    },
-
-    {
-      name: "Whisper3",
-      briefDescription: "Messenger app using Socket.IO",
-      techStack: ["Node.js", "React", "Socket.IO", "Electron"],
-      role: "Full-stack role, bruh",
-      description:
-        "placeholder whisper description that will have tooo much text and will run over for testing purposes",
-      images: [
-        {
-          srcSet: `${ProjectsImgBase}whisper-chatting-320w.png 320w,
-          ${ProjectsImgBase}whisper-chatting-480w.png 480w,
-          ${ProjectsImgBase}whisper-chatting-600w.png 600w`,
-          src: `${ProjectsImgBase}whisper-chatting-320w.png`,
-          alt: "example conversation in whisper app",
-        },
-      ],
-    },
-
-    {
-      name: "Whisper4",
-      briefDescription: "Messenger app using Socket.IO",
-      techStack: ["Node.js", "React", "Socket.IO", "Electron"],
-      role: "Full-stack role, bruh",
-      description:
-        "placeholder whisper description that will have tooo much text and will run over for testing purposes",
-      images: [
-        {
-          srcSet: `${ProjectsImgBase}whisper-chatting-inverted-320w.png 320w,
-          ${ProjectsImgBase}whisper-chatting-inverted-480w.png 480w,
-          ${ProjectsImgBase}whisper-chatting-inverted-600w.png 600w`,
-          src: `${ProjectsImgBase}whisper-chatting-inverted-320w.png`,
-          alt: "example conversation in whisper app",
-        },
-      ],
-    },
-    */
   ],
+};
+
+export const NavArrowConfig = {
+  left: {
+    addClasses: "arrow-left",
+    icon: {
+      imgPath: "assets/page/nav_arrow_left.svg",
+      imgAlt: "",
+    },
+  },
+
+  right: {
+    addClasses: "arrow-right",
+    icon: {
+      imgPath: "assets/page/nav_arrow_left.svg",
+      imgAlt: "",
+    },
+  },
 };
