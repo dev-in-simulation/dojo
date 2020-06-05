@@ -20,7 +20,7 @@ WithText.propTypes = {
 };
 
 function WithBtn(props) {
-  let btnClasses = `btn ${props.addClasses}`;
+  let btnClasses = `btn ${props.addClasses}`.trim();
   return (
     <button className={btnClasses} onClick={props.handleClick}>
       {props.children}
@@ -47,9 +47,19 @@ export function IconTextBtn({ data }) {
 }
 
 export function IconBtn({ config, handleClick }) {
+  let iconClasses = `icon ${config.addClasses}`.trim();
+
   return (
-    <WithBtn addClasses={`icon ${config.addClasses}`} handleClick={handleClick}>
+    <WithBtn addClasses={iconClasses} handleClick={handleClick}>
       <WithBtnIcon data={config.icon} />
+    </WithBtn>
+  );
+}
+
+export function Btn({ config, handleClick }) {
+  return (
+    <WithBtn addClasses={config.addClasses} handleClick={handleClick}>
+      {config.btnText || ""}
     </WithBtn>
   );
 }

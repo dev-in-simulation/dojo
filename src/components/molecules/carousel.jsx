@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Container from "../template/container";
 import CarouselNav from "./carouselNav";
 import CarouselImg from "../atoms/carouselImg";
+import Indicators from "./indicators";
 
 function getUpdatedIndex(classes, currIndex, max) {
   let index = currIndex;
@@ -29,6 +30,19 @@ getUpdatedIndex.propTypes = {
 function Carousel(props) {
   const [imgIndex, setImgIndex] = useState(0); //* starting index used to display image
 
+  const handleIndicatorClick = useCallback(
+    (e) => {
+      console.log(`\n\nhandleIndicatorClick()`);
+
+      if (e.currentTarget) {
+        const id = e.currentTarget.id;
+        console.log(`\t - id: ${id}`);
+        console.log(`\t - img index: ${imgIndex}\n`);
+      }
+    },
+    [imgIndex]
+  );
+
   const handleArrowNav = useCallback(
     (e) => {
       let arrowClasses = e.currentTarget.className;
@@ -52,6 +66,7 @@ function Carousel(props) {
     return (
       <Container id={props.id} addClasses="carousel">
         <CarouselNav handleClick={handleArrowNav} />
+        <CarouselImg img={null} />
       </Container>
     );
   }
@@ -60,6 +75,11 @@ function Carousel(props) {
     <Container id={props.id} addClasses="carousel">
       <CarouselNav handleClick={handleArrowNav} />
       <CarouselImg img={props.images[imgIndex]} />
+      <Indicators
+        activeIndex={imgIndex}
+        totalIndicators={props.images.length}
+        handleClick={handleIndicatorClick}
+      />
     </Container>
   );
 }

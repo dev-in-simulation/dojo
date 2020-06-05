@@ -1,13 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Indicators(props) {
+//TODO: click to go to image
+function Indicators({ activeIndex, totalIndicators, handleClick }) {
   const indicatorsList = [];
+  console.log(`\n\nonClick: ${JSON.stringify(handleClick)}`);
+  console.log(`type: ${JSON.stringify(handleClick)}`);
 
-  for (let i = 0; i < props.totalIndicators; i++) {
+  for (let i = 0; i < totalIndicators; i++) {
     let indicatorClasses = "indicator";
 
-    if (i === props.activeIndex) {
+    if (i === activeIndex) {
       indicatorClasses += " active";
     }
 
@@ -16,7 +19,7 @@ function Indicators(props) {
         key={i}
         id={i}
         className={indicatorClasses}
-        onClick={props.handleClick}
+        onClick={handleClick}
       ></span>
     );
   }

@@ -2,6 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function CarouselImg({ img }) {
+  if (!img) {
+    return <img className="carousel-img" alt="" />;
+  }
   return (
     <img
       className="carousel-img"
@@ -22,7 +25,7 @@ CarouselImg.propTypes = {
     sizes: PropTypes.string.isRequired,
     src: PropTypes.string.isRequired,
     alt: PropTypes.string,
-  }).isRequired,
+  }),
 };
 
 export default CarouselImg;
