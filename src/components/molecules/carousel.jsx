@@ -38,6 +38,7 @@ function Carousel(props) {
         const id = e.currentTarget.id;
         console.log(`\t - id: ${id}`);
         console.log(`\t - img index: ${imgIndex}\n`);
+        setImgIndex(Number(e.currentTarget.id));
       }
     },
     [imgIndex]
@@ -70,6 +71,7 @@ function Carousel(props) {
       </Container>
     );
   }
+  /*
 
   return (
     <Container id={props.id} addClasses="carousel">
@@ -81,6 +83,21 @@ function Carousel(props) {
         handleClick={handleIndicatorClick}
       />
     </Container>
+  );
+  */
+
+  return (
+    <React.Fragment>
+      <Container id={props.id} addClasses="carousel">
+        <CarouselNav handleClick={handleArrowNav} />
+        <CarouselImg img={props.images[imgIndex]} />
+      </Container>
+      <Indicators
+        activeIndex={imgIndex}
+        totalIndicators={props.images.length}
+        handleClick={handleIndicatorClick}
+      />
+    </React.Fragment>
   );
 }
 

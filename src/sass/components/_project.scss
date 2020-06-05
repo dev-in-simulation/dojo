@@ -3,7 +3,6 @@
 //*      - format: #{$prefix}-#{$id}
 //*      - ex. where 'project' is $prefix: project-on-enter, project-on-enter-active
 //!   $transition-data: all attributes being set for the selector
-
 @mixin set-transition-on-parent($prefix, $transition-data) {
   @each $id, $idAttributes in $transition-data {
     &.#{$prefix}-#{$id} {
@@ -54,16 +53,21 @@
   }
 }
 
+//!$project-bg: hsl(271, 54%, 67%);
+$project-bg: none;
+
 .project {
   //TODO TESTING TRANSITION
   @include anim-transition-setup();
 
   padding: 0;
+  border: none;
   border-radius: 0.5rem;
   text-align: justify;
   overflow: hidden;
-  max-width: 100%;
-  width: 100%;
+  //max-width: 100%;
+  max-width: 480px;
+  //width: 100%;
 
   display: flex;
   flex-flow: column nowrap;
@@ -72,7 +76,7 @@
 
   transition: all 1s;
   box-shadow: 1px 1px 2px 1px black;
-  background: hsla(270, 100%, 90%, 0.35);
+  background: $project-bg;
 
   &.toggled-off {
     white-space: nowrap;

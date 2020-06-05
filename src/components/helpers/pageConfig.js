@@ -227,7 +227,8 @@ export const NavArrowConfig = {
   left: {
     addClasses: "nav-arrow left",
     icon: {
-      imgPath: "assets/page/nav_arrow_left.svg",
+      //imgPath: "assets/page/nav_arrow_left.svg",
+      imgPath: "assets/page/arrow_right.svg",
       imgAlt: "",
     },
   },
@@ -235,7 +236,8 @@ export const NavArrowConfig = {
   right: {
     addClasses: "nav-arrow right",
     icon: {
-      imgPath: "assets/page/nav_arrow_left.svg",
+      //imgPath: "assets/page/nav_arrow_left.svg",
+      imgPath: "assets/page/arrow_right.svg",
       imgAlt: "",
     },
   },

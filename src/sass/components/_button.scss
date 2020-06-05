@@ -112,20 +112,24 @@ $btn-content-toggle: (
   }
 
   &.nav-arrow {
-    width: 42px;
-    height: 42px;
+    width: 35px;
+    height: 35px;
     padding: 0;
     margin: 0;
     transform-origin: center;
     border: none;
     background: none;
-    transition: all 1s;
 
-    //&.left {
-    //}
+    opacity: 0.4;
+    transition: all 1.5s ease-out;
 
-    //* rotates left-arrow icon to use for right side
-    &.right {
+    &:hover {
+      opacity: 1;
+      transition: all 0.5s ease-out;
+    }
+
+    //* rotates icon to use for both left / right
+    &.left {
       transform: rotateY(180deg);
     }
 
