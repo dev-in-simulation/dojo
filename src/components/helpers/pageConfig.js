@@ -255,18 +255,16 @@ export const ProjectsConfig = {
 
 export const NavArrowConfig = {
   left: {
-    addClasses: "nav-arrow left",
+    addClasses: "arrow left",
     icon: {
-      //imgPath: "assets/page/nav_arrow_left.svg",
       imgPath: "assets/page/arrow_right.svg",
       imgAlt: "",
     },
   },
 
   right: {
-    addClasses: "nav-arrow right",
+    addClasses: "arrow right",
     icon: {
-      //imgPath: "assets/page/nav_arrow_left.svg",
       imgPath: "assets/page/arrow_right.svg",
       imgAlt: "",
     },

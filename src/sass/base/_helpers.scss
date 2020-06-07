@@ -169,6 +169,12 @@ a {
   }
 }
 
+.container {
+  &.flex-row {
+    flex-flow: row nowrap;
+  }
+}
+
 .debug {
   border: 2px dashed red;
 }
