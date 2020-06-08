@@ -1,11 +1,12 @@
 import React, { useRef } from "react";
 
+import Navbar from "./components/organisms/navbar";
 import Homepage from "./components/views/homepage";
 import About from "./components/views/about";
 import Projects from "./components/views/projects";
 import Footer from "./components/organisms/footer";
 import { IconBtn } from "./components/atoms/btn";
-import { NavConfig } from "./components/helpers/pageConfig";
+import { FABConfig } from "./components/helpers/pageConfig";
 
 function App() {
   const scrollToTopRef = useRef(null);
@@ -27,13 +28,11 @@ function App() {
 
   return (
     <main id="app" className="App">
+      <Navbar />
       <Projects />
       <Homepage handleSetRef={handleSetRef} />
-      <IconBtn config={NavConfig} handleClick={handleScrollHome} />
+      <IconBtn config={FABConfig} handleClick={handleScrollHome} />
       <About />
-      <Footer />
-      <Footer />
-      <Footer />
       <Footer />
     </main>
   );

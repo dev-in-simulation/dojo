@@ -95,6 +95,21 @@ $btn-content-toggle: (
   @include set-content($base);
   //@include set-content($btn-def);
 
+  //&.logo {
+  //width: 32px;
+  //height: 32px;
+  //padding: 0;
+  //margin: 0;
+  //border: none;
+
+  //> .btn-icon {
+  //display: inline-block;
+  //max-width: 100%;
+  //width: 100%;
+  //height: auto;
+  //}
+  //}
+
   &.outline {
     position: relative;
     top: 0;

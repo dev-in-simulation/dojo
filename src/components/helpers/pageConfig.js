@@ -113,7 +113,7 @@ export const FooterConfig = {
   ],
 };
 
-export const NavConfig = {
+export const FABConfig = {
   icon: {
     name: "arrow home",
     link: "#homepage",
@@ -269,4 +269,31 @@ export const NavArrowConfig = {
       imgAlt: "",
     },
   },
+};
+
+export const NavbarConfig = {
+  logo: {
+    //* logo for homepage navigation
+    name: "logo",
+    link: "#homepage",
+    imgPath: "assets/logo.svg",
+    imgAlt: "navigate to homepage",
+  },
+  pages: [
+    {
+      name: "About",
+      link: "#about",
+      alt: "navigate to 'about' page",
+    },
+    {
+      name: "Projects",
+      link: "#projects",
+      alt: "navigate to 'projects' page",
+    },
+    {
+      name: "Contact",
+      link: "#contact",
+      alt: "navigate to 'contact' page",
+    },
+  ],
 };

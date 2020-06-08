@@ -47,7 +47,11 @@ export function IconTextBtn({ data }) {
 }
 
 export function IconBtn({ config, handleClick }) {
-  let iconClasses = `icon ${config.addClasses}`.trim();
+  let iconClasses = "icon";
+
+  if (config.addClasses) {
+    iconClasses += " " + config.addClasses;
+  }
 
   return (
     <WithBtn addClasses={iconClasses} handleClick={handleClick}>
