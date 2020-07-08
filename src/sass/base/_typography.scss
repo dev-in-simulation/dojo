@@ -1,11 +1,13 @@
 //* basic typography styling
 
 body {
+  $font-max: 16px;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   @include font-init(
     $body-font-stack,
-    16px,
+    $font-max,
     normal,
     $weight-normal,
     0.25px,
@@ -14,11 +16,50 @@ body {
   text-align: center;
 }
 
+//TODO: refactor .page-title --> .header-1
+.header-1,
+.page-title {
+  //$font-max: 101px;
+  //$font-min: 66px;
+  $font-max: 64px;
+  $font-min: 40px;
+
+  @include font-init(
+    $header-font-stack,
+    $font-max,
+    normal,
+    $weight-light,
+    6px,
+    58px
+  );
+
+  text-transform: uppercase;
+  @include font-setup-scale($font-min, $font-max);
+}
+
+.content-1,
+.page-desc {
+  $font-max: 22px;
+  $font-min: 16px;
+  @include font-init(
+    $header-font-stack,
+    $font-max,
+    normal,
+    $weight-light,
+    2px,
+    36px
+  );
+
+  @include font-setup-scale($font-min, $font-max);
+}
+
 .title {
   &.is-size-1 {
+    $font-max: 101px;
+
     @include font-init(
       $header-font-stack,
-      101px,
+      $font-max,
       normal,
       $weight-light,
       -1.5px
@@ -26,17 +67,32 @@ body {
   }
 
   &.is-size-2 {
-    @include font-init($header-font-stack, 63px, normal, $weight-light, -0.5px);
+    $font-max: 63px;
+    @include font-init(
+      $header-font-stack,
+      $font-max,
+      normal,
+      $weight-light,
+      -0.5px
+    );
   }
 
   &.is-size-3 {
-    @include font-init($header-font-stack, 50px, normal, $weight-normal, 0px);
+    $font-max: 50px;
+    @include font-init(
+      $header-font-stack,
+      $font-max,
+      normal,
+      $weight-normal,
+      0px
+    );
   }
 
   &.is-size-4 {
+    $font-max: 36px;
     @include font-init(
       $header-font-stack,
-      36px,
+      $font-max,
       normal,
       $weight-normal,
       0.25px
@@ -44,13 +100,21 @@ body {
   }
 
   &.is-size-5 {
-    @include font-init($header-font-stack, 25px, normal, $weight-normal, 0px);
+    $font-max: 26px;
+    @include font-init(
+      $header-font-stack,
+      $font-max,
+      normal,
+      $weight-normal,
+      0px
+    );
   }
 
   &.is-size-6 {
+    $font-max: 22px;
     @include font-init(
       $header-font-stack,
-      21px,
+      $font-max,
       normal,
       $weight-medium,
       0.15px
@@ -60,9 +124,10 @@ body {
 
 .subtitle {
   &.is-size-1 {
+    $font-max: 17px;
     @include font-init(
       $header-font-stack,
-      17px,
+      $font-max,
       normal,
       $weight-normal,
       0.15px,
@@ -71,9 +136,11 @@ body {
   }
 
   &.is-size-2 {
+    $font-max: 15px;
+
     @include font-init(
       $header-font-stack,
-      15px,
+      $font-max,
       normal,
       $weight-medium,
       0.1px,
@@ -84,9 +151,11 @@ body {
 
 .body {
   &.is-size-1 {
+    $font-max: 17px;
+
     @include font-init(
       $body-font-stack,
-      17px,
+      $font-max,
       normal,
       $weight-normal,
       0.5px,
@@ -95,9 +164,11 @@ body {
   }
 
   &.is-size-2 {
+    $font-max: 15px;
+
     @include font-init(
       $body-font-stack,
-      15px,
+      $font-max,
       normal,
       $weight-normal,
       0.25px,
@@ -108,9 +179,10 @@ body {
 
 .btn {
   &.is-size-1 {
+    $font-max: 15px;
     @include font-init(
       $body-font-stack,
-      15px,
+      $font-max,
       normal,
       $weight-normal,
       0.25px,
@@ -121,9 +193,10 @@ body {
 
 .caption {
   &.is-size-1 {
+    $font-max: 13px;
     @include font-init(
       $body-font-stack,
-      13px,
+      $font-max,
       normal,
       $weight-normal,
       0.4px,

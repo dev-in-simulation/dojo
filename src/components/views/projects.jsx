@@ -17,11 +17,14 @@ function AllProjects(props) {
 }
 
 function Projects(props) {
+  const description =
+    "From SVG animations using Sass (preprocessed CSS) to React.js, Node.js, Socket.IO, and WebRTC. Check out a few of my latest projects.";
+
   return (
     <View id="projects" handleSetRef={props.handleSetRef}>
       <ViewSection>
-        <ViewTitle title="Projects" addClasses="is-size-1 show-sides" />
-        <p className="title is-size-6">description for project's page</p>
+        <ViewTitle title="Projects" addClasses="show-sides" />
+        <p className="content-1">{description}</p>
       </ViewSection>
 
       <ViewSection addClasses="all-projects">
