@@ -1,3 +1,25 @@
+@mixin font-setup-scale($font-min, $font-max) {
+  @media only screen and (max-width: $min-view-width) {
+    font-size: $font-min;
+    //font-size: smaller;
+  }
+
+  @media only screen and (min-width: $min-view-width) {
+    font-size: calc(
+      #{$font-min} + #{strip-unit($font-max - $font-min)} *
+        (
+          (100vw - #{$min-view-width}) / #{strip-unit(
+              $max-view-width - $min-view-width
+            )}
+        )
+    );
+  }
+
+  @media only screen and (min-width: $max-view-width) {
+    font-size: $font-max;
+  }
+}
+
 @mixin font-init(
   $family,
   $size,
