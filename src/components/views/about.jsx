@@ -10,19 +10,21 @@ function About(props) {
   return (
     <View id="about">
       <ViewSection>
-        <ViewTitle title="About" addClasses="is-size-1 show-sides" />
+        <ViewTitle title="About" addClasses="show-sides" />
 
-        <p className="subtitle is-size-1">{config.description}</p>
-        <p className="subtitle is-size-1">{config.description2}</p>
+        <p className="content-1">{config.description}</p>
+        <p className="content-1">{config.description2}</p>
       </ViewSection>
 
       <ViewSection addClasses="skills">
-        <p className="title is-size-5">{config.dailyDescription}</p>
+        <p className="content-2 weight--normal">{config.dailyDescription}</p>
         <DisplayIcons icons={config.iconsDaily} />
       </ViewSection>
 
       <ViewSection addClasses="skills">
-        <p className="title is-size-5">{config.occasionalDescription}</p>
+        <p className="content-2 weight--normal">
+          {config.occasionalDescription}
+        </p>
         <DisplayIcons icons={config.iconsOccasional} />
       </ViewSection>
     </View>
