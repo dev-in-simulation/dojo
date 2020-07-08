@@ -20,7 +20,7 @@ $nav-highlight-clip-end: 100%;
   border: none;
   border-bottom: 0.25rem solid $nav-highlight-border-hover;
   z-index: 10;
-  transform: translateY(-30%);
+  transform: translateY(calc(-1.5rem));
 }
 
 .nav {
@@ -44,7 +44,7 @@ $nav-highlight-clip-end: 100%;
     top: 0;
     left: 0;
     display: inline-block;
-    margin: 0 1rem;
+    margin: 0 0.8rem;
     text-decoration: none;
     color: $nav-fg;
     background: none;
@@ -93,16 +93,16 @@ $nav-highlight-clip-end: 100%;
   > .nav-pages {
     width: max-content;
     height: 100%;
-    font-size: 1rem;
+    //font-size: 1rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
 
     > .nav-link {
-      font-size: 1.05rem;
-      letter-spacing: 0.15rem;
-      padding: 0 0.5rem;
+      letter-spacing: 0.1rem;
+      @include font-setup-scale(0.9rem, 1.1rem);
+      padding: 0 0;
     }
   }
 }
