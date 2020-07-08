@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function ViewTitle(props) {
-  let titleClasses = "title";
+  //let titleClasses = "page-title";
+  let titleClasses = "header-1";
 
   if (props.addClasses) {
     titleClasses += " " + props.addClasses;
