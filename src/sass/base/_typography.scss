@@ -17,8 +17,9 @@ body {
 }
 
 //TODO: refactor .page-title --> .header-1
-.header-1,
-.page-title {
+//* header content setup
+//!.page-title,
+.header-1 {
   //$font-max: 101px;
   //$font-min: 66px;
   $font-max: 64px;
@@ -37,17 +38,53 @@ body {
   @include font-setup-scale($font-min, $font-max);
 }
 
-.content-1,
-.page-desc {
+//!page-desc,
+//* page content setup
+
+//* all content specifiers are used with the content of the page,
+//* which amounts to everything other than the title
+.content-1 {
   $font-max: 22px;
-  $font-min: 16px;
+  $font-min: 18px;
   @include font-init(
-    $header-font-stack,
+    $body-font-stack,
     $font-max,
     normal,
     $weight-light,
     2px,
-    36px
+    1.8
+  );
+
+  @include font-setup-scale($font-min, $font-max);
+}
+
+.content-2 {
+  $font-max: 20px;
+  $font-min: 16px;
+  @include font-init(
+    $body-font-stack,
+    $font-max,
+    normal,
+    $weight-light,
+    2px,
+    1.625
+  );
+
+  @include font-setup-scale($font-min, $font-max);
+}
+
+//* used ONLY with the body for setup
+.content-default {
+  $font-max: 16px;
+  $font-min: 14px;
+
+  @include font-init(
+    $body-font-stack,
+    $font-max,
+    normal,
+    $weight-normal,
+    0.5px,
+    1.625
   );
 
   @include font-setup-scale($font-min, $font-max);

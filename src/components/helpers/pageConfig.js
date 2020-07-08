@@ -1,4 +1,13 @@
 //* holds config data for each page, so they don't get cluttered
+export const HomeConfig = {
+  briefDescription: "You are now on the homepage :D",
+  description:
+    "Here is some homepage placeholder text. Required to make sure everything formats correctly, doesn't clip, etc.",
+  icon: {
+    imgPath: "assets/icons/beaker.svg",
+    imgAlt: "default logo: a beaker I coded in svg",
+  },
+};
 
 export const AboutConfig = {
   description:
