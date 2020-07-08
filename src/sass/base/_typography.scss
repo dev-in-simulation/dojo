@@ -1,10 +1,10 @@
 //* basic typography styling
-
 body {
   $font-max: 16px;
-
+  $font-min: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   @include font-init(
     $body-font-stack,
     $font-max,
@@ -13,11 +13,14 @@ body {
     0.25px,
     1.5
   );
+
   text-align: center;
+  @include font-setup-scale($font-min, $font-max);
 }
 
 //TODO: refactor .page-title --> .header-1
-//* header content setup
+//? header content setup
+//* used for all component header variations
 //!.page-title,
 .header-1 {
   //$font-max: 101px;
@@ -38,11 +41,11 @@ body {
   @include font-setup-scale($font-min, $font-max);
 }
 
-//!page-desc,
-//* page content setup
-
+//? page content setup
 //* all content specifiers are used with the content of the page,
 //* which amounts to everything other than the title
+
+//!page-desc,
 .content-1 {
   $font-max: 22px;
   $font-min: 18px;
@@ -67,23 +70,6 @@ body {
     normal,
     $weight-light,
     2px,
-    1.625
-  );
-
-  @include font-setup-scale($font-min, $font-max);
-}
-
-//* used ONLY with the body for setup
-.content-default {
-  $font-max: 16px;
-  $font-min: 14px;
-
-  @include font-init(
-    $body-font-stack,
-    $font-max,
-    normal,
-    $weight-normal,
-    0.5px,
     1.625
   );
 

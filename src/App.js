@@ -29,10 +29,10 @@ function App() {
   return (
     <main id="app" className="App">
       <Navbar />
-      <Projects />
       <Homepage handleSetRef={handleSetRef} />
-      <IconBtn config={FABConfig} handleClick={handleScrollHome} />
       <About />
+      <Projects />
+      <IconBtn config={FABConfig} handleClick={handleScrollHome} />
       <Footer />
     </main>
   );
