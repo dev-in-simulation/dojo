@@ -94,19 +94,19 @@ $project-bg: none;
     }
   }
 
-  > .title,
-  > .subtitle {
+  > .project-name,
+  > .project-brief-desc {
     margin: 0;
     padding: 0 0.5rem;
-    margin-bottom: 0.625rem;
+    margin-bottom: 0.25rem;
     width: 100%;
   }
 
-  > .title {
+  > .project-name {
     margin-top: 0.75rem;
   }
 
-  > .subtitle {
+  > .project-brief-desc {
     font-size: 90%;
   }
 

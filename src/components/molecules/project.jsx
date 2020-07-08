@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react";
+import Container from "../template/container";
 import Carousel from "./carousel";
 
 function ProjectDesc({ data }) {
@@ -37,8 +38,10 @@ function Project({ data }) {
         id={`${data.name.toLowerCase()}-carousel`}
         images={data.images}
       />
-      <h6 className="title is-size-6">{data.name}</h6>
-      <p className="subtitle is-size-1">{data.briefDescription}</p>
+      <h6 className="project-name content-2 weight--normal">{data.name}</h6>
+      <p className="project-brief-desc content-4 weight--normal">
+        {data.briefDescription}
+      </p>
 
       {showAll && <ProjectDesc data={data} />}
 
