@@ -1,19 +1,17 @@
 import React from "react";
 import { FooterConfig as config } from "../helpers/pageConfig";
+import ViewSection from "../template/viewSection";
 import DisplayIcons from "../molecules/displayIcons";
 
 function Footer(props) {
   return (
-    <footer className="page-view footer-view">
-      <section className="view centered footer">
-        <p className="closing-words title is-size-5 weight--light">
-          {config.title}
-        </p>
+    <footer id="footer" className="page-view">
+      <ViewSection>
+        <p className="closing-words content-2">{config.title}</p>
+
         <DisplayIcons icons={config.iconsData} />
-        <p className="copyright body is-size-2 weight--light">
-          {config.copyright}
-        </p>
-      </section>
+        <p className="copyright content-4 weight--normal">{config.copyright}</p>
+      </ViewSection>
     </footer>
   );
 }
