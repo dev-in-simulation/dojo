@@ -1,34 +1,49 @@
 import React, { useRef, useState } from "react";
-//import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import Container from "../template/container";
 
-function PlayOnHover(props) {
+function PlayOnHover({ mediaInfo }) {
+  //* attach to element you want to monitor
+  const videoRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
-  const isHoveredRef = useRef(null); //* attach to element you want to monitor
 
-  function onEnter() {
-    setIsHovered(true);
-    console.log(`\t - onEnter()`);
-  }
+  function handleHoverChange(hoverState) {
+    setIsHovered(hoverState);
 
-  function onLeave() {
-    setIsHovered(false);
-    console.log(`\t - onLeave()`);
+    //* hovering over media - starts media playback if paused
+    if (hoverState) {
+      videoRef.current.paused && videoRef.current.play();
+    }
+
+    //* no longer hovering - pauses media if playing
+    else {
+      !videoRef.current.paused && videoRef.current.pause();
+    }
   }
 
   return (
-    <Container>
-      <p
-        className="content-1"
-        ref={isHoveredRef}
-        onMouseEnter={onEnter}
-        onMouseLeave={onLeave}
+    <Container addClasses="media">
+      <video
+        ref={videoRef}
+        onMouseEnter={() => handleHoverChange(true)}
+        onMouseLeave={() => handleHoverChange(false)}
+        playsInline
+        loop
       >
-        playOnHover component placeholder
-      </p>
-      {isHovered && <p className="content-3">hovering text :D</p>}
+        <source src={mediaInfo.src} type={mediaInfo.type} />
+        <p className="content-3">Video not supported</p>
+      </video>
+      <p className="content-3 name">{mediaInfo.name}</p>
     </Container>
   );
 }
+
+PlayOnHover.propTypes = {
+  mediaInfo: PropTypes.shape({
+    src: PropTypes.string.isRequired, //* link to media
+    type: PropTypes.string.isRequired, //* MIME type
+    name: PropTypes.string, //* display name of media
+  }).isRequired,
+};
 
 export default PlayOnHover;
