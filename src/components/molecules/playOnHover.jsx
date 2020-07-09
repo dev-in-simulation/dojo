@@ -2,23 +2,31 @@ import React, { useRef, useState } from "react";
 //import PropTypes from "prop-types";
 import Container from "../template/container";
 
-function useOnHover() {
-  const [isHovered, setIsHovered] = useState();
+function PlayOnHover(props) {
+  const [isHovered, setIsHovered] = useState(false);
   const isHoveredRef = useRef(null); //* attach to element you want to monitor
 
-  function handleOnHover(e) {
-    console.log(`handleOnHover() - hoveringggg`);
+  function onEnter() {
+    setIsHovered(true);
+    console.log(`\t - onEnter()`);
   }
 
-  return [isHovered, isHoveredRef];
-}
-
-function PlayOnHover(props) {
-  const [isHovered, hoveredRef] = useOnHover();
+  function onLeave() {
+    setIsHovered(false);
+    console.log(`\t - onLeave()`);
+  }
 
   return (
     <Container>
-      <p className="content-1">playOnHover component placeholder</p>
+      <p
+        className="content-1"
+        ref={isHoveredRef}
+        onMouseEnter={onEnter}
+        onMouseLeave={onLeave}
+      >
+        playOnHover component placeholder
+      </p>
+      {isHovered && <p className="content-3">hovering text :D</p>}
     </Container>
   );
 }
