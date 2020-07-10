@@ -1,6 +1,13 @@
 #footer {
-  padding: 2rem 0;
+  padding: 1rem 0;
+  margin: 0;
   background: $theme-secondary-bg;
+
+  .icon-link {
+    img {
+      filter: invert(1);
+    }
+  }
 
   > .view-section {
     margin: 0;
@@ -9,11 +16,15 @@
 
     > .closing-words {
       margin: 0;
-      margin-bottom: 1rem;
+      //margin-bottom: 1rem;
+      color: white;
+      color: $lightest-purple;
+      letter-spacing: 0.15em;
     }
 
     > .copyright {
       margin: 1.25rem 0;
+      color: white;
     }
   }
 }
