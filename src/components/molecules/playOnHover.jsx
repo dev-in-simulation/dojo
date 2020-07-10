@@ -1,22 +1,21 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import Container from "../template/container";
 
 function PlayOnHover({ mediaInfo }) {
   //* attach to element you want to monitor
   const videoRef = useRef(null);
-  const [isHovered, setIsHovered] = useState(false);
 
   function handleHoverChange(hoverState) {
-    setIsHovered(hoverState);
-
-    //* hovering over media - starts media playback if paused
+    //* component being hovered
     if (hoverState) {
+      //* start playback if paused
       videoRef.current.paused && videoRef.current.play();
     }
 
-    //* no longer hovering - pauses media if playing
+    //* component no longer hovered
     else {
+      //* pause video if playing
       !videoRef.current.paused && videoRef.current.pause();
     }
   }
