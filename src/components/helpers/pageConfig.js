@@ -88,8 +88,10 @@ export const AboutConfig = {
 };
 
 export const FooterConfig = {
-  title: "Living, learning, & leveling up one day at a time.",
-  copyright: "Hand typed by me © twentytwenty",
+  //title: "Living, learning, & leveling up one day at a time.",
+  title: "He would increase his arcane wizardry",
+  subtitle: "not satisfied tinkering until reality bent to his will",
+  copyright: "Zach Niemann © twentytwenty",
   iconsData: [
     {
       name: "github",
@@ -305,4 +307,26 @@ export const NavbarConfig = {
       alt: "navigate to 'contact' page",
     },
   ],
+};
+
+export const experimentTestData = {
+  menu: {
+    src: "https://media.giphy.com/media/9DawXEUzWLcN2qzyX2/giphy.mp4",
+    type: "video/mp4",
+    name: "Pure Sass Menu",
+  },
+
+  preloader: {
+    src: "https://media.giphy.com/media/5hq1mh1VHvFr1Bv5q5/giphy.mp4",
+    type: "video/mp4",
+    name: "Sass Preloader",
+    addClasses: "padded",
+  },
+
+  spinner: {
+    src: "https://media.giphy.com/media/9AIA9Jz1zwJKHvaLeI/giphy.mp4",
+    type: "video/mp4",
+    name: "Spinner Preloader",
+    addClasses: "padded",
+  },
 };

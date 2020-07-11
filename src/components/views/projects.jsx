@@ -3,8 +3,9 @@ import React from "react";
 import View from "../template/view";
 import ViewSection from "../template/viewSection";
 import ViewTitle from "../atoms/viewTitle";
+import PlayOnHover from "../molecules/playOnHover";
 import ParticleBackground from "../organisms/particleBackground";
-import { ProjectsConfig } from "../helpers/pageConfig";
+import { ProjectsConfig, experimentTestData } from "../helpers/pageConfig";
 
 import Project from "../molecules/project";
 
@@ -29,6 +30,16 @@ function Projects(props) {
 
       <ViewSection addClasses="all-projects">
         <AllProjects />
+      </ViewSection>
+
+      <ViewSection addClasses="tinkering-work">
+        <h3 className="header-2">Tinkering</h3>
+        <p className="content-2">
+          These are a result of late-night tinkering. Tap / hover to animate!
+        </p>
+        <PlayOnHover mediaInfo={experimentTestData.preloader} />
+        <PlayOnHover mediaInfo={experimentTestData.menu} />
+        <PlayOnHover mediaInfo={experimentTestData.spinner} />
       </ViewSection>
 
       <ParticleBackground />
