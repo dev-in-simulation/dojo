@@ -9,7 +9,7 @@ import { ProjectsConfig, TinkeringData } from "../helpers/pageConfig";
 
 import Project from "../molecules/project";
 
-function AllProjects(props) {
+function AllProjects() {
   const displayProjects = ProjectsConfig.allProjects.map((work) => (
     <Project key={work.name} data={work} />
   ));
@@ -17,9 +17,19 @@ function AllProjects(props) {
   return displayProjects;
 }
 
-function Projects(props) {
+//*  tinkering project videos
+function VideoList() {
+  return TinkeringData.videos.map((video) => (
+    <PlayOnHover key={video.id} mediaInfo={video} />
+  ));
+}
+
+function Projects() {
+  console.log(
+    `\n\nTinkering data: ${JSON.stringify(TinkeringData.videos)}\n\n `
+  );
   return (
-    <View id="projects" handleSetRef={props.handleSetRef}>
+    <View id="projects">
       <ViewSection>
         <ViewTitle title={ProjectsConfig.title} addClasses="show-sides" />
         <p className="content-1">{ProjectsConfig.description}</p>
@@ -32,9 +42,7 @@ function Projects(props) {
       <ViewSection addClasses="tinkering-work">
         <h3 className="header-2">{TinkeringData.title}</h3>
         <p className="content-2">{TinkeringData.description}</p>
-        <PlayOnHover mediaInfo={TinkeringData.preloader} />
-        <PlayOnHover mediaInfo={TinkeringData.menu} />
-        <PlayOnHover mediaInfo={TinkeringData.spinner} />
+        <VideoList />
       </ViewSection>
 
       <ParticleBackground />

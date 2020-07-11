@@ -315,24 +315,36 @@ export const NavbarConfig = {
 export const TinkeringData = {
   title: "Tinkering",
   description: "The cards below animate on tap / hover.",
+  videos: [
+    {
+      src: "https://media.giphy.com/media/9DawXEUzWLcN2qzyX2/giphy.mp4",
+      type: "video/mp4",
+      name: "Pure Sass Menu",
+      id: "sass-menu-vid",
+    },
 
-  menu: {
-    src: "https://media.giphy.com/media/9DawXEUzWLcN2qzyX2/giphy.mp4",
-    type: "video/mp4",
-    name: "Pure Sass Menu",
-  },
+    {
+      src: "https://media.giphy.com/media/1ziiF5jQ5CaXnjipIf/giphy.mp4",
+      type: "video/mp4",
+      name: "Sass Preloader",
+      id: "sass-preloader-1-vid",
+      addClasses: "padded",
+    },
 
-  preloader: {
-    src: "https://media.giphy.com/media/5hq1mh1VHvFr1Bv5q5/giphy.mp4",
-    type: "video/mp4",
-    name: "Sass Preloader",
-    addClasses: "padded",
-  },
+    {
+      src: "https://media.giphy.com/media/9AIA9Jz1zwJKHvaLeI/giphy.mp4",
+      type: "video/mp4",
+      name: "Spinner Preloader",
+      id: "sass-preloader-2-vid",
+      addClasses: "padded",
+    },
 
-  spinner: {
-    src: "https://media.giphy.com/media/9AIA9Jz1zwJKHvaLeI/giphy.mp4",
-    type: "video/mp4",
-    name: "Spinner Preloader",
-    addClasses: "padded",
-  },
+    {
+      src: "https://media.giphy.com/media/5hq1mh1VHvFr1Bv5q5/giphy.mp4",
+      type: "video/mp4",
+      name: "Spinner Preloader",
+      id: "spinner-preloader-3-vid",
+      addClasses: "padded",
+    },
+  ],
 };
