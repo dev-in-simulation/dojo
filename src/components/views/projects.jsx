@@ -5,7 +5,7 @@ import ViewSection from "../template/viewSection";
 import ViewTitle from "../atoms/viewTitle";
 import PlayOnHover from "../molecules/playOnHover";
 import ParticleBackground from "../organisms/particleBackground";
-import { ProjectsConfig, experimentTestData } from "../helpers/pageConfig";
+import { ProjectsConfig, TinkeringData } from "../helpers/pageConfig";
 
 import Project from "../molecules/project";
 
@@ -18,14 +18,11 @@ function AllProjects(props) {
 }
 
 function Projects(props) {
-  const description =
-    "From SVG animations using Sass (preprocessed CSS) to React.js, Node.js, Socket.IO, and WebRTC. Check out a few of my latest projects.";
-
   return (
     <View id="projects" handleSetRef={props.handleSetRef}>
       <ViewSection>
-        <ViewTitle title="Projects" addClasses="show-sides" />
-        <p className="content-1">{description}</p>
+        <ViewTitle title={ProjectsConfig.title} addClasses="show-sides" />
+        <p className="content-1">{ProjectsConfig.description}</p>
       </ViewSection>
 
       <ViewSection addClasses="all-projects">
@@ -33,13 +30,11 @@ function Projects(props) {
       </ViewSection>
 
       <ViewSection addClasses="tinkering-work">
-        <h3 className="header-2">Tinkering</h3>
-        <p className="content-2">
-          These are a result of late-night tinkering. Tap / hover to animate!
-        </p>
-        <PlayOnHover mediaInfo={experimentTestData.preloader} />
-        <PlayOnHover mediaInfo={experimentTestData.menu} />
-        <PlayOnHover mediaInfo={experimentTestData.spinner} />
+        <h3 className="header-2">{TinkeringData.title}</h3>
+        <p className="content-2">{TinkeringData.description}</p>
+        <PlayOnHover mediaInfo={TinkeringData.preloader} />
+        <PlayOnHover mediaInfo={TinkeringData.menu} />
+        <PlayOnHover mediaInfo={TinkeringData.spinner} />
       </ViewSection>
 
       <ParticleBackground />

@@ -148,6 +148,9 @@ export const DownloadBtnConfig = {
 const ProjectsImgBase = "assets/projects/";
 
 export const ProjectsConfig = {
+  title: "Projects",
+  description:
+    "From SVG animations using Sass (preprocessed CSS) to React.js, Node.js, Socket.IO, and WebRTC. Check out a few of my latest projects.",
   allProjects: [
     {
       name: "Whisper",
@@ -309,7 +312,10 @@ export const NavbarConfig = {
   ],
 };
 
-export const experimentTestData = {
+export const TinkeringData = {
+  title: "Tinkering",
+  description: "The cards below animate on tap / hover.",
+
   menu: {
     src: "https://media.giphy.com/media/9DawXEUzWLcN2qzyX2/giphy.mp4",
     type: "video/mp4",
