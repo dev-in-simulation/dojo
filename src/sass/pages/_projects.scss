@@ -2,29 +2,27 @@
 
 .all-projects {
   //* mobile sizes
-  $projects-container-base: 300px, 1fr;
-  $projects-container-base-height: 260px, 1fr;
+  $project-max-width: 300px;
 
-  $project-max-width: 500px;
-
-  width: 100%;
   margin: 2rem 0;
   padding: 0.5rem;
 
-  display: grid;
-  //* allows the number of columns to be based on container size
-  grid-template-columns: minmax($projects-container-base);
-  grid-auto-rows: minmax($projects-container-base-height);
-
-  gap: 2rem 0; //* mobile
-  justify-items: stretch; //* mobile
-  align-items: stretch;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
 
   background: none;
   transition: all 1s;
 
   > .project {
+    flex: 1 1 280px;
     max-width: $project-max-width;
+    margin: 1rem;
+
+    .carousel-img {
+      object-fit: contain;
+    }
   }
 }
 
@@ -65,17 +63,11 @@
 //* large screen
 @media screen and (min-width: map-get($breakpoints, "small")) {
   .all-projects {
-    $projects-container-base-width: 360px, 0.95fr;
-    $projects-container-base-height: 300px, 1fr;
-
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax($projects-container-base-width)
-    );
-    grid-auto-rows: minmax($projects-container-base-height);
-
-    gap: 2rem;
-    justify-items: center;
+    > .project {
+      flex: 1 1 400px;
+      max-width: 480px;
+      margin: 1.5rem 1rem;
+    }
   }
 
   .tinkering-work {
