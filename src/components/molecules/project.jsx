@@ -1,5 +1,4 @@
 import React, { useState, useCallback } from "react";
-import Container from "../template/container";
 import Carousel from "./carousel";
 
 function ProjectDesc({ data }) {

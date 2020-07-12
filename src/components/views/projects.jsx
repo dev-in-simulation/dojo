@@ -10,11 +10,9 @@ import { ProjectsConfig, TinkeringData } from "../helpers/pageConfig";
 import Project from "../molecules/project";
 
 function AllProjects() {
-  const displayProjects = ProjectsConfig.allProjects.map((work) => (
+  return ProjectsConfig.allProjects.map((work) => (
     <Project key={work.name} data={work} />
   ));
-
-  return displayProjects;
 }
 
 //*  tinkering project videos
@@ -25,9 +23,6 @@ function VideoList() {
 }
 
 function Projects() {
-  console.log(
-    `\n\nTinkering data: ${JSON.stringify(TinkeringData.videos)}\n\n `
-  );
   return (
     <View id="projects">
       <ViewSection>
