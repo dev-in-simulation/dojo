@@ -4,6 +4,7 @@ import Navbar from "./components/organisms/navbar";
 import Homepage from "./components/views/homepage";
 import About from "./components/views/about";
 import Projects from "./components/views/projects";
+import Contact from "./components/views/contact";
 import Footer from "./components/organisms/footer";
 import { IconBtn } from "./components/atoms/btn";
 import { FABConfig } from "./components/helpers/pageConfig";
@@ -32,6 +33,7 @@ function App() {
       <Homepage handleSetRef={handleSetRef} />
       <About />
       <Projects />
+      <Contact />
       <IconBtn config={FABConfig} handleClick={handleScrollHome} />
       <Footer />
     </main>
