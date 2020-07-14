@@ -71,33 +71,18 @@ function Carousel(props) {
       </Container>
     );
   }
-  /*
 
   return (
     <Container id={props.id} addClasses="carousel">
       <CarouselNav handleClick={handleArrowNav} />
       <CarouselImg img={props.images[imgIndex]} />
+
       <Indicators
         activeIndex={imgIndex}
         totalIndicators={props.images.length}
         handleClick={handleIndicatorClick}
       />
     </Container>
-  );
-  */
-
-  return (
-    <React.Fragment>
-      <Container id={props.id} addClasses="carousel">
-        <CarouselNav handleClick={handleArrowNav} />
-        <CarouselImg img={props.images[imgIndex]} />
-      </Container>
-      <Indicators
-        activeIndex={imgIndex}
-        totalIndicators={props.images.length}
-        handleClick={handleIndicatorClick}
-      />
-    </React.Fragment>
   );
 }
 

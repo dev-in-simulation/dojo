@@ -50,6 +50,7 @@
   $indicator-bar-height: 1.5rem;
   $indicator-border: white;
   $indicator-hover-bg: white;
+  $indicator-bar-bg: hsla(0, 0%, 0%, 0.35);
 
   flex: 1 1 $indicator-bar-height;
   width: 100%;
@@ -61,7 +62,7 @@
   align-items: center;
 
   border: none;
-  background: inherit;
+  background: $indicator-bar-bg;
 
   > .indicator {
     cursor: pointer;
