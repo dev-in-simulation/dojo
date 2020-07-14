@@ -10,7 +10,7 @@ function About(props) {
   return (
     <View id="about">
       <ViewSection>
-        <ViewTitle title="About" addClasses="show-sides" />
+        <ViewTitle title="About" addClasses="page-title show-sides" />
 
         <p className="content-1">{config.description}</p>
         <p className="content-1">{config.description2}</p>

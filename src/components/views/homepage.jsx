@@ -11,7 +11,7 @@ function Homepage(props) {
   return (
     <View id="homepage" handleSetRef={props.handleSetRef}>
       <ViewSection>
-        <ViewTitle title="Homepage" addClasses="show-sides" />
+        <ViewTitle title="Homepage" addClasses="page-title show-sides" />
         <p className="content-1">{HomeConfig.briefDescription}</p>
       </ViewSection>
 

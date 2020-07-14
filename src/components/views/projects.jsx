@@ -4,9 +4,7 @@ import View from "../template/view";
 import ViewSection from "../template/viewSection";
 import ViewTitle from "../atoms/viewTitle";
 import PlayOnHover from "../molecules/playOnHover";
-import ParticleBackground from "../organisms/particleBackground";
 import { ProjectsConfig, TinkeringData } from "../helpers/pageConfig";
-
 import Project from "../molecules/project";
 
 function AllProjects() {
@@ -26,7 +24,10 @@ function Projects() {
   return (
     <View id="projects">
       <ViewSection>
-        <ViewTitle title={ProjectsConfig.title} addClasses="show-sides" />
+        <ViewTitle
+          title={ProjectsConfig.title}
+          addClasses="page-title show-sides"
+        />
         <p className="content-1">{ProjectsConfig.description}</p>
       </ViewSection>
 
@@ -46,8 +47,6 @@ function Projects() {
         <p className="content-2">{TinkeringData.description}</p>
         <VideoList />
       </ViewSection>
-
-      <ParticleBackground />
     </View>
   );
 }

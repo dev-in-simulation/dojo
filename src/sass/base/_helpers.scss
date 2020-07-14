@@ -76,7 +76,12 @@ a {
 
 //* displays marks on both sides of the title if .show-sides
 .header-1 {
-  margin: 2rem 0 1rem 0;
+  margin: 1rem 0;
+
+  &.page-title {
+    margin-bottom: 3rem;
+    //letter-spacing: 0.25rem;
+  }
 
   &.show-sides {
     $sides: (
@@ -111,19 +116,23 @@ a {
 
     &:before {
       left: -(map-get($sides, "width"));
-      transform: translate(-50%, 0%);
+      transform: translate(-65%, 0%);
     }
     &:after {
       right: -(map-get($sides, "width"));
-      transform: translate(50%, 0%);
+      transform: translate(65%, 0%);
     }
   }
 }
 
-.title {
-  margin: 0;
-  margin-top: 2rem;
+.content-1 {
+  width: 90%;
 }
+
+//?.title {
+//?margin: 0;
+//?margin-top: 2rem;
+//?}
 
 //*
 .view {
