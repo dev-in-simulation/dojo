@@ -204,16 +204,6 @@ export const ProjectsConfig = {
     },
 
     {
-      name: "GIF Component",
-      briefDescription: "Standalone GIF search",
-      techStack: ["React", "GIPHY API"],
-      role: "Side Project",
-      description:
-        "This GIF search component searches your queries through the GIPHY API.",
-      images: [],
-    },
-
-    {
       name: "Roulette",
       briefDescription: "Video chat app using WebRTC",
       techStack: ["Node.js", "WebRTC", "React", "Socket.IO", "Electron"],
@@ -231,6 +221,16 @@ export const ProjectsConfig = {
           alt: "example conversation in whisper app",
         },
       ],
+    },
+
+    {
+      name: "GIF Component",
+      briefDescription: "Standalone GIF search",
+      techStack: ["React", "GIPHY API"],
+      role: "Side Project",
+      description:
+        "This GIF search component searches your queries through the GIPHY API.",
+      images: [],
     },
 
     {

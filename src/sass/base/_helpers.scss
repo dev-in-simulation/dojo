@@ -149,6 +149,10 @@ a {
   &.centered {
     justify-content: center;
   }
+
+  &.width-xl {
+    max-width: $xl-view-width;
+  }
 }
 
 //* used to keep related content in .view together

@@ -30,7 +30,14 @@ function Projects() {
         <p className="content-1">{ProjectsConfig.description}</p>
       </ViewSection>
 
+      {/*
       <ViewSection addClasses="all-projects">
+        <AllProjects />
+      </ViewSection>
+
+      
+        */}
+      <ViewSection addClasses="test-all-projects">
         <AllProjects />
       </ViewSection>
 

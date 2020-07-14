@@ -77,6 +77,22 @@ body {
   @include font-setup-scale($font-min, $font-max);
 }
 
+.header-3 {
+  $font-max: 32px;
+  $font-min: 24px;
+
+  @include font-init(
+    $header-font-stack,
+    $font-max,
+    normal,
+    $weight-light,
+    4px,
+    1.5
+  );
+
+  @include font-setup-scale($font-min, $font-max);
+}
+
 //? page content setup
 //* all content specifiers are used with the content of the page,
 //* which amounts to everything other than the title

@@ -1,17 +1,7 @@
 import React, { useState, useCallback } from "react";
 import Carousel from "./carousel";
 
-function ProjectDesc({ data }) {
-  return (
-    <React.Fragment>
-      <p className="body is-size-1 project-role project-data">{data.role}</p>
-      <p className="body is-size-2 project-desc project-data">
-        {data.description}
-      </p>
-    </React.Fragment>
-  );
-}
-
+/*
 function Project({ data }) {
   const [showAll, setShowAll] = useState(false);
   let projectClasses = "project";
@@ -30,7 +20,6 @@ function Project({ data }) {
     [setShowAll]
   );
   //TODO check onEntered and onExit for CSSTransition
-
   return (
     <div className={projectClasses}>
       <Carousel
@@ -47,6 +36,36 @@ function Project({ data }) {
       <button className="btn content-toggle" onClick={handleShowAll}>
         {showAll ? "Collapse" : "More"}
       </button>
+    </div>
+  );
+}
+*/
+
+function Project({ data }) {
+  let projectClasses = "project";
+  let projectTechStack = data.techStack.join(" | ");
+
+  if (data.addClasses) {
+    projectClasses += ` ${data.addClasses.trim()}`;
+  }
+
+  return (
+    <div className={projectClasses}>
+      <Carousel
+        id={`${data.name.toLowerCase()}-carousel`}
+        images={data.images}
+      />
+      <h6 className="project-name header-3 weight--bold">{data.name}</h6>
+      <p className="project-tech-stack content-3 weight--light">
+        {projectTechStack}
+      </p>
+      <p className="project-brief-desc content-2 weight--light">
+        {data.description}
+      </p>
+
+      <p className="project-brief-desc2 content-2 weight--light">
+        {data.description}
+      </p>
     </div>
   );
 }

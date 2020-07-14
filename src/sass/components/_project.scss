@@ -56,7 +56,61 @@
 //!$project-bg: hsl(271, 54%, 67%);
 $project-bg: none;
 
+//?.test-all-projects {
+//?> .project {
+//?//?display: flex;
+//?//?flex-flow: row wrap;
+//?//?justify-content: flex-start;
+//?//?align-items: stretch;
+//?display: grid;
+//?background: green;
+
+//?.carousel {
+//?max-width: 350px;
+//?}
+
+//?.carousel-img {
+//?object-fit: contain;
+//?}
+//?}
+//?}
+
+//* testing new project layout
 .project {
+  //! MOBILE SETUP
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr auto auto;
+  grid-template-areas:
+    "carousel carousel"
+    "title ."
+    "brief-desc brief-desc";
+
+  gap: 1rem 0;
+  background: green;
+
+  > .carousel {
+    //max-width: 350px;
+    grid-area: carousel;
+
+    max-width: 600px;
+  }
+
+  > .project-name {
+    grid-area: title;
+    margin: 0;
+  }
+
+  > .project-brief-desc {
+    grid-area: brief-desc;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+//! commented out during testing of new layout
+//!.project {
+.old-project {
   //TODO TESTING TRANSITION
   @include anim-transition-setup();
 
