@@ -10,11 +10,8 @@ function getUpdatedIndex(classes, currIndex, max) {
   let index = currIndex;
 
   if (classes.includes("left")) {
-    console.log("\t - arrow left triggered");
-
     return index === 0 ? max : index - 1;
   } else if (classes.includes("right")) {
-    console.log("\t - arrow right triggered");
     return index === max ? 0 : index + 1;
   }
 
@@ -30,32 +27,22 @@ getUpdatedIndex.propTypes = {
 function Carousel(props) {
   const [imgIndex, setImgIndex] = useState(0); //* starting index used to display image
 
-  const handleIndicatorClick = useCallback(
-    (e) => {
-      console.log(`\n\nhandleIndicatorClick()`);
-
-      if (e.currentTarget) {
-        const id = e.currentTarget.id;
-        console.log(`\t - id: ${id}`);
-        console.log(`\t - img index: ${imgIndex}\n`);
-        setImgIndex(Number(e.currentTarget.id));
-      }
-    },
-    [imgIndex]
-  );
+  const handleIndicatorClick = useCallback((e) => {
+    if (e.currentTarget) {
+      const id = e.currentTarget.id;
+      setImgIndex(Number(id));
+    }
+  }, []);
 
   const handleArrowNav = useCallback(
     (e) => {
       let arrowClasses = e.currentTarget.className;
-      console.log(`\n\nhandleArrowNav() classes: ${arrowClasses}`);
 
       let updatedIndex = getUpdatedIndex(
         arrowClasses,
         imgIndex,
         props.images.length - 1
       );
-      console.log(`\t - previous index: ${imgIndex}`);
-      console.log(`\t - updatedIndex: ${updatedIndex}\n`);
 
       //TODO: update image index
       setImgIndex(updatedIndex);

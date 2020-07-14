@@ -1,10 +1,14 @@
+//* indicator bar height AND used as padding-bottom
+//* for carousel so it can be set to absolute pos.
+$indicator-bar-height: 1.5rem;
+
 .carousel {
   $carousel-img-bg: hsl(0, 1%, 16%);
   $nav-arrow-bg: hsla(0, 0%, 0%, 0.35);
 
   flex: 1 1 auto;
   min-height: 240px; //* based on image-min
-  //max-height: 380px; //* based on image-max
+  padding-bottom: $indicator-bar-height;
 
   position: relative;
   top: 0;
@@ -19,7 +23,6 @@
     display: inline-block;
     width: 100%;
     min-height: 240px;
-    //max-height: 380px;
     flex: 1 1 auto;
     object-fit: cover;
     background: $carousel-img-bg;
@@ -47,7 +50,6 @@
 }
 
 .indicators-wrapper {
-  $indicator-bar-height: 1.5rem;
   $indicator-border: white;
   $indicator-hover-bg: white;
   $indicator-bar-bg: hsla(0, 0%, 0%, 0.35);
@@ -55,6 +57,10 @@
   flex: 1 1 $indicator-bar-height;
   width: 100%;
   min-height: $indicator-bar-height;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
 
   display: flex;
   flex-flow: row nowrap;
