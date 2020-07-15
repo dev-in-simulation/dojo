@@ -5,7 +5,8 @@ export const HomeConfig = {
     "Here is some homepage placeholder text. Required to make sure everything formats correctly, doesn't clip, etc.",
   icon: {
     imgPath: "assets/icons/beaker.svg",
-    imgAlt: "default logo: a beaker I coded in svg",
+    imgAlt: "displays the beaker for homepage",
+    addClasses: "beaker-icon",
   },
 };
 
@@ -15,11 +16,23 @@ export const AboutConfig = {
     imgAlt: "displays the user page icon",
     addClasses: "user-icon",
   },
-  description:
+
+  description: `
+    The problem solving nature of coding drew me to it. This wizardry, limited only by
+    your imagination, gives you the power to create, without having to worry about all
+    those external variables irl.
+
+    I'm a coder. 
+
+    I tinker with programming languages, create [artwork, ,...] and [try to stay ,...]
+  `,
+  description4:
     "I'm a versatile Web Developer with experience in both the front-end and back-end of the development process.",
   description2:
     "Constantly looking to grow my skill set, specializing in React and mobile-first responsive design",
 
+  description3:
+    "I tend to have an interesting problem to solve or idea to code.",
   dailyDescription: "Day-to-day:",
   occasionalDescription: "Additional experience with:",
   iconsDaily: [
@@ -236,7 +249,7 @@ export const ProjectsConfig = {
     {
       name: "GIF Component",
       briefDescription: "Standalone GIF search",
-      techStack: ["React", "GIPHY API"],
+      techStack: ["React", "GIPHY API w/in-view lazy-loading"],
       role: "Side Project",
       description:
         "This GIF search component searches your queries through the GIPHY API.",
@@ -359,7 +372,7 @@ export const TinkeringData = {
   ],
 };
 
-export const ContactData = {
+export const ContactConfig = {
   pageIcon: {
     imgPath: "assets/icons/chatIcon.svg",
     imgAlt: "displays the chat page icon",

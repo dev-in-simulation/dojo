@@ -10,6 +10,9 @@ $breakpoints: (
   "large": 1200px,
 );
 
+//* content setup
+$content-max-width: px-to-rem(1000px);
+
 //* icon sizes based on media breakpoints
 $icon-small: (
   "size": 35px,
