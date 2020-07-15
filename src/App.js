@@ -31,8 +31,8 @@ function App() {
     <main id="app" className="App">
       <Navbar />
       <Homepage handleSetRef={handleSetRef} />
-      <About />
       <Projects />
+      <About />
       <Contact />
       <IconBtn config={FABConfig} handleClick={handleScrollHome} />
       <Footer />
