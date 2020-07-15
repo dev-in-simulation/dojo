@@ -6,6 +6,7 @@ import ViewTitle from "../atoms/viewTitle";
 import PlayOnHover from "../molecules/playOnHover";
 import { ProjectsConfig, TinkeringData } from "../helpers/pageConfig";
 import Project from "../molecules/project";
+import PageIcon from "../atoms/pageIcon";
 
 function AllProjects() {
   return ProjectsConfig.allProjects.map((work) => (
@@ -23,6 +24,7 @@ function VideoList() {
 function Projects() {
   return (
     <View id="projects">
+      <PageIcon data={ProjectsConfig.pageIcon} />
       <ViewSection>
         <ViewTitle
           title={ProjectsConfig.title}
