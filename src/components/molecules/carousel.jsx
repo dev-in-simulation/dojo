@@ -50,11 +50,16 @@ function Carousel(props) {
     [imgIndex, props.images]
   );
 
-  if (!props.images || !props.images.length) {
+  //* doesn't render arrow navigation or indicators if
+  //* < two images passed
+  if (props.images.length < 2) {
     return (
       <Container id={props.id} addClasses="carousel">
-        <CarouselNav handleClick={handleArrowNav} />
-        <CarouselImg img={null} />
+        {props.images.length ? (
+          <CarouselImg img={props.images[imgIndex]} />
+        ) : (
+          <CarouselImg img={null} />
+        )}
       </Container>
     );
   }
