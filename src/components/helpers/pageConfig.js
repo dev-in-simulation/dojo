@@ -10,6 +10,11 @@ export const HomeConfig = {
 };
 
 export const AboutConfig = {
+  pageIcon: {
+    imgPath: "assets/icons/userIcon.svg",
+    imgAlt: "displays the user page icon",
+    addClasses: "user-icon",
+  },
   description:
     "I'm a versatile Web Developer with experience in both the front-end and back-end of the development process.",
   description2:
@@ -149,6 +154,11 @@ const ProjectsImgBase = "assets/projects/";
 
 export const ProjectsConfig = {
   title: "Projects",
+  pageIcon: {
+    imgPath: "assets/icons/codeIcon.svg",
+    imgAlt: "displays the project page icon",
+    addClasses: "code-icon",
+  },
   description:
     "From SVG animations using Sass (preprocessed CSS) to React.js, Node.js, Socket.IO, and WebRTC. Check out a few of my latest projects.",
   allProjects: [
@@ -347,4 +357,12 @@ export const TinkeringData = {
       addClasses: "padded",
     },
   ],
+};
+
+export const ContactData = {
+  pageIcon: {
+    imgPath: "assets/icons/chatIcon.svg",
+    imgAlt: "displays the chat page icon",
+    addClasses: "chat-icon",
+  },
 };
