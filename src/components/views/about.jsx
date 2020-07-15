@@ -5,10 +5,12 @@ import ViewTitle from "../atoms/viewTitle";
 import View from "../template/view";
 import ViewSection from "../template/viewSection";
 import DisplayIcons from "../molecules/displayIcons";
+import PageIcon from "../atoms/pageIcon";
 
 function About(props) {
   return (
     <View id="about">
+      <PageIcon data={config.pageIcon} />
       <ViewSection>
         <ViewTitle title="About" addClasses="page-title show-sides" />
 
