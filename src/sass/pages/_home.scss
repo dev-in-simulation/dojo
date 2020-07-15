@@ -1,4 +1,13 @@
 //* file specific to homepage
 #homepage {
-  //background: $mid-purple;
+  background: $color-charcoal;
+  .view {
+    min-height: 85vh;
+  }
+
+  .page-icon {
+    &::after {
+      border-top-color: $dark-purple;
+    }
+  }
 }
