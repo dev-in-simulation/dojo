@@ -47,23 +47,14 @@ $logo-color: black;
   .node {
     stroke-width: 0.25;
     stroke-opacity: 1;
-    fill-opacity: 0.25;
+    fill-opacity: 0.5;
     fill: black;
 
     &.secondary {
       stroke-width: 0.2;
-      stroke-opacity: 1;
-      fill-opacity: 1;
-      //fill: none;
+      fill-opacity: 0.2;
     }
   }
-  //!.node {
-  //!stroke-width: 0.85;
-
-  //!&.secondary {
-  //!stroke-width: 0.5;
-  //!}
-  //!}
 }
 
 //@media screen and (min-width: map-get($breakpoints, "small")) {
