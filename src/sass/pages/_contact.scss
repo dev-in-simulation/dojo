@@ -1,0 +1,12 @@
+#contact {
+  $page-bg: #2b2d32;
+  $page-icon-bg: #8ba5f9;
+
+  background: $page-bg;
+
+  .page-icon {
+    &::after {
+      border-top-color: $page-icon-bg;
+    }
+  }
+}

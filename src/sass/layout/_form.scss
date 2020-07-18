@@ -1,0 +1,87 @@
+.form {
+  $form-bg: hsl(220, 8%, 23%);
+  $form-border: hsl(220, 8%, 20%);
+  $label-fg: hsl(213, 4%, 57%);
+  $input-border: #050505;
+  $legend-fg: hsl(213, 4%, 85%);
+  $input-border-focus: #8ba5f9;
+  $input-fg: whitesmoke;
+  $input-bg: #303339;
+
+  $input-submit-bg: #8ba5f9;
+  $input-submit-fg: white;
+
+  width: 90%;
+  max-width: 520px;
+  height: max-content;
+  margin: 1rem 0;
+  transition: all 0.5s;
+
+  fieldset {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 2rem 2rem;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 6px;
+
+    background: $form-bg;
+    border-color: $form-border;
+    box-shadow: 1px 1px 3px black;
+  }
+
+  legend {
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    color: $legend-fg;
+    border-radius: 4px;
+    padding: 0 0.5rem;
+  }
+
+  .label {
+    align-self: flex-start;
+    text-align: left;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    color: $label-fg;
+  }
+
+  .inputfield,
+  .textarea,
+  .form-submit {
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 3px;
+
+    border: 1px solid $input-border;
+    color: $input-fg;
+    outline-color: $input-border-focus;
+  }
+
+  .inputfield,
+  .textarea {
+    padding: 0.25rem 0.5rem;
+    background: $input-bg;
+    margin-bottom: 1rem;
+
+    &:focus {
+      outline: 1px solid $input-border-focus;
+    }
+  }
+
+  .form-submit {
+    cursor: pointer;
+    padding: 0.625rem 0.5rem;
+    color: $input-submit-fg;
+    background: $input-submit-bg;
+    font-weight: bold;
+    margin-top: 1.75rem;
+    letter-spacing: 0.05em;
+  }
+}

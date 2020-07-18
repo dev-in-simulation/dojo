@@ -8,6 +8,7 @@
 @import "base/helpers";
 
 @import "layout/navbar";
+@import "layout/form";
 @import "layout/footer";
 
 @import "./components/button";
@@ -17,5 +18,6 @@
 @import "./components/carousel";
 
 @import "./pages/home";
-@import "./pages/about";
 @import "./pages/projects";
+@import "./pages/about";
+@import "./pages/contact";
