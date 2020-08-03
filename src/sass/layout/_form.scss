@@ -8,8 +8,11 @@
   $input-fg: whitesmoke;
   $input-bg: #303339;
 
-  $input-submit-bg: #8ba5f9;
-  $input-submit-fg: white;
+  $input-submit-bg: #303339;
+  $input-submit-border: #8ba5f9;
+  $input-submit-bg-hover: #88a4f6;
+  $input-submit-fg: hsl(213, 4%, 85%);
+  $input-submit-fg-hover: hsl(220, 8%, 23%);
 
   width: 94%;
   max-width: 600px;
@@ -60,15 +63,15 @@
     border-radius: 3px;
 
     border: 1px solid $input-border;
-    color: $input-fg;
     outline-color: $input-border-focus;
   }
 
   .inputfield,
   .textarea {
     padding: 0.25rem 0.5rem;
-    background: $input-bg;
     margin-bottom: 1rem;
+    color: $input-fg;
+    background: $input-bg;
 
     &:focus {
       outline: 1px solid $input-border-focus;
@@ -80,8 +83,14 @@
     padding: 0.625rem 0.5rem;
     color: $input-submit-fg;
     background: $input-submit-bg;
-    font-weight: bold;
+    border: 1px solid $input-submit-border;
     margin-top: 1.75rem;
     letter-spacing: 0.05em;
+    transition: background 0.5s;
+
+    &:hover {
+      color: $input-submit-fg-hover;
+      background: $input-submit-bg-hover;
+    }
   }
 }

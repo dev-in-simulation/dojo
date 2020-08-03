@@ -84,7 +84,7 @@ function ContactForm() {
           required
         ></textarea>
 
-        <input className="form-submit" type="submit" />
+        <input className="form-submit weight--bold" type="submit" />
       </fieldset>
     </form>
   );
