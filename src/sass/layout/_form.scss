@@ -1,0 +1,150 @@
+.form {
+  $form-bg: hsl(220, 8%, 23%);
+  $form-border: hsl(220, 8%, 20%);
+  $label-fg: hsl(213, 4%, 57%);
+  $legend-fg: hsl(213, 4%, 85%);
+  $input-border: #050505;
+  $input-border-focus: #8ba5f9;
+  $input-border-outline: #8ba5f9;
+  $input-fg: whitesmoke;
+  $input-bg: #303339;
+
+  $input-submit-bg: #303339;
+  $input-submit-border: #8ba5f9;
+  $input-submit-bg-hover: #88a4f6;
+  $input-submit-fg: hsl(213, 4%, 85%);
+  $input-submit-fg-hover: hsl(220, 8%, 23%);
+
+  width: 94%;
+  max-width: 600px;
+  height: max-content;
+  margin: 1rem 0;
+  transition: all 0.5s;
+
+  fieldset {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 2rem 2rem;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 6px;
+
+    background: $form-bg;
+    border-color: $form-border;
+    box-shadow: 1px 1px 3px black;
+  }
+
+  legend {
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    color: $legend-fg;
+    border-radius: 4px;
+    padding: 0 0.5rem;
+  }
+
+  .label {
+    align-self: flex-start;
+    text-align: left;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    color: $label-fg;
+  }
+
+  .inputfield,
+  .textarea,
+  .form-submit {
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 3px;
+
+    border-width: 1px;
+    border-style: inset;
+    border-color: $input-border;
+
+    //!outline-width: 1px;
+    //!outline-style: inset;
+    //!outline-color: $input-border-outline;
+  }
+
+  .inputfield,
+  .textarea {
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 1rem;
+    color: $input-fg;
+    background: $input-bg;
+    transition: all 0.5s;
+    outline-width: 1px;
+    outline-color: $input-border-outline;
+
+    &:focus {
+      outline-style: inset;
+    }
+
+    &:valid {
+      &:focus {
+        outline-color: hsl(100, 100%, 50%);
+        border-bottom-color: hsl(100, 100%, 50%);
+      }
+    }
+  }
+
+  //!.textarea {
+  #msg-bodies {
+    overflow: auto;
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 200px;
+
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 1rem;
+    color: $input-fg;
+    background: $input-bg;
+    transition: background 0.5s;
+
+    &::before {
+      //content: "Writing a wizard, you are";
+      content: "Writing a wizard, you are";
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(50%, -50%);
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      font-weight: bold;
+      background: orange;
+    }
+  }
+
+  .form-submit {
+    cursor: pointer;
+    padding: 0.625rem 0.5rem;
+    color: $input-submit-fg;
+    background: $input-submit-bg;
+    border: 1px solid $input-submit-border;
+    margin-top: 1.75rem;
+    letter-spacing: 0.05em;
+    transition: background 0.5s;
+
+    &:hover,
+    &:focus {
+      color: $input-submit-fg-hover;
+      background: $input-submit-bg-hover;
+    }
+  }
+}

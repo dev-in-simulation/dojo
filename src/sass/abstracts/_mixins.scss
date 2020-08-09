@@ -1,3 +1,24 @@
+@mixin font-setup-scale($font-min: smaller, $font-max) {
+  @media only screen and (max-width: $min-view-width) {
+    font-size: $font-min;
+  }
+
+  @media only screen and (min-width: $min-view-width) {
+    font-size: calc(
+      #{$font-min} + #{strip-unit($font-max - $font-min)} *
+        (
+          (100vw - #{$min-view-width}) / #{strip-unit(
+              $max-view-width - $min-view-width
+            )}
+        )
+    );
+  }
+
+  @media only screen and (min-width: $max-view-width) {
+    font-size: $font-max;
+  }
+}
+
 @mixin font-init(
   $family,
   $size,
@@ -12,6 +33,31 @@
   font-weight: $weight;
   letter-spacing: $ltr-spacing;
   line-height: $line-height;
+
+  &.weight {
+    &--light {
+      font-weight: $weight-light;
+    }
+
+    &--normal {
+      font-weight: $weight-normal;
+    }
+
+    &--medium {
+      font-weight: $weight-medium;
+    }
+
+    &--bold {
+      font-weight: $weight-bold;
+    }
+  }
+}
+
+//* @params: $init (Map object) to assign attribute: value
+@mixin set-content($init) {
+  @each $attr, $value in $init {
+    #{$attr}: #{$value};
+  }
 }
 
 //* scrollbar styling setup

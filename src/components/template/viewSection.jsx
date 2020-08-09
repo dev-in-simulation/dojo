@@ -19,6 +19,7 @@ function ViewSection(props) {
 ViewSection.propTypes = {
   props: PropTypes.shape({
     id: PropTypes.string,
+    addClasses: PropTypes.string,
   }),
 };
 

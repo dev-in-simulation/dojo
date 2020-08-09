@@ -1,0 +1,175 @@
+//* @params
+//!   $prefix: name used to identify transition
+//*      - format: #{$prefix}-#{$id}
+//*      - ex. where 'project' is $prefix: project-on-enter, project-on-enter-active
+//!   $transition-data: all attributes being set for the selector
+@mixin set-transition-on-parent($prefix, $transition-data) {
+  @each $id, $idAttributes in $transition-data {
+    &.#{$prefix}-#{$id} {
+      @debug "";
+      @debug "";
+      @debug ".#{prefix}-#{$id}";
+      @each $attr, $attrVal in $idAttributes {
+        #{$attr}: #{$attrVal};
+        @debug "- #{$attr}: #{$attrVal}";
+      }
+    }
+  }
+}
+
+@mixin anim-transition-setup {
+  $transition-wrapper-duration: 1s;
+
+  $anim-base: (
+    "min-width": 80px,
+    "width": 90%,
+    "max-width": 320px,
+  );
+
+  $anim-active: (
+    "min-width": 200px,
+    "width": 20%,
+    "max-width": 600px,
+  );
+
+  &.anim-enter,
+  &.anim-appear {
+    @include set-content($anim-base);
+  }
+
+  &.anim-enter-active,
+  &.anim-appear-active {
+    @include set-content($anim-active);
+    transition: all $transition-wrapper-duration;
+  }
+
+  &.anim-exit {
+    @include set-content($anim-active);
+  }
+
+  &.anim-exit-active {
+    @include set-content($anim-base);
+    transition: all $transition-wrapper-duration;
+  }
+}
+
+//!$project-bg: hsl(271, 54%, 67%);
+$project-bg: none;
+
+//?.test-all-projects {
+//?> .project {
+//?//?display: flex;
+//?//?flex-flow: row wrap;
+//?//?justify-content: flex-start;
+//?//?align-items: stretch;
+//?display: grid;
+//?background: green;
+
+//?.carousel {
+//?max-width: 350px;
+//?}
+
+//?.carousel-img {
+//?object-fit: contain;
+//?}
+//?}
+//?}
+
+//* testing new project layout
+.project {
+  //! MOBILE SETUP
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr auto auto;
+  grid-template-areas:
+    "carousel carousel"
+    "title ."
+    "brief-desc brief-desc";
+
+  gap: 1rem 0;
+  background: green;
+
+  > .carousel {
+    //max-width: 350px;
+    grid-area: carousel;
+
+    max-width: 600px;
+  }
+
+  > .project-name {
+    grid-area: title;
+    margin: 0;
+  }
+
+  > .project-brief-desc {
+    grid-area: brief-desc;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+//! commented out during testing of new layout
+//!.project {
+.old-project {
+  //TODO TESTING TRANSITION
+  @include anim-transition-setup();
+
+  padding: 0;
+  border: none;
+  border-radius: 0.5rem;
+  text-align: justify;
+  overflow: hidden;
+  width: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  transition: all 1s;
+  box-shadow: 1px 1px 2px 1px black;
+  background: $project-bg;
+
+  &.toggled-off {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    > * {
+      white-space: inherit;
+      text-overflow: inherit;
+      overflow: inherit;
+    }
+  }
+
+  &.toggled-on {
+    > .project-data {
+      white-space: normal;
+      overflow: visible;
+    }
+  }
+
+  > .project-name,
+  > .project-brief-desc {
+    margin: 0;
+    padding: 0 0.5rem;
+    margin-bottom: 0.25rem;
+    width: 100%;
+  }
+
+  > .project-name {
+    margin-top: 0.75rem;
+  }
+
+  > .project-brief-desc {
+    font-size: 90%;
+  }
+
+  > .content-toggle {
+    align-self: flex-end;
+  }
+
+  > .project-data {
+    max-width: 85%;
+    width: calc($project-max-width - 4rem);
+  }
+}

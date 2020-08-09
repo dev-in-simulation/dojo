@@ -9,6 +9,7 @@ body {
 body {
   width: 100%;
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 
 p {
@@ -35,6 +36,7 @@ a {
 
   overflow-x: hidden;
   overflow-y: auto;
+  scroll-behavior: smooth;
 
   //* keeps .view centered since it's width is capped
   display: flex;
@@ -62,21 +64,32 @@ a {
   width: 100%;
   height: max-content;
   margin: 0;
-  padding: 5rem 0;
+
+  //! modifying for page icons
+  //padding: 5rem 0;
+  padding: 0;
 
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
 
   background: $theme-primary-bg;
+  //margin-bottom: 1rem;
 }
 
 //* displays marks on both sides of the title if .show-sides
-.title {
+.header-1 {
+  margin: 1rem 0;
+
+  &.page-title {
+    margin-bottom: 3rem;
+    //letter-spacing: 0.25rem;
+  }
+
   &.show-sides {
     $sides: (
-      "width": 3rem,
-      "height": 0.35rem,
+      "width": 1rem,
+      "height": 0.45rem,
     );
 
     width: max-content;
@@ -85,8 +98,6 @@ a {
     position: relative;
     top: 0;
     left: 0;
-    margin: 0;
-    margin-top: 2rem;
     padding: 0;
 
     &:before,
@@ -103,25 +114,36 @@ a {
       background: none;
       margin: 0;
       padding: 0;
-      border: 2px solid $theme-on-primary;
+      border: 1px solid $theme-on-primary;
     }
 
     &:before {
       left: -(map-get($sides, "width"));
-      transform: translate(-50%, 0%);
+      transform: translate(-65%, 0%);
     }
     &:after {
       right: -(map-get($sides, "width"));
-      transform: translate(50%, 0%);
+      transform: translate(65%, 0%);
     }
   }
 }
+
+.content-1 {
+  width: 85%;
+  max-width: $content-max-width;
+}
+
+//?.title {
+//?margin: 0;
+//?margin-top: 2rem;
+//?}
 
 //*
 .view {
   position: relative;
   top: 0;
   left: 0;
+  padding-bottom: 2.5rem;
 
   max-width: $max-view-width;
   width: 100%;
@@ -131,6 +153,8 @@ a {
   flex-flow: column nowrap;
   align-items: center;
   background: none;
+  transition: all ease 1.5s;
+  //transition: background ease 2s;
 
   &:nth-of-type(2n) {
     background: green;
@@ -139,13 +163,20 @@ a {
   &.centered {
     justify-content: center;
   }
+
+  &.width-xl {
+    max-width: $xl-view-width;
+  }
 }
 
 //* used to keep related content in .view together
 //* stays width of parent, but height grows based on content
-.view-section {
+
+.view-section,
+.container {
   z-index: 1;
   width: 100%;
+  //TODO background-clip: ;
   height: max-content;
   margin: 0;
   padding: 0;
@@ -160,8 +191,19 @@ a {
   }
 }
 
+.container {
+  &.flex-row {
+    flex-flow: row nowrap;
+  }
+}
+
 .debug {
   border: 2px dashed red;
+}
+
+.error {
+  border-color: red !important;
+  outline-color: red !important;
 }
 
 .particle-bg {

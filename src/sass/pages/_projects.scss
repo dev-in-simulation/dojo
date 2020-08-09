@@ -1,0 +1,239 @@
+//* styles specific to the projects page
+
+#projects {
+  //max-width: $xl-view-width;
+  background: #2c3037;
+  color: $theme-on-primary;
+
+  > .view {
+    max-width: $xl-view-width;
+    //width: 100%;
+
+    > .test-all-projects {
+      //width: 100%;
+    }
+
+    > .tinkering-work {
+      max-width: $max-view-width;
+      //width: 100%;
+    }
+  }
+}
+
+//! commented out during testing of new layout
+.all-projects {
+  //* mobile sizes
+  $project-max-width: 300px;
+
+  margin: 2rem 0;
+  padding: 0.5rem;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  background: none;
+  transition: all 1s;
+
+  > .project {
+    flex: 1 1 280px;
+    max-width: $project-max-width;
+    margin: 1rem;
+
+    .carousel-img {
+      object-fit: contain;
+    }
+  }
+}
+
+.test-all-projects {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 1 1 auto;
+
+  //!> .project {
+  //!//!flex: 1 1 280px;
+  //!//max-width: 300px;
+
+  //!//! used ONLY WITH LARGE SCREEN
+  //!//* alternates project placement between the left / right sides
+  //!&:nth-child(even) {
+  //!align-self: flex-end;
+  //!background: orange;
+  //!}
+
+  //!> .carousel {
+  //!max-width: 500px;
+  //!}
+  //!}
+}
+
+//* MOBILE PROJECT SETUP
+.project {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "carousel carousel"
+    "tech-stack tech-stack"
+    "title title"
+    "description description"
+    "description2 description2";
+  //background: green;
+
+  gap: 0.25rem 0;
+  margin: 5rem 0;
+
+  &:nth-child(even) {
+    align-self: flex-end;
+  }
+
+  > .carousel {
+    grid-area: carousel;
+    max-width: 600px;
+  }
+
+  > .project-name {
+    grid-area: title;
+    text-align: left;
+    margin: 0 1rem;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+  }
+
+  > .project-tech-stack {
+    grid-area: tech-stack;
+    border-bottom: 1px solid $theme-on-primary;
+  }
+
+  > .project-brief-desc,
+  > .project-brief-desc2 {
+    max-width: 600px;
+    width: 90%;
+    margin: 0 1rem;
+    text-align: left;
+  }
+
+  > .project-brief-desc {
+    grid-area: description;
+  }
+
+  > .project-brief-desc2 {
+    grid-area: description2;
+    margin-top: 1rem;
+  }
+}
+
+.tinkering-work {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  > .media-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 0;
+    margin: 0.625rem;
+    max-width: 225px;
+    border: 1px solid $theme-primary-bg;
+    border-radius: px-to-rem(6px);
+    overflow: hidden;
+
+    //* reduces video size
+    &.padded {
+      > video {
+        padding: 1rem;
+      }
+    }
+
+    > video {
+      width: 100%;
+      height: 260px;
+      background: black;
+      object-fit: cover;
+    }
+  }
+}
+
+//* large screen
+@media screen and (min-width: map-get($breakpoints, "small")) {
+  .tinkering-work {
+    > .media-container {
+      max-width: 320px;
+      padding: 0.25rem;
+      margin: 1rem;
+
+      > video {
+        width: 100%;
+        height: 360px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: map-get($breakpoints, "medium")) {
+  .project {
+    grid-template-areas:
+      "carousel ."
+      "carousel title"
+      "carousel tech-stack"
+      "carousel description"
+      "carousel description2"
+      "carousel .";
+
+    gap: 0.5rem 2rem;
+
+    &:nth-child(even) {
+      //background: cadetblue;
+      justify-items: end;
+      grid-template-areas:
+        ". carousel"
+        "title carousel"
+        "tech-stack carousel"
+        "description carousel"
+        "description2 carousel"
+        ". carousel";
+
+      > .project-name {
+        text-align: right;
+      }
+
+      > .project-tech-stack {
+        text-align: right;
+        margin-right: 1rem;
+        margin: 0;
+      }
+
+      > .project-brief-desc,
+      > .project-brief-desc2 {
+        text-align: right;
+        margin: 0;
+        margin-top: 1.5rem;
+      }
+    }
+
+    > .project-name {
+      margin: 0;
+      //margin-top: 1rem;
+    }
+
+    > .project-tech-stack {
+      text-align: left;
+      margin-left: 1rem;
+      margin: 0;
+    }
+
+    > .project-brief-desc,
+    > .project-brief-desc2 {
+      margin: 0;
+      margin-top: 1.5rem;
+    }
+  }
+}

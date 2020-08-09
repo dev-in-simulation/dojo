@@ -1,0 +1,105 @@
+//* used to display the icon that sits at the top
+//* of each page
+
+//* default page icon container background
+$icon-container-bg: #757575;
+
+@mixin page-icon-size($class, $img-percentage, $top: 0) {
+  &#{$class} {
+    > img {
+      width: $img-percentage;
+      height: $img-percentage;
+
+      @if $top != 0 {
+        top: $top;
+      }
+    }
+  }
+}
+
+@mixin page-icon-container-size(
+  $container-size,
+  $lwidth: 1.1,
+  $rwidth: 1.1,
+  $twidth: 0.9,
+  $bg: null
+) {
+  width: $container-size;
+  height: $container-size;
+
+  &::after {
+    border-left-width: ($container-size * $lwidth);
+    border-right-width: ($container-size * $rwidth);
+    border-top-width: ($container-size * $twidth);
+
+    @if $bg != null {
+      border-top-color: $bg !important;
+    }
+  }
+}
+
+//* container for page icon
+.page-icon {
+  $icon-container-size: px-to-rem(165px);
+  $icon-img-percentage: 50%;
+
+  width: $icon-container-size;
+  height: $icon-container-size;
+  padding: 0.5rem;
+  margin: 0;
+
+  position: relative;
+  top: 0;
+  left: 0;
+  transform-origin: center;
+  z-index: 0;
+  overflow: none;
+  transition: all 1s;
+
+  //* used as background of page icon, absolute pos. for transforms
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform-origin: center;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border: none;
+    border-left: ($icon-container-size * 1.1) solid transparent;
+    border-right: ($icon-container-size * 1.1) solid transparent;
+    border-top: ($icon-container-size * 0.9) solid $icon-container-bg;
+    transition: inherit;
+  }
+
+  //* page icon image
+  > img {
+    width: $icon-img-percentage;
+    height: $icon-img-percentage;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding-bottom: 0.25rem;
+  }
+
+  @include page-icon-size(".beaker-icon", 68%, -2%);
+  @include page-icon-size(".user-icon", 62%);
+  @include page-icon-size(".code-icon", 82%, -4%);
+  @include page-icon-size(".chat-icon", 70%);
+}
+
+@media screen and (min-width: map-get($breakpoints, "small")) {
+  .page-icon {
+    $icon-container-size: px-to-rem(200px);
+    @include page-icon-container-size($icon-container-size);
+  }
+}
+
+@media screen and (min-width: map-get($breakpoints, "large")) {
+  .page-icon {
+    $icon-container-size: px-to-rem(260px);
+    @include page-icon-container-size($icon-container-size);
+  }
+}

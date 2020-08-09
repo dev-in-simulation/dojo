@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //* icon sizes based on media breakpoints
 $icon-small: (
   "size": 35px,
@@ -17,11 +18,14 @@ $icon-large: (
   "margin": 0 1.15rem,
 );
 
+=======
+>>>>>>> inbf-transfer-backup
 //* container holding all social icons
 .display-icons-container {
   width: 100%;
   height: 100%;
   margin: 0.25rem;
+  margin-top: 1.5rem;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -31,7 +35,10 @@ $icon-large: (
 //* container holds in individual icon
 .icon-container {
   cursor: pointer;
+<<<<<<< HEAD
   display: inline-block;
+=======
+>>>>>>> inbf-transfer-backup
   width: map-get($icon-small, "size");
   height: map-get($icon-small, "size");
   margin: map-get($icon-small, "margin");
@@ -47,6 +54,16 @@ $icon-large: (
     padding: map-get($icon-small, "padding");
   }
 
+<<<<<<< HEAD
+=======
+  //?&.page {
+  //?display: inline-block; //* controlled
+  //?max-width: 100%;
+  //?height: auto;
+  //?background: red;
+  //?}
+
+>>>>>>> inbf-transfer-backup
   &.named {
     height: max-content;
     position: relative;

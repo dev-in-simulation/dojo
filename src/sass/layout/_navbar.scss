@@ -1,0 +1,108 @@
+$nav-height: 72px;
+$nav-bg: $color-charcoal;
+$nav-fg: $near-white;
+$nav-logo-size: 48px; //*same for height/width
+$nav-highlight-border-hover: $near-white;
+$nav-highlight-border-active: red;
+
+$nav-highlight-clip-start: 0;
+$nav-highlight-clip-end: 100%;
+
+@mixin nav-link-highlight {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: $nav-height;
+  background: none;
+  border: none;
+  border-bottom: 0.25rem solid $nav-highlight-border-hover;
+  z-index: 10;
+  transform: translateY(calc(-1.5rem));
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: $nav-height;
+  height: $nav-height;
+  background: $nav-bg;
+  z-index: 100;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  background: $nav-bg;
+
+  .nav-link {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    margin: 0 0.8rem;
+    text-decoration: none;
+    color: $nav-fg;
+    background: none;
+    border: none;
+    transition: all 0.5s ease-out;
+
+    &::before {
+      @include nav-link-highlight();
+      clip-path: polygon(
+        0 0,
+        $nav-highlight-clip-start 0,
+        $nav-highlight-clip-start 100%,
+        0 100%
+      );
+      transition: all 0.5s ease-out;
+    }
+
+    &:visited {
+      color: $nav-fg;
+    }
+    &:hover {
+      &::before {
+        @include nav-link-highlight();
+        clip-path: polygon(
+          0 0,
+          $nav-highlight-clip-end 0,
+          $nav-highlight-clip-end 100%,
+          0 100%
+        );
+
+        transition: all 0.25s ease-out;
+      }
+    }
+  }
+
+  .logo {
+    height: $nav-logo-size;
+    width: $nav-logo-size;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  > .nav-pages {
+    width: max-content;
+    height: 100%;
+    //font-size: 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    > .nav-link {
+      letter-spacing: 0.1rem;
+      @include font-setup-scale(0.9rem, 1.1rem);
+      padding: 0 0;
+    }
+  }
+}

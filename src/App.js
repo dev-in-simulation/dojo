@@ -1,30 +1,41 @@
-import React, { lazy, Suspense } from "react";
-import { Route, Switch } from "react-router-dom";
+import React, { useRef } from "react";
 
-import Loading from "./components/views/loading";
-//! testing only
+import Navbar from "./components/organisms/navbar";
+import Homepage from "./components/views/homepage";
+import About from "./components/views/about";
+import Projects from "./components/views/projects";
+import Contact from "./components/views/contact";
 import Footer from "./components/organisms/footer";
-
-const Homepage = lazy(() => import("./components/views/homepage"));
-const About = lazy(() => import("./components/views/about"));
-const NoMatch = lazy(() => import("./components/views/noMatch"));
+import { IconBtn } from "./components/atoms/btn";
+import { FABConfig } from "./components/helpers/pageConfig";
 
 function App() {
-  return (
-    <main className="App">
-      <Suspense fallback={<Loading />}>
-        <Switch>
-          <Route exact path="/">
-            <Homepage />
-            <About />
-            <Footer />
-          </Route>
+  const scrollToTopRef = useRef(null);
 
-          <Route>
-            <NoMatch />
-          </Route>
-        </Switch>
-      </Suspense>
+  function handleSetRef(el) {
+    if (!scrollToTopRef.current) {
+      scrollToTopRef.current = el;
+    }
+  }
+
+  function handleScrollHome(e) {
+    e.preventDefault();
+
+    if (scrollToTopRef.current) {
+      //* confirm reference exists
+      scrollToTopRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
+  return (
+    <main id="app" className="App">
+      <Navbar />
+      <Homepage handleSetRef={handleSetRef} />
+      <Projects />
+      <About />
+      <Contact />
+      <IconBtn config={FABConfig} handleClick={handleScrollHome} />
+      <Footer />
     </main>
   );
 }

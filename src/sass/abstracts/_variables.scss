@@ -1,10 +1,35 @@
 //* .view container setup
+$min-view-width: 380px; //* min content width in .view
 $max-view-width: 1200px; //* max content width in .view
+$xl-view-width: 1600px; //* max content width in .view
 
 //* screen breakpoints
 $breakpoints: (
+  "small": 420px,
   "medium": 800px,
   "large": 1200px,
+);
+
+//* content setup
+$content-max-width: px-to-rem(1000px);
+
+//* icon sizes based on media breakpoints
+$icon-small: (
+  "size": 35px,
+  "padding": 0.25rem,
+  "margin": 0 0.85rem,
+);
+
+$icon-mid: (
+  "size": 40px,
+  "padding": 0.3rem,
+  "margin": 0 1rem,
+);
+
+$icon-large: (
+  "size": 45px,
+  "padding": 0.3rem,
+  "margin": 0 1.15rem,
 );
 
 //* font-based variables
@@ -17,7 +42,7 @@ $weight-bold: 700;
 
 //* base colors
 $near-white: hsl(0, 0%, 90%);
-$color-charcoal: #343434;
+$color-charcoal: hsla(0, 0%, 20%, 0.9); //#343434; ;
 $color-charcoal-fade: hsl(0, 0%, 35%);
 $color-light-purple: #84a9df;
 $color-dark-purple: #5788cf;
@@ -29,6 +54,29 @@ $dark-purple: hsl(239, 36%, 69%);
 
 //! TESTING
 $DEBUG: true;
+$theme1-bright-purple: #6300e6;
+$theme1-lightest: #e0ccf9;
+$p-theme-lightest: #d4b6f7;
+$p-theme-light3: #c8a3f5;
+$p-theme-outline: #9c5eef;
+$p-theme-accent: green;
+
+//! old primary theme
+$p-theme-primary: $p-theme-outline;
+//*$p-theme-primary-fade: hsla(266, 82%, 65%, 0.35);
+//*$p-theme-primary-hover: $p-theme-light3;
+//*$p-theme-on-primary: $p-theme-lightest;
+//*$p-theme-text-on-accent: green;
+
+//TODO: that new-new theme
+//$p-theme-primary-fade: hsla(117, 100%, 50%, 0.1);
+$p-theme-primary-fade: hsla(255, 100%, 50%, 0.1);
+$p-theme-primary-fade-outline: hsla(207, 100%, 85%, 0.5);
+$p-theme-on-primary: hsla(11, 100%, 50%, 0.5);
+$p-theme-primary-hover: yellow; //hsla(50, 85%, 60%, 0.25);
+
+$p-theme-text-on-accent: green;
+
 $lightest-test: #fcfcff;
 $light-test: #e3e4f5;
 $mid-test: #bdbfe3;
@@ -38,17 +86,19 @@ $light-text-test: $lightest-test;
 
 $theme-primary: gray; //* sets the text color to the theme primary color
 $theme-primary-bg: $dark-purple; //* sets background color to theme primary color
-$theme-on-primary: $color-charcoal; //* sets text color to color configured for text ON primary color
+//!$theme-on-primary: $color-charcoal; //* sets text color to color configured for text ON primary color
+$theme-on-primary: whitesmoke; //* sets text color to color configured for text ON primary color
 
 $theme-secondary: gray; //* sets the text color to the theme secondary color
-$theme-secondary-bg: $mid-purple; //* sets background color to theme secondary color
+//$theme-secondary-bg: $mid-purple; //* sets background color to theme secondary color
+$theme-secondary-bg: #36393f;
 $theme-on-secondary: $color-charcoal; //* sets text color to color configured for text ON secondary color
 
 $theme-surface: gray; //* sets background color to the surface background color
 $theme-on-surface: gray; //* sets text color to the configured color for text on the surface color
 $theme-background: gray; //* sets the background color to the theme background color
 
-$theme-icon-bg: $light-purple; //* sets background color to theme icon
+$theme-icon-bg: $dark-test; //$dark-purple; //* sets background color to theme icon
 
 //* logo
 $logo-size: 200px; //* used for both width and height

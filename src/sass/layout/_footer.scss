@@ -1,20 +1,30 @@
-.footer-view {
-  padding: 2rem 0;
-  background: $theme-secondary-bg;
-}
-
-.footer {
+#footer {
+  padding: 1rem 0;
   margin: 0;
-  padding: 0;
+  background: $theme-secondary-bg;
 
-  color: $theme-on-secondary;
-
-  > .closing-words {
-    margin: 0;
-    margin-bottom: 1.5rem;
+  .icon-link {
+    img {
+      filter: invert(1);
+    }
   }
 
-  > .copyright {
-    margin: 1.25rem 0;
+  > .view-section {
+    margin: 0;
+    padding: 0;
+    color: $theme-on-secondary;
+
+    > .closing-words {
+      margin: 0;
+      //margin-bottom: 1rem;
+      color: white;
+      color: $lightest-purple;
+      letter-spacing: 0.15em;
+    }
+
+    > .copyright {
+      margin: 1.25rem 0;
+      color: white;
+    }
   }
 }

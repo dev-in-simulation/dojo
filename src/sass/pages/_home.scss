@@ -1,4 +1,80 @@
 //* file specific to homepage
+//$logo-color: #61dafb;
+$logo-color: black;
 #homepage {
-  //background: $mid-purple;
+  background: $dark-purple;
+  .view {
+    min-height: 90vh;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .page-icon {
+    &::after {
+      border-top-color: $dark-purple;
+    }
+  }
 }
+
+.svg-logo {
+  //max-width: 460px;
+  max-width: 480px;
+  width: 60%;
+  height: auto;
+
+  stroke: $logo-color;
+  fill: none;
+  stroke-opacity: 1;
+  transition: all 0.5s;
+
+  .main-bar,
+  .secondary-bar {
+    stroke-opacity: 1;
+    stroke: black;
+  }
+
+  .main-bar {
+    stroke-width: 0.35;
+  }
+
+  .secondary-bar {
+    stroke-width: 0.25;
+  }
+
+  .node {
+    stroke-width: 0.25;
+    stroke-opacity: 1;
+    fill-opacity: 0.5;
+    fill: black;
+
+    &.secondary {
+      stroke-width: 0.2;
+      fill-opacity: 0.2;
+    }
+  }
+}
+
+//@media screen and (min-width: map-get($breakpoints, "small")) {
+//.svg-logo {
+//max-width: 420px;
+//width: 65%;
+//background: green;
+//}
+//}
+
+//@media screen and (min-width: map-get($breakpoints, "medium")) {
+//.svg-logo {
+//max-width: 460px;
+//background: purple;
+//}
+//}
+
+//@media screen and (min-width: map-get($breakpoints, "large")) {
+//.svg-logo {
+//background: orange;
+//max-width: 600px;
+//}
+//}

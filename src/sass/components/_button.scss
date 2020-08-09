@@ -1,0 +1,196 @@
+$btn-def: (
+  "base": (
+    "width": 120px,
+    "height": 50px,
+    "padding": 0 12px,
+    "border-radius": 6px,
+    "border-color": $p-theme-outline,
+    "color": #efefee,
+    "background": $p-theme-primary-fade,
+  ),
+  "hover": (
+    "background": $p-theme-primary,
+  ),
+);
+
+$btn-outline: (
+  "bg": none,
+  "bg-on-hover": map-get($btn-def, "background"),
+);
+
+$btn-fab: (
+  "base": (
+    "width": 40px,
+    "height": 40px,
+    "transform": translate(-40px, -40px * 1.5),
+    "padding": 0.3rem,
+    "border-radius": 50%,
+    "z-index": 10,
+    "color": red,
+    //$p-theme-text-on-accent,
+      "scroll-behavior": smooth,
+    "background": $p-theme-primary-fade,
+    "transition": all 0.45s,
+  ),
+  "hover": (
+    "background": $p-theme-primary,
+  ),
+  "img": (
+    "max-width": 100%,
+    "width": 100%,
+    "height": auto,
+  ),
+);
+
+$btn-icon-text: (
+  "base": (
+    "width": max-content,
+    "height": 40px,
+    "padding": 0.25rem 0.75rem,
+  ),
+  "icon": (
+    "padding": 0,
+    "padding-right": 0.5rem,
+    "filter": invert(0.95),
+  ),
+);
+
+$btn-content-toggle: (
+  "width": 90px,
+  "min-height": max-content,
+  "border": 1px inset $p-theme-primary-fade-outline,
+  "background": none,
+  "padding": 8px,
+);
+
+//*
+@mixin btn-center-expand($bg) {
+  &::before {
+    content: "";
+    box-shadow: 1px 1px 2px 4px red;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: map-get($btn-def, "background");
+    clip-path: circle(0%);
+    transition: inherit;
+    opacity: 0.25;
+  }
+
+  &:hover {
+    &::before {
+      clip-path: circle(100%);
+      //clip-path: inset(100% 100% 100% 100%);
+      opacity: 1;
+    }
+  }
+}
+
+.btn {
+  $base: map-get($btn-def, "base");
+  $hover: map-get($btn-def, "hover");
+  @include set-content($base);
+  //@include set-content($btn-def);
+
+  //&.logo {
+  //width: 32px;
+  //height: 32px;
+  //padding: 0;
+  //margin: 0;
+  //border: none;
+
+  //> .btn-icon {
+  //display: inline-block;
+  //max-width: 100%;
+  //width: 100%;
+  //height: auto;
+  //}
+  //}
+
+  &.outline {
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: all 0.45s;
+    //background: map-get($btn-outline, "bg");
+
+    //@include btn-center-expand(map-get($hover, "background"));
+    @include btn-center-expand(map-get($btn-outline, "bg-on-hover"));
+  }
+
+  //* the "read more" button that toggles content
+  &.content-toggle {
+    @include set-content($btn-content-toggle);
+  }
+
+  &.arrow {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    margin: 0;
+    transform-origin: center;
+    border: none;
+    background: none;
+
+    opacity: 0.4;
+    transition: all 1.5s ease-out;
+
+    &:hover {
+      opacity: 1;
+      transition: all 0.5s ease-out;
+    }
+
+    //* rotates icon to use for both left / right
+    &.left {
+      transform: rotateY(180deg);
+    }
+
+    > img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.icon-text {
+  $base: map-get($btn-icon-text, "base");
+  $icon: map-get($btn-icon-text, "icon");
+
+  @include set-content($base);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  > .btn-icon {
+    @include set-content($icon);
+  }
+}
+
+.fab {
+  @include set-content(map-get($btn-fab, "base"));
+
+  &.scroll-to-top {
+    position: fixed;
+    top: 100%;
+    right: 0;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &:hover {
+    @include set-content(map-get($btn-fab, "hover"));
+  }
+
+  > img {
+    filter: invert(1);
+    @include set-content(map-get($btn-fab, "img"));
+  }
+}

@@ -1,0 +1,89 @@
+//* indicator bar height AND used as padding-bottom
+//* for carousel so it can be set to absolute pos.
+$indicator-bar-height: 1.5rem;
+
+.carousel {
+  $carousel-img-bg: hsl(0, 1%, 16%);
+  $nav-arrow-bg: hsla(0, 0%, 0%, 0.35);
+
+  flex: 1 1 auto;
+  min-height: 240px; //* based on image-min
+  padding-bottom: $indicator-bar-height;
+
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+
+  > .carousel-img {
+    display: inline-block;
+    width: 100%;
+    min-height: 240px;
+    flex: 1 1 auto;
+    object-fit: cover;
+    background: $carousel-img-bg;
+  }
+
+  > .carousel-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0 0.25rem;
+
+    > .arrow {
+      background: $nav-arrow-bg;
+    }
+  }
+}
+
+.indicators-wrapper {
+  $indicator-border: white;
+  $indicator-hover-bg: white;
+  $indicator-bar-bg: hsla(0, 0%, 0%, 0.35);
+
+  flex: 1 1 $indicator-bar-height;
+  width: 100%;
+  min-height: $indicator-bar-height;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  background: $indicator-bar-bg;
+
+  > .indicator {
+    cursor: pointer;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 1rem;
+    border: 1px solid $indicator-border;
+    border-radius: 50%;
+    background: none;
+    transition: background 0.5s;
+
+    &.active {
+      background: $indicator-hover-bg;
+      transform: scale(1.2, 1.2);
+    }
+  }
+}
