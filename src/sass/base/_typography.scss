@@ -284,34 +284,6 @@ body {
   }
 }
 
-<<<<<<< HEAD
-//* set the font weight: .weight-light, .weight-medium
-.title,
-.subtitle,
-.body,
-.btn,
-.caption {
-  &.weight {
-    &--light {
-      font-weight: $weight-light;
-    }
-
-    &--normal {
-      font-weight: $weight-normal;
-    }
-
-    &--medium {
-      font-weight: $weight-medium;
-    }
-
-    &--bold {
-      font-weight: $weight-bold;
-    }
-  }
-}
-
-=======
->>>>>>> inbf-transfer-backup
 //* SVG animation text
 svg {
   .text {
