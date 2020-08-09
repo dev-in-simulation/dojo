@@ -90,7 +90,8 @@ $theme-primary-bg: $dark-purple; //* sets background color to theme primary colo
 $theme-on-primary: whitesmoke; //* sets text color to color configured for text ON primary color
 
 $theme-secondary: gray; //* sets the text color to the theme secondary color
-$theme-secondary-bg: $mid-purple; //* sets background color to theme secondary color
+//$theme-secondary-bg: $mid-purple; //* sets background color to theme secondary color
+$theme-secondary-bg: #36393f;
 $theme-on-secondary: $color-charcoal; //* sets text color to color configured for text ON secondary color
 
 $theme-surface: gray; //* sets background color to the surface background color

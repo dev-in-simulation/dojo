@@ -197,6 +197,11 @@ a {
   border: 2px dashed red;
 }
 
+.error {
+  border-color: red !important;
+  outline-color: red !important;
+}
+
 .particle-bg {
   position: absolute;
   top: 0;

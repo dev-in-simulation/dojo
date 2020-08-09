@@ -1,8 +1,10 @@
 //* holds config data for each page, so they don't get cluttered
 export const HomeConfig = {
   briefDescription: "You are now on the homepage :D",
-  description:
-    "Here is some homepage placeholder text. Required to make sure everything formats correctly, doesn't clip, etc.",
+  description: [
+    "I came to code, have a good time, and find out what's possible",
+    "Curiosity drew me in. Coding sat me down. [...]",
+  ],
   icon: {
     imgPath: "assets/icons/beaker.svg",
     imgAlt: "displays the beaker for homepage",
@@ -372,10 +374,45 @@ export const TinkeringData = {
   ],
 };
 
+//* indexes of the contact form's inputfields
+export const FIELD_ID = {
+  NAME: 0,
+  EMAIL: 1,
+  SUBJECT: 2,
+  MSG: 3,
+};
+
 export const ContactConfig = {
   pageIcon: {
     imgPath: "assets/icons/chatIcon.svg",
     imgAlt: "displays the chat page icon",
     addClasses: "chat-icon",
   },
+
+  //* stores data for contact form inputfields & nav. indicators
+  formFields: [
+    {
+      id: "name",
+      label: "Name",
+      index: 0,
+      minLength: 6,
+    },
+    {
+      id: "email",
+      label: "Email",
+      index: 1,
+      type: "email",
+      minLength: 6,
+    },
+    {
+      id: "form-subject",
+      label: "Subject",
+      index: 2,
+    },
+    {
+      id: "form-msg",
+      label: "Message",
+      index: 3,
+    },
+  ],
 };
